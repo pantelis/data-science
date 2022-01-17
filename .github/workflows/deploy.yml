@@ -18,6 +18,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
+        token: ${{ secrets.AIML_COMMON_CICD_TOKEN }}
 
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
