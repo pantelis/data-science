@@ -1,6 +1,6 @@
 # data-science
 
-Introduction to Data Science
+Introduction to Data Science Course Content
 
 ## Usage
 

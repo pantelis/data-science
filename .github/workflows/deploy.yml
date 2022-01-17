@@ -16,6 +16,8 @@ jobs:
         python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
