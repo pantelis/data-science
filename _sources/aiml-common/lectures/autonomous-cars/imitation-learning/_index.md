@@ -4,7 +4,7 @@
 
 In imitation learning a [simulation engine](https://github.com/udacity/self-driving-car-sim) is used to create training datasets.  A screenshot of the simulator for the first track is shown below:
 
-![udacity-simulator](images/udacity-simulator.png#center)
+![udacity-simulator](images/udacity-simulator.png)
 
 A convolution neural network was developed using the high level deep learning API Keras based on a Tensorflow backend.  **This network predicts steering angles from images.**
 
@@ -12,7 +12,7 @@ A convolution neural network was developed using the high level deep learning AP
 
 The model was based on [NVIDIA's work](http://arxiv.org/abs/1604.07316) with two preprocessing stages.  The original NVIDIA model  is shown in the figure below:
 
-![nvidia-model](images/nvidia-model.png#center)
+![nvidia-model](images/nvidia-model.png)
 
 and except from the normalization layer it consists of five convolutional and five flat layers. 
 
@@ -96,8 +96,8 @@ for image, measurement in zip(images, measurements):
 
 The original (top) and flipped (bottom) images are shown below. 
 
-![original-image](images/original-image.png#center)
-![augmented-image](images/augmented-image.png#center)
+![original-image](images/original-image.png)
+![augmented-image](images/augmented-image.png)
 
 Cropping was applied to both images as described above. In total 5882 original images resulted in 11764 images after augmentation. With 20% validation set size, this meant 9411 images that were  used for training and 2353 images used for validation. The model used an adam optimizer, so the learning rate was not tuned manually. 
 

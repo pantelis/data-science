@@ -23,12 +23,12 @@ The example CNN architecture above has the following layers:
 
 The VGG networks from Oxford were the first to use much smaller 3×3 filters in each convolutional layers. They have shown that multiple 3×3 convolution in sequence can emulate the effect of larger receptive fields, for examples 5×5 and 7×7. The VGG configuration is shown below:
 
-![vgg-configuration](images/vgg-configurations.png#center)
+![vgg-configuration](images/vgg-configurations.png)
 _VGG Configurations: Different columns represent different depths_
 
 We will focus on configuration D - its a complex network, very expensive to train _and_ run but worthy competitor to newer architectures in [pure performance terms](https://github.com/keras-team/keras-applications). 
 
-![vgg-network](images/vgg-network.png#center)
+![vgg-network](images/vgg-network.png)
 _VGG16 Network_
 
 ```python

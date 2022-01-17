@@ -15,12 +15,12 @@ Even without global localization we can _track_ an object as it moves within the
 
 ## Localization
 
-![pgm-localization](images/pgm-localization.png#center)
+![pgm-localization](images/pgm-localization.png)
 *GPM for localization of mobile agent - notice the map $m$ is known.  In the text we use for states the letter $s$ instead of $x$ and for actions the letter $a$ instead of $u$.*
 
 For localization we are also given a map $m$ that can take multiple shapes. Most common maps are as shown below:
 
-![map-ambiguity](images/map-ambiguity.png#center)
+![map-ambiguity](images/map-ambiguity.png)
 *Map assumed known for agent localization - notice that beliefs may be ambiguous for certain maps and locations*
 
 The Bayes filter for the localization problem must consider the map and it becomes:
@@ -49,7 +49,7 @@ where $|S|$ is the number of states (poses) that the robot can have.
 
 To illustrate the localization problem solution with probabilistic reasoning lets consider an simple environment with a corridor and three doors.
 
-![robot-doors-problem](images/localization-doors.png#center)
+![robot-doors-problem](images/localization-doors.png)
 *Example environment for agent localization - a hallway with three identical doors*
 
 
@@ -74,7 +74,7 @@ $$\mathtt{bel}(s_0) = \mathcal{N}(s_0-\hat s_0, \Sigma)$$
 
 Lets look at a similar example to the localization problem:
 
-![robot-doors-problem](images/ekf-tracking-doors.png#center)
+![robot-doors-problem](images/ekf-tracking-doors.png)
 *Example environment for tracking - a hallway with three identical and labeled doors*
 
 The original belief is a normal distribution centered  around door 1 where the agent is initially placed. As the robot moves to the right, its belief is convolved with the Gaussian transition / motion model.

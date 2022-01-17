@@ -8,7 +8,7 @@ The policy $\pi$ is evaluated when we have produced the state-value function $v_
 
 We start at $k=0$ by initializing all state-value function (a vactor) to $v_0(s)=0$. In each iteration $k+1$ we start with the state value function of the previous iteration $v_k(s)$ and apply the Bellman expectation backup as prescribed by the one step lookahead tree below that is decorated relative to what [we have seen]({{<ref "../../bellman-expectation-backup">}}) with the iteration information. This is called the synchronous backup formulation as we are updating all the elements of the value function vector at the same time. 
 
-![policy-evaluation-tree](images/policy-evaluation-tree.png#center)
+![policy-evaluation-tree](images/policy-evaluation-tree.png)
 *Tree representation of the state-value function with one step look ahead across iterations.*
 
 The Bellman expectation backup is given by,

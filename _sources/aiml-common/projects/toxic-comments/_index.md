@@ -4,7 +4,7 @@ title: Toxic Comment Classification
 
 # Toxic Comment Classification
 
-![toxic-comment](images/toxic-comment.jpg#center)
+![toxic-comment](images/toxic-comment.jpg)
 
 
 The internet has been converted from a tool offering unprecedented utility to mankind to a tool that can can destabilize societies and ven cause individuals to take their own lives [cite](https://www.nytimes.com/2018/08/08/technology/personaltech/internet-trolls-comments.html). 

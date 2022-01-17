@@ -12,12 +12,12 @@ _Computational graph in Tensorboard showing the components involved in a TF BP u
 
 ## Neuron
 
-![backprop-neuron](images/backprop-neuron.jpg#center)
+![backprop-neuron](images/backprop-neuron.jpg)
 
 ## Simple DNN 1
 
 
-![backprop-simple-dnn](images/backprop-simple-dnn.jpg#center)
+![backprop-simple-dnn](images/backprop-simple-dnn.jpg)
 
 
 ## Simple DNN 2
@@ -37,20 +37,20 @@ The task of backprop consists of the following steps:
 
 NOTE: Please note that we have omitted the bias terms for simplicity.
 
-| Forward Pass Step | Symbolic Equation 
-| --- | --- |
-| (1) | $z^{(1)} = W^{(1)} x^{(1)}$ |
-| (2) | $a^{(1)} = \max(0, z^{(1)})$| 
-| (3) | $z^{(2)} = W^{(2)} a^{(1)}$| 
-| (4) | $\hat{y} = \mathtt{softmax}(z^{(2)})$| 
-| (5) | $L = CE(y, \hat{y})$| 
+| Forward Pass Step | Symbolic Equation                     |
+| ----------------- | ------------------------------------- |
+| (1)               | $z^{(1)} = W^{(1)} x^{(1)}$           |
+| (2)               | $a^{(1)} = \max(0, z^{(1)})$          |
+| (3)               | $z^{(2)} = W^{(2)} a^{(1)}$           |
+| (4)               | $\hat{y} = \mathtt{softmax}(z^{(2)})$ |
+| (5)               | $L = CE(y, \hat{y})$                  |
 
 
-| Backward Pass Step | Symbolic Equation 
-| --- | --- |
-| (5) | $\frac{\partial L}{\partial L} = 1.0$ | 
-| (4) | $\frac{\partial L}{\partial z^{(2)}} = \hat y - y$|
-| (3a) | $\frac{\partial L}{\partial W^{(2)}} = a^{(1)} (\hat y - y)$|
-| (3b) | $\frac{\partial L}{\partial a^{(1)}} = W^{(2)} (\hat y - y)$|
-| (2) | $\frac{\partial L}{\partial z^{(1)}} = \frac{\partial L}{\partial a^{(1)}}$ if   $a^{(1)} > 0$|
-| (1) | $\frac{\partial L}{\partial W^{(1)}} = \frac{\partial L}{\partial z^{(1)}} \times x^{(1)}$|
+| Backward Pass Step | Symbolic Equation                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------------- |
+| (5)                | $\frac{\partial L}{\partial L} = 1.0$                                                          |
+| (4)                | $\frac{\partial L}{\partial z^{(2)}} = \hat y - y$                                             |
+| (3a)               | $\frac{\partial L}{\partial W^{(2)}} = a^{(1)} (\hat y - y)$                                   |
+| (3b)               | $\frac{\partial L}{\partial a^{(1)}} = W^{(2)} (\hat y - y)$                                   |
+| (2)                | $\frac{\partial L}{\partial z^{(1)}} = \frac{\partial L}{\partial a^{(1)}}$ if   $a^{(1)} > 0$ |
+| (1)                | $\frac{\partial L}{\partial W^{(1)}} = \frac{\partial L}{\partial z^{(1)}} \times x^{(1)}$     |

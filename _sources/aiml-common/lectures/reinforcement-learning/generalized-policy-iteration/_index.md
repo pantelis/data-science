@@ -12,7 +12,7 @@ In value iteration, for example, only a single iteration of policy evaluation is
 
 In some cases a single state is updated in one process before returning to the other.  As long as both processes continue to update all states, the ultimate result is typically the same—convergence to the optimal value function and an optimal policy.
 
-![generalized-policy-iteration](images/generalized-policy-iteration.png#center)
+![generalized-policy-iteration](images/generalized-policy-iteration.png)
 
 We  use  the  term generalized  policy  iteration (GPI)  to  refer to the general idea of letting policy-evaluation and policy-improvement processes interact, independent of the granularity and other details of the two processes.  **Almost all reinforcement learning methods are well described as GPI.** 
 
@@ -24,16 +24,16 @@ Thus, both processes stabilize only when a policy has been found that is greedy 
 
 **The evaluation and improvement processes in GPI can be viewed as both competing and cooperating.**  They compete in the sense that they pull in opposing directions.  Making the policy greedy with respect to the value function typically makes the value function incorrect for the changed policy, and making the value function consistent with the policy typically causes that policy no longer to be greedy.  In the long run,  however,  these two processes interact to find a single joint solution:  the optimal value function and an optimal policy.
 
-![gpi](images/gpi.png#center)
+![gpi](images/gpi.png)
 _We have seen this diagram in policy iteration where the arrows takes the system all the way to achieving one of the two goals completely.  In GPI one could also take smaller, incomplete steps toward each goal (not shown).  In either case, the two processes together achieve the overall goal of optimality even though neither is attempting to achieve it directly._
 
 ## GPI Algorithms
 
 The following tables summarize the algorithms between sample backup and full backup and are provided in this GPI section for reference. 
 
-![dp-td-tree-comparison](images/dp-td-tree-comparison.png#center)
+![dp-td-tree-comparison](images/dp-td-tree-comparison.png)
 *Backup Trees for DP vs TD.*
 
-![dp-td-comparison-equations](images/dp-td-comparison-equations.png#center)
+![dp-td-comparison-equations](images/dp-td-comparison-equations.png)
 *Update equation comparison between DP vs TD* 
 

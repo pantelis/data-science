@@ -6,7 +6,7 @@ title: The SARSA Algorithm
 
 As we discussed in the [model-free control]({{<relref "../../control">}}) section, SARSA implements a $Q(s,a)$ value-based GPI. SARSA is one of the best known RL algorithms and is very practical as compared to pure policy-based algorithms. It tends to be more sample efficient - a general trait of many value-based algorithms despite the algorithmic hybridization that is usually applicable today. Its name is attributed to the fact that we need to know the State-Action-Reward-State-Action before performing an update. The tree for SARSA is shown below:
 
-![sarsa-update-tree](images/sarsa-update-tree.png#center)
+![sarsa-update-tree](images/sarsa-update-tree.png)
 *SARSA action-value backup update tree. The name SARSA is written as you read from the top to the bottom of the tree :)*
 
 There are two concepts that we need to grasp:
@@ -20,14 +20,14 @@ $$Q(S,A) = Q(S,A) + \alpha (R + \gamma Q(S^\prime, A^\prime)-Q(S,A))$$
 
 Effectively the equation above updates the Q function by $\alpha$ times the direction of the TD-error. What SARSA does is basically the policy iteration diagram we have seen in the control above but with a twist. Instead of trying to evaluate the policy all the way using the DP, or over an episode using MC,  SARSA does policy improvement **over each time step** significantly increasing the iteration rate - this is figuratively shown below:
 
-![sarsa-policy-iteration](images/sarsa-policy-iteration.png#center)
+![sarsa-policy-iteration](images/sarsa-policy-iteration.png)
 *SARSA on-policy control*
 
 The idea is to increase the frequency of the so called $\epsilon$-Greedy policy improvement step where we select with probability $\epsilon$ a random action instead of the action that maximizes the $Q(s,a)$ function (greedy). We do so, in order to "hit" new states that we havent seen before (exploration). 
 
 The SARSA algorithm is summarized below:
 
-![sarsa-on-policy-control-algorithm](images/sarsa-on-policy-control-algorithm.png#center)
+![sarsa-on-policy-control-algorithm](images/sarsa-on-policy-control-algorithm.png)
 *SARSA algorithm for on-policy control*
 
 $Q(s,a)$ in practice is a table (matrix) stored in memory. Every step that we take an action we flip a "bent coin" and if "heads" comes up we take the maximum of the $Q(s,a)$ values and this will be the policy improvement for the subsequent step. If it comes up as "tails" we just pick a random action and update the policy accordingly.
@@ -35,7 +35,7 @@ $Q(s,a)$ in practice is a table (matrix) stored in memory. Every step that we ta
 
 ## $Q(s,a)$ estimation Example
 
-![td-environment](images/td-environment.jpg#center)
+![td-environment](images/td-environment.jpg)
 
 Suppose an agent is learning to play the toy environment shown above. This is a essentially a corridor and the agent has to learn to navigate to the end of the corridor to the good terminal state $s_{T2}$, denoted with a star. 
 
@@ -61,12 +61,12 @@ The diagram is split into five blocks from top to bottom. Each block corresponds
   * $$Q*(s, a) = r + γQ*(s^\prime, a^\prime)$$.
 * **Q-function episode end**: The value of Q-function at the end of the episode. The Bellman update has been applied for each experience of the episode in time step order. This means that the Bellman update was applied first for the experience corresponding to time step 1, then time step 2, and so on. The table shows the final result after all of the Bellman updates have been applied for the episode.
 
-![td-q-function-learning](images/td-q-function-learning.jpg#center)
+![td-q-function-learning](images/td-q-function-learning.jpg)
 *TD Q-function learning*
 
 Obviously this is a trivial example to show in detail the calculations that are being done at every episode and time step. For a more elaborate gridworld, the python code that follows shows how SARSA would work in the environment below.  
 
-![sarsa-gridworld](images/sarsa-gridworld.png#center)
+![sarsa-gridworld](images/sarsa-gridworld.png)
 *SARSA Gridworld*
 
 {{<details "Python SARSA Gridworld Envrironment">}}

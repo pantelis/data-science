@@ -473,16 +473,16 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="the-neuron-perceptron">
 <h1>The Neuron (Perceptron)<a class="headerlink" href="#the-neuron-perceptron" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Frank-Rosenblatt" src="aiml-common/lectures/classification/perceptron/images/frankrosenblatt.png#center" />
+<p><img alt="Frank-Rosenblatt" src="../../../../_images/frankrosenblatt.png" />
 <em>Frank Rosenblatt</em></p>
 <p>This section captures the main principles of the perceptron algorithm which is the essential building block for neural networks.</p>
 <div class="section" id="architecture-of-a-single-neuron">
 <h2>Architecture of a single neuron<a class="headerlink" href="#architecture-of-a-single-neuron" title="Permalink to this headline">¶</a></h2>
 <p>The perceptron algorithm invented 60 years ago by Frank Rosenblatt in Cornell Aeronautical Laboratory. Neural networks are constructed from neurons - each neuron is a perceptron with a specific activation function.  A single neuron is itself capable of learning – indeed,various standard statistical methods can be viewed in terms of single neurons – so this model will serve as a first and simple example of a <em>supervised</em> neural network.</p>
-<p><img alt="real-neuron" src="aiml-common/lectures/classification/perceptron/images/real-neuron.png#center" /></p>
-<p><img alt="perceptron-architecture-2" src="aiml-common/lectures/classification/perceptron/images/perceptron-architecture-2.png#center" />
+<p><img alt="real-neuron" src="../../../../_images/real-neuron.png" /></p>
+<p><img alt="perceptron-architecture-2" src="../../../../_images/perceptron-architecture-2.png" />
 <em>Model of a single neuron. Note that in this course we use the conventions of the GCB book for notations of number of features <span class="math notranslate nohighlight">\(n\)</span> (dimensions) and number of examples <span class="math notranslate nohighlight">\(m\)</span>. This figure has them flipped.</em></p>
-<p><img alt="perceptron-architecture" src="aiml-common/lectures/classification/perceptron/images/perceptron-architecture.png#center" />
+<p><img alt="perceptron-architecture" src="../../../../_images/perceptron-architecture.png" />
 <em>Model of a single neuron (compressed). Notation alignment: <span class="math notranslate nohighlight">\(I \rightarrow n\)</span></em></p>
 <p>A single neuron has a number <span class="math notranslate nohighlight">\(n\)</span> of  inputs <span class="math notranslate nohighlight">\(x_i\)</span> (note the figure is not compatible with this notation) and one output which we will here call <span class="math notranslate nohighlight">\(\hat{y}\)</span>. Associated with each input is a weight <span class="math notranslate nohighlight">\(w_i\)</span> (<span class="math notranslate nohighlight">\(i = 1 ,\ldots, n\)</span>). The additional parameter <span class="math notranslate nohighlight">\(w_0\)</span> of the neuron called a bias which we may view as being the weight associated with an input <span class="math notranslate nohighlight">\(x_0\)</span> that is permanently set to 1. The single neuron is a <em>feedforward</em> device – the connections
 are directed from the inputs to the output of the neuron.  Feedforward neural networks are called Multi-Layer Perceptrons (MLPs).</p>

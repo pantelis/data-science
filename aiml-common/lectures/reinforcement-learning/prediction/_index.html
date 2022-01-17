@@ -504,7 +504,7 @@
 <p>The value functions <span class="math notranslate nohighlight">\(v_π\)</span> and <span class="math notranslate nohighlight">\(q_π\)</span> can be estimated from experience.</p>
 <p>For example, if an agent follows policy <span class="math notranslate nohighlight">\(\pi\)</span> and maintains an average, for each state encountered, of the actual returns that have followed that state, then the average will converge to the state’s value,<span class="math notranslate nohighlight">\(v_π(s)\)</span>, as the number of times that state is encountered approaches infinity.  If separate averages are kept for each action taken in each state, then these averages will similarly converge to the action values,<span class="math notranslate nohighlight">\(q_π(s,a)\)</span>.</p>
 <p>We call estimation methods of this kind <em>Monte Carlo</em> methods because they involve averaging over many random samples of returns. In MC prediction more specifically, for every state at time <span class="math notranslate nohighlight">\(t\)</span> we sample one complete trajectory (episode) as shown below.</p>
-<p><img alt="mc-value-iteration-tree" src="aiml-common/lectures/reinforcement-learning/prediction/images/mc-value-iteration-tree.png#center" />
+<p><img alt="mc-value-iteration-tree" src="../../../../_images/mc-value-iteration-tree.png" />
 <em>Backup tree with value iteration based on the MC approach. MC samples a complete trajectory to the terminating node T shown with red.</em></p>
 <p>There is some rationale of doing so, if we recall that the state-value function that was defined in the introductory [MDP section]() i.e. the <em>expected</em> return.</p>
 <div class="math notranslate nohighlight">
@@ -550,10 +550,10 @@
 <li><p>Like  DP,  TD  methods  update  estimates  based  in  part  on  other  learned estimates, without waiting for a final outcome.</p></li>
 </ul>
 <p>In TD, instead of getting an estimated value function at the end of multiple episodes, we can use the incremental mean approximation to update the value function after each step.</p>
-<p><img alt="td-value-iteration-tree" src="aiml-common/lectures/reinforcement-learning/prediction/images/td-value-iteration-tree.png#center" />
+<p><img alt="td-value-iteration-tree" src="../../../../_images/td-value-iteration-tree.png" />
 <em>Backup tree for value iteration with the TD approach. TD samples a single step ahead as shown with red.</em></p>
 <p>Going back to the example of crossing the room optimally, we take one step towards the goal and the we  <em>bootstrap</em> the value function of the state we were in from an estimated return for the remaining trajectory. We repeat this as we go along effectively adjusting the value estimate of the starting state from the true returns we have experienced up to now, <em>gradually grounding</em> the whole estimate as we approach the goal.</p>
-<p><img alt="td-driving-to-work-example" src="aiml-common/lectures/reinforcement-learning/prediction/images/td-driving-to-work-example.png#center" />
+<p><img alt="td-driving-to-work-example" src="../../../../_images/td-driving-to-work-example.png" />
 <em>Two value approximation methods: MC (left), TD (right) as converging in their predictions of the value of each of the states in the x-axis. The example is from a hypothetical commute from office back home. In MC you have to wait until the episode ended (reach the goal) to update the value function at each state of the trajectory. In contrast, TD updates the value function at each state based on the estimates of the total travel time. The goal state is “arrive home”, while the reward function is time.</em></p>
 <p>As you can notice in the figure above the solid arrows in the MC case, adjust the predicted value of each state to the <em>actual</em> return while in the TD case the value prediction happens every step in the way. We call TD for this reason an <em>online</em> learning scheme. Another characteristic of TD is that it does not depend on reaching the goal, it <em>continuously</em> learns. MC does depend on the goal and therefore is <em>episodic</em>. This is important in many mission critical applications eg self-driving cars where you dont wait to “crash” to apply corrections to your state value based on what you experienced.</p>
 <p>Mathematically, instead of using the <em>true</em> return, <span class="math notranslate nohighlight">\(G_t\)</span>, something that it is possible in the MC as we are trully experiencing the world along a trajectory, TD uses a (biased) <em>estimated</em> return called the <em>TD target</em>: <span class="math notranslate nohighlight">\( R_{t+1} + \gamma V(S_{t+1})\)</span> approximating the value function as:</p>
@@ -573,7 +573,7 @@
 <p>We now define the so called <span class="math notranslate nohighlight">\(\lambda\)</span>-return that combines all n-step return <span class="math notranslate nohighlight">\(G_t^{(n)}\)</span> via the weighting function shown below as,</p>
 <div class="math notranslate nohighlight">
 \[G_t^{(n)} = (1-\lambda) \sum_{n=1}^\infty \lambda^{n-1} G_t^{(n)}\]</div>
-<p><img alt="lambda-weighting-function" src="aiml-common/lectures/reinforcement-learning/prediction/images/lambda-weighting-function.png#center" />
+<p><img alt="lambda-weighting-function" src="../../../../_images/lambda-weighting-function.png" />
 <em><span class="math notranslate nohighlight">\(\lambda\)</span> weighting function for TD(<span class="math notranslate nohighlight">\(\lambda\)</span>)</em></p>
 <p>the TD(n) learning equation becomes</p>
 <div class="math notranslate nohighlight">

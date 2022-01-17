@@ -514,7 +514,7 @@
 <p>In this chapter we will treat a non-parametric method, the Decision Tree (DT) that is one of the most popular ML algorithms. They are used usually as components of ensemble methods. They are non-parametric models because they don’t need a predetermined set of parameters before training can start as in parametric models - rather the tree fits the data very closely and often overfits using as many parameters are required <strong>during training</strong>.</p>
 <p>Its popularity stems also from yet another attribute that is becoming very important in the application of ML/AI in mission critical industries such as health: its ability to offer interpretable predictions to some degree that can also be introspected easily by humans. DTs can be used for both regression and classification - here we look at a classification use case but the principles are the same.</p>
 <p>For example, let’s say that you had a basket of fruit in front of you, and you were trying to teach someone who had never seen these types of fruit before how to tell them apart.  How could you do it? The answer is shown pictorially below.</p>
-<p><img alt="fruit-decision-tree" src="aiml-common/lectures/decision-trees/images/fruit-decision-tree.png#center" /></p>
+<p><img alt="fruit-decision-tree" src="../../../_images/fruit-decision-tree.png" /></p>
 <p>A decision tree is a tree where each node represents a feature(attribute), each link (branch) represents a decision (rule) and each leaf represents an outcome(categorical for classification or continual for regression).</p>
 <p>If your decision tree is good, you can now pick up an unknown piece of fruit and follow the flow chart to classify it.  If your decision tree is bad, you can go down the wrong path and put something in the wrong category.  For instance, if you didn’t know yellow apples existed when you built your decision tree, you might have assumed that all yellow fruit are either bananas or plantains.</p>
 <p>In what follows, we focus on a dataset with <span class="math notranslate nohighlight">\(m=88\)</span> and <span class="math notranslate nohighlight">\(4\)</span> labels: Apples, Oranges,  Bananas,  Grapefruit. Each example has multiple features <span class="math notranslate nohighlight">\(n\)</span>: color, width and length.</p>
@@ -542,7 +542,7 @@
 <p><img alt="fruit-dataset" src="../../../_images/fruit-dataset.png" /></p>
 <p><em>Fruits dataset</em></p>
 <p>If we are to draw separation lines on feature space of length (<span class="math notranslate nohighlight">\(x_1\)</span>) and width (<span class="math notranslate nohighlight">\(x_2\)</span>) without using an ML algorithm but by hand, we probably would come up with the picture below.</p>
-<p><img alt="fruit-human" src="aiml-common/lectures/decision-trees/images/fruit-split-human.png#center" />
+<p><img alt="fruit-human" src="../../../_images/fruit-split-human.png" />
 <em>Draw by hand partition</em></p>
 <p>Now, lets try to solve the same problem using an algorithm bearing in mind that many real-life data sets might have dozens or hundreds of different features.</p>
 <div class="section" id="cart-algorithm">
@@ -553,26 +553,26 @@
 </div></blockquote>
 <p>At its heart, the algorithm implements a recursive binary partitioning of the input feature space. The feature space in the example above is <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, x_3)^T\)</span> denoting length, width and color. Given a training dataset as usual <span class="math notranslate nohighlight">\(D=\{(\mathbf x_i, y_i)\}\)</span> for <span class="math notranslate nohighlight">\(i=\{1, \dots m\}\)</span>, we need to come up with a close to optimal partitioning that minimizes the generalization (test) error.</p>
 <p>We start at a <strong>root node</strong> that corresponds to the whole feature space (no partition) and design a <strong>test</strong> that is in its simplest form a conditional statement against a feature (a comparison if you like). Depending on the binary outcome of the test (either the input examples will satisfy the condition or not) we produce the corresponding child nodes each inheriting a subset of the input population and we repeat the exercise. The recursion stops when we reach the so called leaf nodes e.g. when the remaining examples in these nodes cannot be split further. We will come back at this terminal / leaf nodes later. An example tree and corresponding partition is shown in the two figures below.</p>
-<p><img alt="Figure14.5" src="aiml-common/lectures/decision-trees/images/Figure14.6.png#center" /></p>
+<p><img alt="Figure14.5" src="../../../_images/Figure14.6.png" /></p>
 <p><em>Example tree - <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> based splits shown.</em></p>
-<p><img alt="Figure14.5" src="aiml-common/lectures/decision-trees/images/Figure14.5.png#center" /></p>
+<p><img alt="Figure14.5" src="../../../_images/Figure14.5.png" /></p>
 <p><em>Partition for the example tree above.</em></p>
 <p>The test specification consists of the variables <span class="math notranslate nohighlight">\(\theta_i\)</span> that are are also called <strong>thresholds</strong> as well as the specific feature <span class="math notranslate nohighlight">\(x_k\)</span> that is being selected for the test.</p>
 <p>Lets see the three recursions of the algorithm as shown below.</p>
-<p><img alt="fruit-split-1" src="aiml-common/lectures/decision-trees/images/fruit-split-1.png#center" /></p>
+<p><img alt="fruit-split-1" src="../../../_images/fruit-split-1.png" /></p>
 <p><em>First split</em></p>
-<p><img alt="fruit-split-2" src="aiml-common/lectures/decision-trees/images/fruit-split-2.png#center" /></p>
+<p><img alt="fruit-split-2" src="../../../_images/fruit-split-2.png" /></p>
 <p><em>Second split</em></p>
-<p><img alt="fruit-split-3" src="aiml-common/lectures/decision-trees/images/fruit-split-3.png#center" /></p>
+<p><img alt="fruit-split-3" src="../../../_images/fruit-split-3.png" /></p>
 <p><em>Third split</em></p>
-<p><img alt="fruit-tree-alg-split" src="aiml-common/lectures/decision-trees/images/fruit-tree-alg-split.png#center" />
+<p><img alt="fruit-tree-alg-split" src="../../../_images/fruit-tree-alg-split.png" />
 <em>Final decision tree for the fruit classification problem</em></p>
 <p>This brings up the question of how we select the test spec parameters <span class="math notranslate nohighlight">\(x_k\)</span> and <span class="math notranslate nohighlight">\(\theta_k\)</span> to minimize a certain metric that is dependent on the type of the problem we deal with - classification or regression.</p>
 </div>
 <div class="section" id="selecting-the-feature-x-k-to-split">
 <h2>Selecting the feature <span class="math notranslate nohighlight">\(x_k\)</span> to split<a class="headerlink" href="#selecting-the-feature-x-k-to-split" title="Permalink to this headline">¶</a></h2>
 <p>To gauge which feature we will choose split requires a review of certain [probabilistic concepts]() namely the concept of entropy. We can develop on top of entropy the concept of information gain that is pictorially explained using the example  shown below</p>
-<p><img alt="information-gain-example" src="aiml-common/lectures/decision-trees/images/information-gain.png#center" />
+<p><img alt="information-gain-example" src="../../../_images/information-gain.png" />
 <em>Information gain for two possible splits</em></p>
 <p>The input dataset in this example has uniform distribution over classes - we have exactly the same number  of  points  in  each  class.  If  we  split  the  data  horizontally (select feature <span class="math notranslate nohighlight">\(x_1\)</span>) this  produces  two  sets  of  data.  Each  set  is  associated with a <strong>lower</strong> entropy (higher information, peakier class histograms) that is defined as usual</p>
 <div class="math notranslate nohighlight">
@@ -591,7 +591,7 @@
 <!-- ## Applicability
 When we use decision trees for regression, the entropy is replaced with the usual MSE. We also have the possibility of parametric clustering in an unsupervised learning setting as shown below where the Gaussian distribution is being used to fit the data before and after the split. The Information Gain concept is generic enough to be applied in both discrete, continuous, supervised and unsupervised problems. 
 
-![unsupervised-training](images/unsupervised-training.png#center) -->
+![unsupervised-training](images/unsupervised-training.png) -->
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>

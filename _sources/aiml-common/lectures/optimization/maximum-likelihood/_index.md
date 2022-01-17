@@ -48,7 +48,7 @@ It is now instructive to go over an example to understand that even the plain-ol
 
 Please follow the discussion associated with Section 5.5.1 of the Ian Goodfellow's book or section 20.2.4 of Russell \& Norvig's book and [these notes](https://www.cs.indiana.edu/~predrag/classes/2016fallb365x/ols.pdf)  and consider the following figure for assistance to visualize the relationship of $p_{data}$ and $p_{model}$. 
 
-![conditional-model-gaussian](images/conditional-model-gaussian.png#center)
+![conditional-model-gaussian](images/conditional-model-gaussian.png)
 _Please replace the y-axis target variable $t$ with $y$. The green dashed line shows the mean of the $p_{model}$ distribution._
 
 The following notebook goes through the MLE calculation from scratch and shows the negative log-likelihood curves for a very simple MLE problem of fitting a Gaussian $p_{model}$ to an array produced by sampling an unknown underlying distribution $p_{data}$.
@@ -57,7 +57,7 @@ The following notebook goes through the MLE calculation from scratch and shows t
 
 The following notebook is instructive of what MLE is calculating for the dataset we have seen before. Note that this notebook reveals also the large swings that the $\mathbf w$ takes to fit the model for larger capacities. Please vary $M$ in the code to observe the dynamic range of the weights of the model.
 
-![w-star-various-capacities](images/w-star-various-capacities.png#center)
+![w-star-various-capacities](images/w-star-various-capacities.png)
 _Optimal $\mathbf w$ for various model capacities_
 
 <iframe src="https://nbviewer.jupyter.org/github/pantelis/PRML/blob/master/notebooks/ch03_Linear_Models_for_Regression.ipynb" width="900" height="1200"></iframe>

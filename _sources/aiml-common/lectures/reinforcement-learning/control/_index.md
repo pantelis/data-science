@@ -20,7 +20,7 @@ $$\pi^\prime = \argmax_{a \in \mathcal A} Q(s,a)$$
 
 This is shown next: 
 
-![generalized-policy-iteration](images/generalized-policy-iteration.png#center)
+![generalized-policy-iteration](images/generalized-policy-iteration.png)
 *Generalized policy iteration using action-value function*
 
 The only complication is that many state–action pairs may never be visited.  If $π$ is a deterministic policy, then in following $π$ one will observe returns only for one of the actions from each state.  With no returns to average, the Monte Carlo estimates of the other actions will not improve with experience.  This is a serious problem because the purpose of learning action values is to help in choosing among the actions available in each state.  To compare alternatives we need to estimate the value of all the actions from each state, not just the one we currently favor. **This is the general problem of maintaining exploration** and we solve it by flipping a bent coin with probability $\epsilon$ as the probability of "heads" and if we get a heads we do a greedy action while with tails (with probability $1-\epsilon$) we are taking a random action.   
@@ -29,6 +29,6 @@ This is allowed under the general interaction afforded by the Generalized Policy
 
 The MC pseudocode encompassing $\epsilon$-greedy control is shown below:
 
-![mc-pseudocode](images/mc-epsilon-greedy-pseudocode.png#center)
+![mc-pseudocode](images/mc-epsilon-greedy-pseudocode.png)
 
 Motivated by the advantages of TD prediction we can now replace the MC with TD and obtain SARSA - one of the most important RL algorithms. 

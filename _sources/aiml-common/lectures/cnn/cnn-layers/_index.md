@@ -8,7 +8,7 @@ title: CNN Layers
 
 In the convolutional layer the first operation a 3D image with its two spatial dimensions and its third dimension due to the primary colors, typically Red Green and Blue is at the input layer, is convolved with a 3D structure called the **filter** shown below.
 
-![cnn-filter](images/filter.png#center)
+![cnn-filter](images/filter.png)
 *Each filter is composed of kernels - [source](https://towardsdatascience.com/a-comprehensive-introduction-to-different-types-of-convolutions-in-deep-learning-669281e58215)*  
 
 The filter slides through the picture and the amount by which it slides is referred to as the **stride** $s$. The stride is a hyperparameter. Increasing the stride reduces the size of your model by reducing the number of total patches each layer observes. However, this usually comes with a reduction in accuracy. 
@@ -17,7 +17,7 @@ It's common to have more than one filter. Different filters pick up different qu
 
 This means that typically we are dealing with **volumes** (3D tensors) and of course if someone adds the fact that we do processing in minibatches we are typically dealing with 4D tensors that contain input feature maps. Lets look at a single feature map visualization below of the convolution operation.  
 
-![convolution-single-feature-map](images/convolution-single-feature-map.png#center)
+![convolution-single-feature-map](images/convolution-single-feature-map.png)
 *Convolutional layer with a single feature map. We can see the strides $(s_h, s_w)$, the zero padding as well as the receptive field in the produced feature map.*
 
 In the figure below the authors of [this](https://arxiv.org/abs/1603.07285) paper have also animated the operation.  Blue maps are inputs, and cyan maps are outputs.
@@ -53,7 +53,7 @@ In general though in practice we are dealing with **volumes** due to the multipl
 
 In the class we will go through the example below.
 
-![2d-convolution-example](images/2d-convolution-example.png#center)
+![2d-convolution-example](images/2d-convolution-example.png)
 
 There are two steps involved. Notice that the number of input feature maps is $M_{l-1} = 2$, while the number of output feature maps is $M_{l}=3$. We therefore have three filters of spatial dimension $[height, width]=[3 \times 3]$ and depth dimension of 2.  In the first step each of the three filters generates a correlation result for each of the 2 input feature maps.
 
@@ -65,13 +65,13 @@ $z(i,j,k_l) = \sum_u^{height} \sum_v^{width} \sum_{k_{l-1}=1}^{M_i} x(i+u, j+v, 
 
 The figure below illustrates the input feature map to output feature map mapping directly i.e. without the intermediate step of the example above. 
 
-![convnet-multiple-feature-maps](images/convnet-feature-maps.png#center)
+![convnet-multiple-feature-maps](images/convnet-feature-maps.png)
 *Convolutional layers with multiple feature maps. We can see the receptive field of each column of neurons of the next layer. Each column is produced by performing multiple convolutions (or cross correlation operations) between the volume below and each of the filters.*
 
 In each layer we can have in other words, as was shown in the example above, input and output feature maps of different depths.
 
 
-![2d-convolution-b](images/2d-convolution-b.png#center)
+![2d-convolution-b](images/2d-convolution-b.png)
 *2D convolution that produces a feature map with different depth than the input feature map*
 
 ### Zero Padding
@@ -85,7 +85,7 @@ source: CS231n
 
 **Each output spatial dimension (height is shown here) is in general given by $⌊ \frac{height+2p-k}{s} ⌋ + 1$, where $p$ is the amount of padding,  $k$ is the square kernel size, $s$ is the stride. In the animation above, $p=1, k=3, s = 2$.**  In yet another example of sizing - output depth is a function of the number of kernels but the spatial dimensions depend as the equation above specified on stride, padding and kernel size (usually square). 
 
-![sizing-example](images/sizing-example.png#center)
+![sizing-example](images/sizing-example.png)
 
 ## What the convolution / operation offers
 
@@ -95,14 +95,14 @@ There are two main consequences of the convolution operation: sparsity and param
 
 In DNNs, every output unit interacts with every input unit. Convolutional networks, however, typically have sparse interactions(also referred to as sparse connectivity or sparse weights). This is accomplished by making the kernel smaller than the input as shown in the figure above. For example,when processing an image, the input image might have thousands or millions of pixels, but we can detect small, meaningful features such as edges with kernels that have much smaller receptive fields. 
 
-![cnn-sparsity](images/cnn-sparsity.png#center)
+![cnn-sparsity](images/cnn-sparsity.png)
 *For a specific input unit,$x_3$, we mark the output units in that are aﬀected by this unit. (Top) When is formed by convolution with a kernel of width 3, only three outputs are aﬀected by x. (Bottom)When is formed by matrix multiplication, connectivity is no longer sparse, so all the outputs are aﬀected by $x_3$.*
 
 #### Parameter sharing
 
 In CNNs, each member of the kernel is used at every feasible position of the input. The parameter sharing used by the convolution operation means that rather than learning a separate set of parameters for every location, we learn only one set.
 
-![cnn-parameter-sharing](images/cnn-parameter-sharing.png#center)
+![cnn-parameter-sharing](images/cnn-parameter-sharing.png)
 *Parameter sharing. Black arrows indicate the connections that use a particular parameter in two diﬀerent models. (Top)The black arrows indicate uses of the central element of a 3-element kernel in a convolutional model. Because of parameter sharing, this single parameter is used at all input locations. (Bottom)The single black arrow indicates the use of the central element of the weight matrix in a fully connected model. This model has no parameter sharing, so the parameter is used only once*.
 
 The particular form of parameter sharing causes the layer to have a property called **equivariance to translation**.  This means that a translation of input features results in an equivalent translation of outputs. So if your pattern 0,3,2,0,0 on the input results in 0,1,0,0 in the output, then the pattern 0,0,3,2,0 might lead to 0,0,1,0
@@ -132,7 +132,7 @@ Despite receiving ample treatment in Ians Goodfellows' book, pooling has fallen 
 * Pooling results in a loss of information - think about the max-pooling operation as an example shown in the figure below. 
 * [All convolutional networks](https://arxiv.org/pdf/1412.6806.pdf) where the pooling is replaced by a CNN with larger stride can do better. 
 
-![pooling](images/pooling.png#center)
+![pooling](images/pooling.png)
 *Max pooling layer (2 × 2 pooling kernel, stride 2, no padding)*
 
 {{<hint info>}}
@@ -143,7 +143,7 @@ To further understand the latest reservations against pooling in CNNs, see [this
 
 The 1x1 convolution layer is met in many network architectures (e.g. GoogleNet) and offers a number of modeling capabilities. Spatially, the 1x1 convolution is equivalent to a single number multiplication of each spatial position of the input feature map (if we ignore the non-linearity) as shown below. This means that leaves the spatial dimensions of the input feature maps unchanged unlike the pooling layer. 
 
-![1x1-convolution](images/1x1-convolution.gif#center)
+![1x1-convolution](images/1x1-convolution.gif)
 *1x1 convolution of a single feature map is just scaling - the 1x1 convolution is justified only when we have multiple feature maps at the input*. 
 
 The most straightforward way to look at this layer is as a _cross feature map pooling layer_. When we have multiple input feature maps $M_{l-1}$ and 1x1 filters 1x1x$M_{l-1}$ (note the depth of the filter must match the number of the input feature maps) then we form a dot product between the feature maps at the spatial location $(i,j)$  of the 1x1 filter followed by a non-linearity (ReLU). This operation is in other words the same operation of a fully connected single layer neural network whose neurons are those spanned by the single column at the $(i,j)$ coordinate.  This layer will produce a single output at each visited $(i,j)$ coordinate. 

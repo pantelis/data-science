@@ -13,7 +13,7 @@ A substantial part of AI is machine learning (ML), that nowadays is used to proc
 
 AI is a system with the ability to represent the world and abstract concepts at multiple levels. If we are to draw the architecture of such system, it will have the ability to quickly change depending on the domain and task at hand. Just like origami, AI systems will morph into a suitable architecture, facilitated by high speed interconnections between its subsystems. The controller that controls such changes must be topology aware i.e. knowing the functional decomposition of the AI system and what support for representations and abstractions each subsystem can offer. How these can be combined and ultimately used, is something that needs to be learned. To generalize, such morphic control agents must be able to perform across task domains.
 
-![morphic-ai-architrecture](images/morphic-ai-architecture.drawio.svg#center)
+![morphic-ai-architrecture](images/morphic-ai-architecture.drawio.svg)
 
 *AI distributed system comprising from a number of high-speed interconnected subsystems that are loosely coupled and communicate via a universal language. Line thickness indicates stronger coupling / dependencies between subsystems for the task at hand at this moment in time.*
 
@@ -27,17 +27,17 @@ In the previous section we have argued that AI requires systems thinking to atte
 
 **Logical Reasoning**. A dejavu moment is currently witnessed where symbolic reasoning makes a comeback. Deep learning that up to now was limited to creating reflexive representations (e.g. for perception tasks) it is now supplemented with symbolic representations and caters to encode how the world works (world models). What is missing currently is the combination of explainable mechanisms in the attempt by these new architectures to create facts and entailments across time and space. When this is solved, to give an example, a video camera at the airport gate will have no problem resolving an abandoned backpack, and trigger the alarm, from a backpack left next to a family member. 
 
-![abandoned-backpack](images/abandoned-backpack.jpg#center)
+![abandoned-backpack](images/abandoned-backpack.jpg)
 **Active Continual Learning**. Reasoning can be used to see with a different light, pure machine learning tasks as well. Although active learning is a hot area at the moment and with many approaches already proposed, we believe it needs to expand from the current focus of improving single-task inductive learning. Learning how to learn is important but learning what to learn is even more so, especially when we envision systems that need to transfer their knowledge on a task to complete other upstream ML tasks. This is an extension to the well known Continual Learning problem. 
 
 **Universal Robotic Language (URL)**. There is no doubt that the pandemic will replace the labor arbitrage that has been driving a specific kind of economic growth in the last 20 years, with a robotic labor arbitrage that can financially invalidate offshoring jobs. A key ingredient to this transition is collaborative robotics but currently they are extremely limited in their ability to communicate with workers. They require significant engineering effort and they are incapable to collaborate with other robots of a different vendor. (a) we can ground spoken natural language describing a task to robots (b) we can use natural language to cross robot vendor boundaries something impossible today.
 
-![vision-language](images/vision-language.png#center)
+![vision-language](images/vision-language.png)
 *A very limited example of combining computer vision and language - from [here](https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf)*
 
 We can stich now together a reasonably accurate architecture - treat this for the moment as a snapshot of the morphic architecture we described in the previous section. 
 
-![non-nlp-agent-architecture](images/non-nlp-agent-architecture.drawio.svg#center)
+![non-nlp-agent-architecture](images/non-nlp-agent-architecture.drawio.svg)
 _Architecture of an AI agent suitable for the visual perceptive environments_
 
 Demonstrators of such intelligent agents in the space of robotics are widespread. One such demonstrator shown below is being researched in Bell Labs. The video below is from the [Unix 50 competition](https://www.bell-labs.com/unix50/)  
@@ -48,10 +48,10 @@ Demonstrators of such intelligent agents in the space of robotics are widespread
 
 Similarly architecture can be envisioned for natural language understanding (NLU) tasks as shown below. 
 
-![nlp-agent-architecture](images/nlp-agent-architecture.drawio.svg#center)
+![nlp-agent-architecture](images/nlp-agent-architecture.drawio.svg)
 _Architecture of an AI agent suitable for the natural language understanding tasks_
 
 Many authors present the positioning of deep learning and AI as an onion-like relationship shown below. Our expanded discussion on the block diagrams above during the lecture justifies such relationship.
 
-![ml-ai-categorization](images/ml-ai-categorization.png#center)
+![ml-ai-categorization](images/ml-ai-categorization.png)
 _The relationship between AI and ML/Deep Learning_

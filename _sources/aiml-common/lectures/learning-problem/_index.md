@@ -9,7 +9,7 @@ weight: 30
 
 Let us start with a classic formal definition of the supervised learning problem.
 
-![learning-problem](images/learning-problem.png#center)
+![learning-problem](images/learning-problem.png)
 
 *[Vapnik's](https://en.wikipedia.org/wiki/Vladimir_Vapnik) formulation of the learning problem (enhanced with notation from the Deep Learning book)*
 

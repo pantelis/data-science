@@ -510,13 +510,13 @@
 <div class="section" id="the-input">
 <h3>The input<a class="headerlink" href="#the-input" title="Permalink to this headline">¶</a></h3>
 <p>It is instructive to see the training process as a control system.</p>
-<p><img alt="control-system-training" src="aiml-common/lectures/optimization/batch-normalization/images/control-system-training.drawio.svg#center" />
+<p><img alt="control-system-training" src="../../../../_images/control-system-training.drawio.svg" />
 <em>Control System view of training</em></p>
 <p>The system takes input <span class="math notranslate nohighlight">\(\mathbf x\)</span> and produces a loss that is used to update the parameters <span class="math notranslate nohighlight">\(\mathbf w\)</span> for each of the layers based on a estimate of how much the loss <span class="math notranslate nohighlight">\(L\)</span> changed for that input. There are multiple concepts in this sentence that is worth highlighting. First lets repeat the SGD equation below as it will used to drive the discussion.</p>
 <div class="math notranslate nohighlight">
 \[\mathbf w_{k+1} = \mathbf w_k - \eta \nabla_{\mathbf w} L(\mathbf w_k)\]</div>
 <p>It is enough to discuss the limiting case with just two parameters to visualize the loss as shown below. This is obviously a 3D plot with x and y axes on parameters and the z axis assigned to loss.</p>
-<p><img alt="visualizer" src="aiml-common/lectures/optimization/batch-normalization/images/visualizer.gif#center" />
+<p><img alt="visualizer" src="../../../../_images/visualizer.gif" />
 <em>Optimizer Visualization (from <a class="reference external" href="https://github.com/Kitsunetic/Optimizer-Visualization">here</a>)</em></p>
 <p>Recall that back-propagation starts from where forward propagation ends, so the <em>input</em> is the driving force of the learning process and the noisy negative gradient of the loss with respect to weights is a search direction of where to look for significant reductions of that loss. The control system’s optimizer feedbacks the parameter updates every mini-batch hopping that successive updates will converge to some <em>good</em> local minimum.</p>
 <p>As described in <a class="reference external" href="http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf">this paper</a>, <em>networks learn the fastest from the most unexpected examples</em>.  If this rings the bells of entropy in your ears it should. One way to maximize the unexpectedness is in each iteration to choose input examples that belong to different classes expecting that they will also contain significantly different information. In practice we can approximate this with a permutation over the examples (epochs).</p>
@@ -525,7 +525,7 @@
 <div class="section" id="normalization-and-scaling">
 <h3>Normalization and Scaling<a class="headerlink" href="#normalization-and-scaling" title="Permalink to this headline">¶</a></h3>
 <p>We also have seen that whitening the input to a neural network manages to change the input distribution significantly and in this section we would like to connect this to learning efficiency. Starting from the operation of normalization let us consider a limiting example of two parameters as shown below.</p>
-<p><img alt="sgd-convergence2" src="aiml-common/lectures/optimization/batch-normalization/images/sgd-convergence2.png#center" /></p>
+<p><img alt="sgd-convergence2" src="../../../../_images/sgd-convergence2.png" /></p>
 <p><em>Contour of the loss with respect to two parameters</em></p>
 <p>In this contour plot of the loss, the SGD path as it tries to find the minimum has lots of problems. The trajectory shown is not smooth which means that the algorithm converges very slowly. The reason is that there is a much larger dynamic range in the x-axis and this means that the gradient (a vector) with respect to one of the parameters will dominate its <em>direction</em> creating a zig-zag pattern.</p>
 <p>The different scales at the parameter space are a manifestation of different scales at the input space since the function tries to combine the input with weights. As shown in the [backpropagation exercise with the neuron](), the gradient of the neuron output with respect to the weight is proportional to the input <span class="math notranslate nohighlight">\(x\)</span> and the proportionality factor can be very small if the dot product is either very large or too small. In the case where all inputs are positive (as in the figure above), the changes to the weights are all of the same sign across parameters. The best way to correct the situation is to normalize the input data around a mean of 0 and this will result into a much faster SGD convergence. After normalization you can get a more rounded (bivariate in this case) distribution where gradient directions can be  diverse.</p>
@@ -541,10 +541,10 @@
 <p>A recently developed technique by Ioffe and Szegedy called <a class="reference external" href="http://arxiv.org/abs/1502.03167">Batch Normalization</a> alleviates a lot of headaches with properly initializing neural networks by explicitly forcing the activations throughout a network to take on a unit gaussian distribution at the beginning of the training. The core observation is that this is possible because normalization is a simple differentiable operation. In the implementation, applying this technique usually amounts to insert the BatchNorm layer immediately after fully connected layers (or convolutional layers), and before activations.</p>
 <p>In practice networks that use Batch Normalization are significantly more robust to bad initialization. Additionally, batch normalization can be interpreted as doing preprocessing at every layer of the network, but integrated into the network itself in a differentiable manner.</p>
 <p>The effects of BN is reflected clearly in the distribution of the gradients for the same set of parameters as shown below.</p>
-<p><img alt="histograms-bn" src="aiml-common/lectures/optimization/batch-normalization/images/histograms-bn.png#center" />
+<p><img alt="histograms-bn" src="../../../../_images/histograms-bn.png" />
 <em>Histograms over the gradients at initialization for (midpoint) layer 55 of a network with BN (left) and
 without (right). For the unnormalized network, the gradients are distributed with heavy tails, whereas for the normalized networks the gradients are concentrated around the mean.</em></p>
-<p><img alt="learning-rate-bn" src="aiml-common/lectures/optimization/batch-normalization/images/learning-rate-bn.png#center" />
+<p><img alt="learning-rate-bn" src="../../../../_images/learning-rate-bn.png" />
 <em>BN allows us to learn much faster and operate efficiently at deeper architectures compared to without</em></p>
 <p>Consider running <a class="reference external" href="https://colab.research.google.com/github/davidcpage/cifar10-fast/blob/master/batch_norm_post.ipynb#scrollTo=a22VPg31CLSM">this excellent notebook</a> together with <a class="reference external" href="https://arxiv.org/abs/1806.02375">this paper</a>.</p>
 </div>

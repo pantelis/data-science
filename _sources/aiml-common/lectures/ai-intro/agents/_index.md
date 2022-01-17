@@ -10,7 +10,7 @@ draft: false
 
 In general sensor data are converted via the agent function (that is implemented via a _program_) into actions as shown below. 
 
-![agent-environment](images/agent-environment.png#center)
+![agent-environment](images/agent-environment.png)
 *General Agent-Environment Interface*
 
 The two most important agent architectures that we will deal with in this course are the utility and learning-based agents architectures. To start with we recognize that most of the problems we will face as agent designers are for agents operating in environments that are:
@@ -26,7 +26,7 @@ The two most important agent architectures that we will deal with in this course
 
 ### Rational Agent Architecture
 
-![utility-based-agent](images/utility-based-agent.png#center)
+![utility-based-agent](images/utility-based-agent.png)
 
 In the rational agent architecture we meet three key concepts:
 
@@ -36,7 +36,7 @@ In the rational agent architecture we meet three key concepts:
 
 ### Learning Agent Architecture
 
-![learning-agent](images/learning-agent.png#center)
+![learning-agent](images/learning-agent.png)
 
 The learning agent architecture builds on top of the rational agent (the performance element in the figure below), additional functions that:
 
@@ -50,5 +50,5 @@ We will see in Deep Reinforcement Learning that this architecture is able to acc
 
 For each environment and each architecture there is a number of solutions that may be appropriate. The following figure presents the environment type to algorithm mapping that we will cover in this book. 
 
-![agents-environment-taxonomy](images/agents-environment-taxonomy.png#center)
+![agents-environment-taxonomy](images/agents-environment-taxonomy.png)
 

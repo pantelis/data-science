@@ -11,7 +11,7 @@ In this chapter we are treating _adaptive boosting_ and _gradient_boosting_ that
 
 If we imagine a sequence of weak learners like in random forests, boosting starts with training the first learner and at each subsequent step, due to its sequential nature, it considers the mistakes of the preceding learning step as shown below. 
 
-![boosting-learners](images/boosting-learners.png#center)
+![boosting-learners](images/boosting-learners.png)
 *Boosting methods act sequentially considering the prediction results of the preceding learners.* 
 
 <!-- Note that the figure shows multiple instances of weak learners - this is not necessarily a real implementation but a conceptual depiction.  -->
@@ -22,16 +22,16 @@ Lets assume that you are a data scientist working on a dating site and you are a
 
 $$\mathtt{data} = \\{ (\mathbf{x}_1, y_1), \dots, (\mathbf{x}_m, y_m) \\}$$
 
-| Weight    | Smart    | Polite    | Fit    | Attractive    |
-| --- | --- | --- | --- | --- |
-|  180   | no    |  no   | no    | no   |
-|  150  |  yes   |  yes   | no    | no    |
-|  175  |  no   |  yes   |  yes   |  yes   |
-|  165   | yes    | yes    | yes    | yes    |
-|   190  | no   |  yes   |  no  |   no  |
-|   201  |  yes   | yes    |  yes   | yes    |
-|   185  |  yes   |  yes   | no    |  yes   |
-|   168  |  yes   |  no   |  yes   |  yes   |
+| Weight | Smart | Polite | Fit | Attractive |
+| ------ | ----- | ------ | --- | ---------- |
+| 180    | no    | no     | no  | no         |
+| 150    | yes   | yes    | no  | no         |
+| 175    | no    | yes    | yes | yes        |
+| 165    | yes   | yes    | yes | yes        |
+| 190    | no    | yes    | no  | no         |
+| 201    | yes   | yes    | yes | yes        |
+| 185    | yes   | yes    | no  | yes        |
+| 168    | yes   | no     | yes | yes        |
 
 We assume that the label $y \in \{+1, -1}$ instead of 0 or 1 with loss of generality. This is a binary classification problem but the method is equally applicable to multi-class problems. 
 
@@ -66,7 +66,7 @@ $$\hat y (\mathbf x) = \sum_{t=1}^T \alpha_t h_t(\mathbf x)$$
 
 which can be interpreted as the weighted majority vote of the T weak hypotheses. As shown in the figure below for various values of $\eta$,
 
-![adaboost-perf](images/adaboost-perf.png#center)
+![adaboost-perf](images/adaboost-perf.png)
 *The first classifier gets many instances wrong, so their weights get boosted. The second classifier therefore does a better job on these instances, and so on. The plot on the right represents the same sequence of predictors, except that the learning rate is halved (i.e., the misclassified instance weights are boosted half as much at every iteration). As you can see, this sequential learning technique has some similarities with Gradient Descent, except that instead of tweaking a single predictor’s parameters to minimize a cost function, AdaBoost adds predictors to the ensemble, gradually making it better.* 
 
 A perhaps more illuminating example that shows the weight adjustments is shown below. You need to replace the $m$ with $t$ to match the notation of these notes. 
@@ -91,12 +91,12 @@ Like AdaBoost, Gradient Boosting works by sequentially adding predictors to an e
 
 The complete understanding of gradient boosting (and boosting in general) requires mathematical treatment around function-space optimization  as in [Friedma's original paper](https://statweb.stanford.edu/~jhf/ftp/trebst.pdf). Here we look at the solution from a practical perspective and attempt to understand it (superficially) with the use of a regression example as shown below. 
 
-![gradient-boost-example](images/gradient-boost-example.png#center)
+![gradient-boost-example](images/gradient-boost-example.png)
 *In this depiction of Gradient Boosting, the first predictor (top left) is trained normally, then each consecutive predictor (middle left and lower left) is trained on the previous predictor’s residuals; the right column shows the resulting ensemble’s predictions which is equal to the sum of the predictions of the trees involved.*
 
 Predictions improve as the number of trees grows but we need to know when to stop. 
 
-![gradient-boosting-performance](images/gradient-boosting-performance.png#center)
+![gradient-boosting-performance](images/gradient-boosting-performance.png)
 *On the left we  dont have enough trees to fit the training set, while the one on the right we have too many trees and overfit the training set.*
 
 In practice, do not use sklearn for gradient boosting. It is not an exaggeration to note that the optimized library for gradient boosting, **XGBoost** is a defacto tool for winning Kaggle competitions. Given that gradient boosting dominates performance wise many methods in classical machine learning with structured data (e.g. tabular data), XGBoost is also the standard library to try first in these type of problems. It offers also automatic ways of stopping at the right number of trees in the ensemble. 

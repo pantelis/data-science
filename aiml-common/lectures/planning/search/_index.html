@@ -475,10 +475,10 @@
 <div class="section" id="maps">
 <h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
 <p>We will develop the algorithm for the task at hand which is to find the path between a starting state and the goal state in a map. Not just any path but the <em>minimum cost</em> path when the state transition graph is revealed incrementally through a series of actions and associated individual costs (cost function). The task is depicted below.</p>
-<p><img alt="path-finding" src="aiml-common/lectures/planning/search/images/parking-lot.png#center" />
+<p><img alt="path-finding" src="../../../../_images/parking-lot.png" />
 <em>A map of a parking lot as determined via postprocessing LIDAR returns. Obstacles colored in yellow are tall obstacles, brown obstacles are curbs, and green obstacles are tree branches that are of no relevance to ground navigation.</em></p>
 <p>In practice, maps likes the one above are local both in terms of space (each snapshot is relative to the location of the agent) as well as in terms of time (at the time the agent took these measurements). We can take any map like the one above and form its discrete equivalent such as shown below. We usually call this type <em>metric map</em> and for the purposes of this chapter this is our search area and in it lie all possible feasible <em>solutions</em>, each is a <em>sequence of actions</em> distinguished by <em>path cost</em>. In this example, the least cost path is actually the geographically longer path - the line thickness for each of the two possible solutions in this figure is proportional to its cost.</p>
-<p><img alt="cost-definition" src="aiml-common/lectures/planning/search/images/cost-definition.png#center" />
+<p><img alt="cost-definition" src="../../../../_images/cost-definition.png" />
 <em>An example search area with action-cost function where left turns are penalized compared to right.This is common penalization in path planning for delivery vehicles.</em></p>
 <p>The alternative map representation is <em>topological</em> where the environment is represented as a graph where nodes indicated significant grounded features and edges denote topological relationships (position, orientation, proximity etc.). The sometimes confusing part is that irrespectively of metric or topological representations, the <em>forward search</em> methods we look in this chapter all function on <em>graphs</em>.</p>
 </div>

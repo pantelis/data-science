@@ -19,17 +19,17 @@ _Probability Recitation for my classes. Recitation was delivered by my TA Rohit 
 
 The three important probabilities that we need to be concerned with in data mining are the joint, marginal and conditional probabilities. The pictures below present some examples that we will go through.
 
-![discrete-prob](images/discrete-prob.png#center)
+![discrete-prob](images/discrete-prob.png)
 *Discrete probability distribution function (pdf). On the right side is what is called a Hinton diagram where the area of the square represents the probability in a way that the sum equals to 1.0.*
 
-![monogram](images/figure21.png#center)
+![monogram](images/figure21.png)
 *A more complicated discrete probability distribution over the letters of the English alphabet (letter 27 symbolizes space) as measured by reading the Linux FAQ document.*
 
-![continuous-prob](images/continuous-prob.png#center)
+![continuous-prob](images/continuous-prob.png)
 *Continuous probability distribution density function (pdf) - the area under the curve equals  1.0*
 
 
-![joint-bigram](images/figure2.2.png#center)
+![joint-bigram](images/figure2.2.png)
 *Joint probability $P(x,y)$ distribution over the 27x27 possible bigrams $xy$ found in this document: https://www.tldp.org/FAQ/pdf/Linux-FAQ.pdf*
 
 ![joint-prob](images/joint-prob.png)
@@ -42,7 +42,7 @@ Given the joint what is the marginal probability $P(x)$ ?
 
 $$P(x)   = \sum_y P(x,y) = \sum_y P(x | y)P(y)$$
 
-![marginal-prob](images/marginal-prob.png#center)
+![marginal-prob](images/marginal-prob.png)
 *Extracting the marginal out of the joint*
 
 ### Conditional Probability and the Product or chain rule
@@ -51,7 +51,7 @@ This is obtained from the definition of conditional probability:
 
 $$P(x,y) = P(x | y)P(y) = P(y | x)P(x)$$
 
-![conditional-bigram](images/conditional-bigrams.png#center)
+![conditional-bigram](images/conditional-bigrams.png)
 *Conditional probability distribution over the 27x27 possible bigrams $xy$ found in this document: https://www.tldp.org/FAQ/pdf/Linux-FAQ.pdf*
 
 {{< hint warning >}}
@@ -69,7 +69,7 @@ where where <${\mathbf x}$ is a real 'n'-dimensional column vector and $|\boldsy
 
 You can [generate](http://hosting.astro.cornell.edu/~cordes/A6523/GeneratingCorrelatedRandomVariables.pdf) correlated Gaussian distributions from white gaussian random variables as shown below.  This can be useful in multiple settings. Foe example you can synthesize training examples where there is correlation between features. You can also explain what happens in successive layers of a neural network when a correlated input is propagated through. 
 
-![correlated-gaussians](images/correlated-gaussians.png#center)
+![correlated-gaussians](images/correlated-gaussians.png)
 _Correlated Gaussians_
 
 {{<hint info>}}

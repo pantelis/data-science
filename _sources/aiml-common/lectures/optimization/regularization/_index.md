@@ -16,7 +16,7 @@ where $l$ is the hidden layer index and $W$ is the weight tensor.
 
 The L2 regularization has the intuitive interpretation of heavily penalizing peaky weight vectors and preferring diffuse weight vectors.  Due to multiplicative interactions between weights and inputs this has the appealing property of encouraging the network to use all of its inputs a little rather than some of its inputs a lot. The following figure presents a computational graph of a regularized DNN. 
 
-![regularized-dnn-comp-graph](images/regularized-dnn-comp-graph.png#center)
+![regularized-dnn-comp-graph](images/regularized-dnn-comp-graph.png)
 _Regularized DNN. Notice that in this graph (taken from section 6.5.7 of the DL book), the gates are mentioned in typewriter font and the input and output variables are represented as circles.  There are different backward paths towards the weight matrices - can you identify them ?_
 
 Lastly, notice that during gradient descent parameter update, using the L2 regularization ultimately means that every weight is decayed linearly: $W += -lambda * W$ towards zero.
@@ -28,7 +28,7 @@ This is another relatively common form of regularization, where for each weight 
 ## Dropout
 This is an extremely effective, simple regularization technique by Srivastava et al. in [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf) that complements the other methods (L1, L2). While training, dropout is implemented by only keeping a neuron active with some probability $p$ (a hyperparameter), or setting it to zero otherwise.
 
-![dropout](images/dropout.jpeg#center)
+![dropout](images/dropout.jpeg)
 _During training, Dropout can be interpreted as sampling a Neural Network within the full Neural Network, and only updating the parameters of the sampled network based on the input data. (However, the exponential number of possible sampled networks are not independent because they share the parameters.) During testing there is no dropout applied, with the interpretation of evaluating an averaged prediction across the exponentially-sized ensemble of all sub-networks (more about ensembles in the next section)._
 
 Vanilla dropout in an example 3-layer Neural Network would be implemented as follows:
@@ -102,7 +102,7 @@ In practice, it is most common to use a single, global L2 regularization strengt
 
  In these notes we focused on approaches that have some conceptual depth. We avoid treating extensively techniques that belong to the category of experiment management. For example early stopping is based on the experiment manager that is monitoring the validation loss and stops training when  it observes that the validation error increased while at the same time retrieves the best model that has been trained to the data scientist. This does not stop the approach being one of the most popular regularization approaches as it can be seen as an L2 regularizer as shown below.
 
- ![early-stopping-2](images/early-stopping2.png#center)
+ ![early-stopping-2](images/early-stopping2.png)
  _Early stopping (left) results in the same regularized weight with the L2 penalty regularizer_
 
 ## Weight initialization
@@ -113,4 +113,4 @@ For ReLU units, the suggested experimentally initialization for the weight is to
 
 <!-- ### Control system view of training
 
-![control-system-training](images/control-system-training.drawio.svg#center) -->
+![control-system-training](images/control-system-training.drawio.svg) -->

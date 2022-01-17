@@ -11,15 +11,15 @@ the most respected and reliable methods for machine translation.
 
 The BLEU algorithm evaluates the precision score of a candidate machine translation against a reference human translation. To refresh your memory the following picture is a easy picture for you to memorize and draw every time you forget the definitions of precision and recall.
 
-![precision-recall](images/precision-recall.png#center)
+![precision-recall](images/precision-recall.png)
 
 The reference human translation is a assumed to be a model example of a translation, and we use _n-gram_ matches as our metric for how similar a candidate translation is to it. Why simple precision can't be used? Consider the following example of poor machine translation output with high precision metric using unigrams. 
 
-| Output | | | | | |
-| --- | --- | --- | --- | --- | --- |  --- |
-| Candidate	| the |	the	| the | the	| the | the | the | 
-| Reference 1 |	the | cat | is	| on | the | mat |	
-| Reference 2 | there | is	| a	| cat	| on	| the	| mat |
+| Output      |       |     |     |     |     |
+| ----------- | ----- | --- | --- | --- | --- | --- |
+| Candidate   | the   | the | the | the | the | the | the |
+| Reference 1 | the   | cat | is  | on  | the | mat |
+| Reference 2 | there | is  | a   | cat | on  | the | mat |
 
 Of the seven words in the candidate translation, all of them appear in the reference translations. Thus the candidate text is given a unigram precision of,
 
@@ -72,11 +72,11 @@ $$BLEU = \beta \prod_{i=1}^k p_n^{w_n}$$
 
 where $p_n$ is the n-gram precision and this makes BLUE a  _precision_ oriented metric. You can remember it easily if you remember to draw the diagram above and make the following associations
 
-| Metric | Description as it applies to the NMT |
-| --- | --- |
-| TP | There are n-grams in C that are in R | 
-| FP | There are n-grams in C that are not in R | 
-| FN | There are missing n-grams in C that are in R | 
+| Metric | Description as it applies to the NMT         |
+| ------ | -------------------------------------------- |
+| TP     | There are n-grams in C that are in R         |
+| FP     | There are n-grams in C that are not in R     |
+| FN     | There are missing n-grams in C that are in R |
 
 BLUE is concerned with the first two rows and it shouldn't be a surprise that the n-gram precision is ratio of the counts $\frac{TP}{TP+FP}$.
 

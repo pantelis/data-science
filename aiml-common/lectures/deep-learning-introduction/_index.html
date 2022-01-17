@@ -535,10 +535,10 @@
 <div class="section" id="impact-of-data-set-size-and-active-learning">
 <h2>Impact of data set size and active learning<a class="headerlink" href="#impact-of-data-set-size-and-active-learning" title="Permalink to this headline">¶</a></h2>
 <p>Deep Learning is benefiting from big data as the last 5 years trend shown below.</p>
-<p><img alt="dataset-size" src="aiml-common/lectures/deep-learning-introduction/images/dataset-size.png#center" />
+<p><img alt="dataset-size" src="../../../_images/dataset-size.png" />
 <em>Dataset size over time</em></p>
 <p>However <a class="reference external" href="https://www.kaggle.com/datasets?sortBy=relevance&amp;group=featured&amp;search=image">big data</a> has lead to several side effects and tradeoffs <a class="reference external" href="https://papers.nips.cc/paper/3323-the-tradeoffs-of-large-scale-learning.pdf">cite</a>. The success of DNNs with big data hides well documented failures to e.g. perceive infrequent corner cases that are all too important in mission critical industries.</p>
-<p><img alt="tesla-crash" src="aiml-common/lectures/deep-learning-introduction/images/tesla-crash.jpeg#center" /></p>
+<p><img alt="tesla-crash" src="../../../_images/tesla-crash.jpeg" /></p>
 <p>For example, autonomous vehicles <a class="reference external" href="https://www.theguardian.com/technology/2018/may/29/tesla-crash-autopilot-california-police-car">used to crash more frequently on stopped emergency vehicles</a> simply because there are not many examples in the training dataset of stopped emergency vehicles occupying portion of the lane that the autonomous car is on.</p>
 <p>To get the state of the art performance today from deep neural networks, one needs to think outside of the architecture (which is important) and capture the right examples that need to be included in the training pipeline. This is (partly) solved by a old but recently rediscovered approach in smartly selecting the right examples called  <em>active learning</em> that is <a class="reference external" href="http://www.alectio.com/technology">being used</a> to solve the corner case issue amongst others and the observed results justify the following inequality.</p>
 <div class="math notranslate nohighlight">
@@ -549,12 +549,12 @@
 <h2>Impact of depth<a class="headerlink" href="#impact-of-depth" title="Permalink to this headline">¶</a></h2>
 <p>Even without the smart selection of examples to label though, we have big-data datasets that have lead to very rapid performance improvements in the space of <a class="reference external" href="https://arxiv.org/abs/1905.05055">computer vision</a> as shown next and <a class="reference external" href="https://bdtechtalks.com/2020/08/17/openai-gpt-3-commercial-ai/">NLP</a> especially when the depth of the networks involved are increased.</p>
 <p>Deeper models tend to perform better.This is not merely because the model is larger. Increasing the number of parameters in layers of convolutional networks without increasing their depth is not nearly as eﬀective at increasing test set performance,as illustrated in the ﬁgure below.</p>
-<p><img alt="generalization-shallow-vs-deep-networks" src="aiml-common/lectures/deep-learning-introduction/images/generalization-shallow-vs-deep-networks.png#center" />
+<p><img alt="generalization-shallow-vs-deep-networks" src="../../../_images/generalization-shallow-vs-deep-networks.png" />
 <em>The legend indicates the depth of network used to make each curve and whether the curve represents variation in the size of the convolutional or the fully connected layers.</em></p>
 <p>We observe that shallow models in this context overﬁt at around 20 million parameters while deep ones can beneﬁt from having over 60 million.This suggests that using a deep model expresses a useful preference over the space of functions the model can learn. Speciﬁcally, <strong>it expresses a belief that the function should consist of many simpler functions composed together. This could result either in learning a representation that is composed in turn of simpler representations (e.g., corners deﬁned in terms of edges) or in learning a program with sequentially dependent steps (e.g., ﬁrst locate a set of objects, then segment them from each other, then recognize them).</strong></p>
 <p><img alt="accuracy-vs-depth" src="../../../_images/accuracy-vs-depth.png" />
 <em>Empirical results showing that deeper networks generalize better when used to transcribe multi digit numbers from photographs of addresses. The test set accuracy consistently increases with increasing depth.</em></p>
-<p><img alt="object-detection-accuracy-over-time" src="aiml-common/lectures/deep-learning-introduction/images/object-detection-accuracy-over-time.png#center" />
+<p><img alt="object-detection-accuracy-over-time" src="../../../_images/object-detection-accuracy-over-time.png" />
 <em>Rapid improvements in performance over the last few years for the VOC and the popular Microsoft COCO datasets</em></p>
 </div>
 <div class="section" id="playground">

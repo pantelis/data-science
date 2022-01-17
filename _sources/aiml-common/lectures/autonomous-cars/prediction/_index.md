@@ -13,7 +13,7 @@ Via the perception subsystem our agent the moment it predicts that the other age
 
 Thinking probabilistically, we need to maintain a _belief_, that was introduced in the [PGM]({{<relref "../../pgm/pgm-intro">}}) chapter, regarding the location of the turning-right agent. This belief will change over time as its updated with new observations.
 
-![turn-prediction-prob](images/turn-prediction-prob.png#center)
+![turn-prediction-prob](images/turn-prediction-prob.png)
 *Changing belief over time regarding the possible trajectories of the other agent. At time 0, the probabilities for the two trajectories are the prior probabilities determined from historical data.*
 
 ## Prediction with Model vs ML-driven approaches
@@ -32,5 +32,5 @@ To estimate the probabilities of the possible trajectories we have two broad opt
 
 2. ML-based approach. In this approach, the probabilities are estimated using supervised learning methods where we need to label the observations according to the trajectory that the agent followed. We use such training data to train a model that will predict the class (trajectory ID) and the confidence (belief). 
 
-![model-vs-data](images/model-vs-data.png#center)
+![model-vs-data](images/model-vs-data.png)
 

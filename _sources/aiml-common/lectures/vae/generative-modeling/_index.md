@@ -30,7 +30,7 @@ where $Pa()$ is the set of parent nodes that the variable $\mathbf x_j$ is depen
 
 Consider our simple PGM, shown below: 
 
-![vae-pgm](images/vae-pgm.png#center)
+![vae-pgm](images/vae-pgm.png)
 *Probabilistic Graphical Model from [here](https://arxiv.org/pdf/1606.05908.pdf)*
 
 To generate from the marginal we need to implement a generative model that is a direct consequence of the chain and total probability rules. 

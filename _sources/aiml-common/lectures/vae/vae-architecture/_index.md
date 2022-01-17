@@ -10,12 +10,12 @@ This stage is called the _recognition model or encoder_ and is given by $p(\math
 
 The VAE encoder-decoder spaces are clearly shown below. The picture shows the more compact space that is defined by the encoder. 
 
-![vae](images/vae-spaces.png#center)
+![vae](images/vae-spaces.png)
 *VAE spaces and distributions (from [here](https://arxiv.org/pdf/1906.02691.pdf))*
 
 The architecture of VAE includes four main components as shown below:
 
-![vae](images/vae-architecture.png#center)
+![vae](images/vae-architecture.png)
 *VAE Architecture (from [here](https://arxiv.org/pdf/1906.02691.pdf))*
 
 Similar to the generative model, the inference model can be, in general, a PGM of the form:
@@ -49,7 +49,7 @@ Answering the last question first, we maximize the likelihood by effectively max
 
 $$\mathcal L(q, \phi, \theta) =  \log p(\mathbf x) - KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta)) \le \log p(\mathbf x)$$. This is illustrated bellow:
 
-![Bishop](images/Figure9.11.png#center)
+![Bishop](images/Figure9.11.png)
 *KL represents the tightness of the ELBO bound - From Bishop's book* 
 
 As the figure above shows $KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta))$ represents the tightness of the ELBO $\mathcal L(q, \phi, \theta)$ since the closest the approximation becomes the smaller the gap between ELBO and the log likelihood. Maximizing the ELBO withe respect to $(\phi, \theta)$ will achieve "two birds with one stone" situation: it will maximize the marginal log likelihood that is used for data generation _and_ minimize the KL divergence improving the approximation in the encoder. On top of that, the ELBO allows joint optimization with respect to all the parameters $\phi$ and $\theta$ using SGD. This is described via an example [here]({{<relref "../elbo-optimization">}}). 

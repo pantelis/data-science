@@ -565,7 +565,7 @@
 <p><span class="math notranslate nohighlight">\(c[3] = \sum_m a[m]b[3-m] = 1 * 0 + 0.5 * 0.25 + 1 * 0.5 + 1 * 1 = 1.625\)</span></p>
 <p>and so on.</p>
 <p>Convolution and cross-correlation are very close - see this 1D example (<a class="reference external" href="https://en.wikipedia.org/wiki/Convolution">source</a> to persuade yourself that this is the case.</p>
-<p><img alt="convolution-correlation" src="aiml-common/lectures/cnn/cnn-intro/images/convolution-correlation.png#center" />
+<p><img alt="convolution-correlation" src="../../../../_images/convolution-correlation.png" />
 <em>Convolution and cross-correlation are very similar quantities</em></p>
 </div>
 <div class="section" id="id1">
@@ -593,11 +593,11 @@
 <div class="section" id="d-gaussian">
 <h4>2D Gaussian<a class="headerlink" href="#d-gaussian" title="Permalink to this headline">¶</a></h4>
 <p>Using a Gaussian Blur filter before edge detection aims to reduce the level of noise in the image, which improves the result of the susually subsequent edge-detection algorithms. We will meet again this 2D Gaussian filter in the [object detection]() section, where it is used to help in the initial segmentation in RCNN architectures.</p>
-<p><img alt="2d-gaussian-filter" src="aiml-common/lectures/cnn/cnn-intro/images/2d-gaussian-filter.png#center" />
+<p><img alt="2d-gaussian-filter" src="../../../../_images/2d-gaussian-filter.png" />
 <em>Gaussian Filter</em></p>
-<p><img alt="2d-gaussian-filter" src="aiml-common/lectures/cnn/cnn-intro/images/2d-gaussian-filter-blur.jpg#center" />
+<p><img alt="2d-gaussian-filter" src="../../../../_images/2d-gaussian-filter-blur.jpg" />
 <em>Blurring is evident in this picture</em></p>
-<p><img alt="Gaussian-filter-edge-detection" src="aiml-common/lectures/cnn/cnn-intro/images/Gaussian-filter-edge-detection.gif#center" />
+<p><img alt="Gaussian-filter-edge-detection" src="../../../../_images/Gaussian-filter-edge-detection.gif" />
 <em>Blurring is used to improve edge-detection</em></p>
 <p>The above filtering operations are obviously deterministic. We are given the filter but in CNNs as we will see in the next section we are <em>learning</em> such filters. To keep the terminology aligned with the dense neural networks layers we will be denoting the filter with <span class="math notranslate nohighlight">\(\mathbf w\)</span> - the weights that need to be learned through the training process.</p>
 </div>

@@ -482,9 +482,9 @@
 </ol>
 <p>These  two  techniques  are  not  mutually  exclusive  and  could  be  used together.</p>
 <p>When sampling is performed with replacement, this is called bootstrap aggregating or <strong>bagging</strong> for short. Sampling with replacement shown below, simply samples from a population records the features of the sample and we replace the sample with one identical unit in the population.</p>
-<p><img alt="sampling-with-replacement" src="aiml-common/lectures/ensemble/random-forests/images/sampling-with-replacement.png#center" />
+<p><img alt="sampling-with-replacement" src="../../../../_images/sampling-with-replacement.png" />
 <em>In sampling with replacement, in each draw, all examples have equally probability to be selected.</em></p>
-<p><img alt="bagging" src="aiml-common/lectures/ensemble/random-forests/images/bagging.png#center" />
+<p><img alt="bagging" src="../../../../_images/bagging.png" />
 <em>Bagging principle - it applies to either classification (shown here) or regression.</em></p>
 <p>Note something important. The chance of not being selected in any of the <span class="math notranslate nohighlight">\(m\)</span> draws from <span class="math notranslate nohighlight">\(m\)</span> samples with replacement is <span class="math notranslate nohighlight">\((1−\frac{1}{m})^m\)</span> or approximately 1/3 = 33.33% for large <span class="math notranslate nohighlight">\(m\)</span>. Each predictor therefore may see several instances of the same sample while not see at all other instances (with probability 33.33%). This is because the probability of each predictor seeing one of the examples at least once in <span class="math notranslate nohighlight">\(m\)</span> samples is 1-P(not seeing this example) = 1 - 33.33% = 66.66%. Obviously, however the unseen population differs between predictors.</p>
 <p>The Random Forest algorithm introduces extra randomness when growing trees; instead of searching for the very best feature when splitting a node, it searches for the best feature among a random subset of features. This results in a greater tree diversity. In addition, we can make trees even more random by also using random thresholds for each feature rather than searching for the best possible thresholds - also known as extremely randomized trees of <em>Extra-Trees</em>.</p>
@@ -499,7 +499,7 @@
 <p>During testing the same unlabelled test input data <span class="math notranslate nohighlight">\(\mathbf x\)</span>  is pushed through each component tree. At each internal node the test determined in training is applied and the process is repeated until a leaf is reached. At the leaf the stored posterior <span class="math notranslate nohighlight">\(p_t(c|\mathbf x)\)</span> is determined. The forest class posterior <span class="math notranslate nohighlight">\(p(c|\mathbf x)\)</span> is simply the <em>average</em> of all tree posteriors.</p>
 <p><span class="math notranslate nohighlight">\(p(c|\mathbf x) = \frac{1}{T} \sum_{t=1}^T p_t(c|\mathbf x) \)</span></p>
 <p>As can be seen below, ensemble methods such as random forest result into much smoother decision boundaries than those of decision trees.</p>
-<p><img alt="decision-tree-vs-random-forest" src="aiml-common/lectures/ensemble/random-forests/images/decision-tree-vs-random-forest.png#center" />
+<p><img alt="decision-tree-vs-random-forest" src="../../../../_images/decision-tree-vs-random-forest.png" />
 <em>Random forest decision boundary in an example dataset</em></p>
 <!-- ## Impact of random forest parameters
 Given a training dataset with two classes (a), different training trees produce different partitions and thus different leaf predictors. The colour of tree nodes and edges indicates the class probability of training points  going  through  them (b)  In  testing,  increasing  the  forest  size $T$ produces smoother class posteriors. 

@@ -4,7 +4,7 @@ title: Explainable COVID-19 Pneumonia
 
 # Explainable COVID-19 Pneumonia
 
-![lung-opacity](images/lung-opacity.png#center)
+![lung-opacity](images/lung-opacity.png)
 *Opacities in the lungs caused by pneumonia*
 
 By the fall of 2020, more than 1 million people have died from COVID-19 world wide due to the pneumonia-like symptoms in combination of immune system reactions to it.  Your job is to develop an AI system that detects pneumonia.  Doctors are reluctant to accept black box algorithms such as your deep learning based method - as an AI engineer you need to listen to them and try to satisfy their needs, they are your customer after all. They tell you that your automated diagnostic system that processes the imaging they give you, must be  _explainable_. 

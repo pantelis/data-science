@@ -15,7 +15,7 @@ $$p(\mathbf y | \mathbf x) = g(y_{t-1}, h_{t-1}, \phi_t)$$
 
 To implement the above equation, we construct the following architecture with the additional capabilities:
 
-![attention-example](images/attention-example.png#center)
+![attention-example](images/attention-example.png)
 _Attention mechanism in NMT. Instead of just sending the encoder’s final hidden state to the decoder (which is still done, although it is not shown in the figure), we now send all of its outputs to the decoder. At each time step, the decoder’s memory cell computes a weighted sum of all these encoder outputs: this determines which words it will focus on at this step. The weight $a_t(i)$ is the weight of the ith encoder output at the t-th decoder time step. For example, if the weight $α_3(2)$ is much larger than the weights $α_3(0)$ and $α_3(1)$, then the decoder will pay much more attention to word number 2 (“milk”) than to the other two words, at least at this time step._
 
 1. During encoding the output of bidirectional LSTM encoder can provide the contextual representation of _each input word_ $x_i$ via the encoder hidden vectors $h_1, ..., h_{Tx}$ where $Tx$ is the length of the input sentence. 
@@ -47,8 +47,8 @@ Intuitively, this vector captures the relevant contextual information from the o
 
 The two figures below showcase what it happening in two different time instances of an example french to english translation. Notice how the attention weights calculated via the softmax that puts a lot of emphasis to the highest score vary. In time zone one the attention mechanism weighs on the pronoun and in time step 6 it weighs on the object. 
 
-![seq2seq-attention](images/seq2seq-attention-step1.png#center)
+![seq2seq-attention](images/seq2seq-attention-step1.png)
 *Attention in seq2seq neural machine translation - time step 1*
 
-![seq2seq-attention](images/seq2seq-attention-step5.png#center)
+![seq2seq-attention](images/seq2seq-attention-step5.png)
 *Attention in seq2seq neural machine translation - time step 6* 

@@ -5,7 +5,7 @@ draft: false
 
 # NYC Taxi fare prediction
 
-![taxi-dropoffs-map](images/taxi-dropoffs-map.png#center)
+![taxi-dropoffs-map](images/taxi-dropoffs-map.png)
 
 In this project you will participate in a Kaggle competition. If this is your first competition don't despair as thousands of other engineers have learned to excel in competitions such as this - a good ranking can lift your resume out of the noise and drw the attention of recruiters. In this class we will _not_ judge your performance against the _global_ Kaggle leader board but we will focus only on relative performance with the other teams in this class. 
 

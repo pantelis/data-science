@@ -482,13 +482,13 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>In imitation learning a <a class="reference external" href="https://github.com/udacity/self-driving-car-sim">simulation engine</a> is used to create training datasets.  A screenshot of the simulator for the first track is shown below:</p>
-<p><img alt="udacity-simulator" src="aiml-common/lectures/autonomous-cars/imitation-learning/images/udacity-simulator.png#center" /></p>
+<p><img alt="udacity-simulator" src="../../../../_images/udacity-simulator.png" /></p>
 <p>A convolution neural network was developed using the high level deep learning API Keras based on a Tensorflow backend.  <strong>This network predicts steering angles from images.</strong></p>
 </div>
 <div class="section" id="model-architecture-and-training-strategy">
 <h2>Model Architecture and Training Strategy<a class="headerlink" href="#model-architecture-and-training-strategy" title="Permalink to this headline">¶</a></h2>
 <p>The model was based on <a class="reference external" href="http://arxiv.org/abs/1604.07316">NVIDIA’s work</a> with two preprocessing stages.  The original NVIDIA model  is shown in the figure below:</p>
-<p><img alt="nvidia-model" src="aiml-common/lectures/autonomous-cars/imitation-learning/images/nvidia-model.png#center" /></p>
+<p><img alt="nvidia-model" src="../../../../_images/nvidia-model.png" /></p>
 <p>and except from the normalization layer it consists of five convolutional and five flat layers.</p>
 <p>The model was modified as follows:</p>
 <ol class="simple">
@@ -563,8 +563,8 @@ where recorded - we have not recorded the deviations from the center of the road
 </pre></div>
 </div>
 <p>The original (top) and flipped (bottom) images are shown below.</p>
-<p><img alt="original-image" src="aiml-common/lectures/autonomous-cars/imitation-learning/images/original-image.png#center" />
-<img alt="augmented-image" src="aiml-common/lectures/autonomous-cars/imitation-learning/images/augmented-image.png#center" /></p>
+<p><img alt="original-image" src="../../../../_images/original-image.png" />
+<img alt="augmented-image" src="../../../../_images/augmented-image.png" /></p>
 <p>Cropping was applied to both images as described above. In total 5882 original images resulted in 11764 images after augmentation. With 20% validation set size, this meant 9411 images that were  used for training and 2353 images used for validation. The model used an adam optimizer, so the learning rate was not tuned manually.</p>
 <p>The car was then test driven by the Convolutional Neural Network (CNN) autonomously - without any human intervention. The car successfully drives
 around track one without leaving the road as shown in the video below.</p>

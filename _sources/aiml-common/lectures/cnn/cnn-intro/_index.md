@@ -62,7 +62,7 @@ and so on.
 
 Convolution and cross-correlation are very close - see this 1D example ([source](https://en.wikipedia.org/wiki/Convolution) to persuade yourself that this is the case. 
 
-![convolution-correlation](images/convolution-correlation.png#center)
+![convolution-correlation](images/convolution-correlation.png)
 *Convolution and cross-correlation are very similar quantities*
 
 ### 2D Convolution
@@ -98,13 +98,13 @@ Lets go through the simplest possible 2D filtering operation as shown below. Not
 Using a Gaussian Blur filter before edge detection aims to reduce the level of noise in the image, which improves the result of the susually subsequent edge-detection algorithms. We will meet again this 2D Gaussian filter in the [object detection]({{<ref "../../scene-understanding/object-detection">}}) section, where it is used to help in the initial segmentation in RCNN architectures. 
 
 
-![2d-gaussian-filter](images/2d-gaussian-filter.png#center)
+![2d-gaussian-filter](images/2d-gaussian-filter.png)
 *Gaussian Filter*
 
-![2d-gaussian-filter](images/2d-gaussian-filter-blur.jpg#center)
+![2d-gaussian-filter](images/2d-gaussian-filter-blur.jpg)
 *Blurring is evident in this picture*
 
-![Gaussian-filter-edge-detection](images/Gaussian-filter-edge-detection.gif#center)
+![Gaussian-filter-edge-detection](images/Gaussian-filter-edge-detection.gif)
 *Blurring is used to improve edge-detection*
 
 The above filtering operations are obviously deterministic. We are given the filter but in CNNs as we will see in the next section we are _learning_ such filters. To keep the terminology aligned with the dense neural networks layers we will be denoting the filter with $\mathbf w$ - the weights that need to be learned through the training process. 

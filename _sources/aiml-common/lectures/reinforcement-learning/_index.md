@@ -6,14 +6,14 @@ draft: false
 
 # Reinforcement Learning
 
-![unified-view-rl](images/unified-view-rl.png#center)
+![unified-view-rl](images/unified-view-rl.png)
 *Different Approaches to solve known and unknown MDPs*
 
 We started looking at different agent behavior architectures starting from the [planning agents]({{<ref "../planning">}}) where the _model_ of the environment is known and with _no interaction_ with it the agent improves its policy, using this model as well as problem solving and logical reasoning skills. 
 
 We then looked at agents that can plan by interacting with the environment still knowing the model - this was covered in the [MDP]({{<ref "../mdp">}}) chapter.  We have seen that DP uses _full width_ backups.  For example, in the tree representation of the value iteration algorithm shown below: 
 
-![dp-value-iteration-tree](images/dp-value-iteration-tree.png#center)
+![dp-value-iteration-tree](images/dp-value-iteration-tree.png)
 _Backup tree with the DP value iteration algorithm_
 
 every successor state and action is considered and evaluated using the known transition (environment dynamics) and reward functions. This can be dealt with for moderate size problems but even a single backup cant be feasible when we have very large state spaces. So we definitely need to develop approaches that allow agents to 
@@ -31,12 +31,12 @@ Provided that it can _learn_ such functions, RL can be posed as an MDP and many 
  
 To scale to large problems however, we also need to develop approaches that can learn such functions _efficiently_ both in terms of computation and space (memory). We will use DNNs to provide, in the form of approximations, the needed efficiency boost. 
 
-![drl-concept](images/drl-concept.png#center)
+![drl-concept](images/drl-concept.png)
 *Deep RL (DRL) principle - we will cover it in the SARSA section.*
 
 Suffice to say that exploring DRL algorithms is a very long journey as shown below - we will cover only two key algorithms, REINFORCE and SARSA that can be used as design patterns for the others. These algorithms were not invented in vacuum though. The reader must appreciate that these algorithms are instantiations of the so called model-free prediction and model-free control approaches to solving either unknown MDP problems or known MDP problems that are too large to apply the methods outlined in the [MDP]({{<ref "../mdp">}}) chapter. 
 
-![drl-algorithm-evolution](images/drl-algorithm-evolution.png#center)
+![drl-algorithm-evolution](images/drl-algorithm-evolution.png)
 *DRL algorithms - taxonomy and evolution*
 
 

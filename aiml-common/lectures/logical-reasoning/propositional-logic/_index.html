@@ -529,7 +529,7 @@
 <div class="section" id="wumpus-world">
 <h2>Wumpus World<a class="headerlink" href="#wumpus-world" title="Permalink to this headline">¶</a></h2>
 <p>We will use a very simple world known in the literature as the Wumpus world (a cave) shown below.</p>
-<p><img alt="wumpus-world" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/wumpus-world.png#center" />
+<p><img alt="wumpus-world" src="../../../../_images/wumpus-world.png" />
 <em>Wumpus World. It was inspired by a video game Hunt the Wumpus by Gregory Yob in 1973. The Wumpus world is a cave which has 4/4 rooms connected with passageways. So there are total 16 rooms which are connected with each other. We have a agent who will move in this world. The cave has a room with a beast which is called Wumpus, who eats anyone who enters the room. The Wumpus can be shot by the agent, but the agent has a single arrow. There are pit rooms which are bottomless, and if agent falls in such pits, then he will be stuck there forever. The agent’s goal is to find the gold and climb out of the cave without falling into pits or eaten by Wumpus. The agent will get a reward if he comes out with gold, and he will get a penalty if eaten by Wumpus or falls in the pit.</em></p>
 <p>The Performance Environment Actuators and Sensors (PEAS) description is summarized in the table.</p>
 <table class="colwidths-auto table">
@@ -594,7 +594,7 @@
 <li><p><em>Sequential</em>: The order is important, so it is sequential.</p></li>
 </ul>
 <p>But why this problem requires <em>reasoning</em>? Simply put, the agent needs to infer the state of adjacent cells from its perception subsystem in the current cell <strong>and</strong> <em>the knowledge of the rules</em> of the wumpus world. These inferences will help the agent to <em>only</em> move to an adjacent cell when it has determined that the cell is OK for it move into.</p>
-<p><img alt="wumpus-seq01" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/wumpus-seq01.png#center" />
+<p><img alt="wumpus-seq01" src="../../../../_images/wumpus-seq01.png" />
 <em>Agent A moving in the environment infering the contents of adjacent cells. (a) Initial environment after percept [Stench, Breeze, Glitter, Bump, Scream]=[None, None, None, None, None]. (b) After one move with percept [Stench, Breeze, Glitter, Bump, Scream]=[None, Breeze, None, None, None].</em></p>
 <table class="colwidths-auto table">
 <thead>
@@ -620,7 +620,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="wumpus-seq35" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/wumpus-seq35.png#center" />
+<p><img alt="wumpus-seq35" src="../../../../_images/wumpus-seq35.png" />
 <em>Agent moving in the environment infering the contents of adjacent cells.  (a) After the 3rd move and percept [Stench, Breeze, Glitter, Bump, Scream]=[Stench, None, None, None, None]. (b) After the 5th move with percept [Stench, Breeze, Glitter, Bump, Scream]=[Stench, Breeze, Glitter, None, None].</em></p>
 <table class="colwidths-auto table">
 <thead>
@@ -670,16 +670,16 @@
 <div class="section" id="model-checking-algorithm">
 <h3>Model-Checking Algorithm<a class="headerlink" href="#model-checking-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>The reasoning algorithm regarding the possible state of the environment in surrounding cells that the agent performed informally above, is called <em>model checking</em> because it enumerates <em>all possible</em> models to check that a sentence <span class="math notranslate nohighlight">\(a\)</span> is supported by the KB i.e. <span class="math notranslate nohighlight">\(M(KB) ⊆ M(\alpha)\)</span>.</p>
-<p><img alt="wumpus-entailment" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/wumpus-entailment.png#center" />
+<p><img alt="wumpus-entailment" src="../../../../_images/wumpus-entailment.png" />
 <em>Possible Models in the presence of pits in cells [1,2],[2,2] and [3,1]. There are <span class="math notranslate nohighlight">\(2^3=8\)</span> possible models. The KB when the percepts indicate nothing in cell [1,1] and a breeze in [2,1] is shown as a solid line. With dotted line we show all models of <span class="math notranslate nohighlight">\(a_1=\text{&quot;not have a pit in [1,2]&quot;}\)</span> sentence</em>.</p>
-<p><img alt="wumpus-noentailment" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/wumpus-nonentailment.png#center" />
+<p><img alt="wumpus-noentailment" src="../../../../_images/wumpus-nonentailment.png" />
 <em>Same situation as the figure above but we indicate with dot circle a different sentence <span class="math notranslate nohighlight">\(a_2\)</span>. What is this sentence?</em></p>
 </div>
 </div>
 <div class="section" id="propositional-logic-syntax">
 <h2>Propositional Logic Syntax<a class="headerlink" href="#propositional-logic-syntax" title="Permalink to this headline">¶</a></h2>
 <p>The PL syntax defines the allowable sentences that can be complex. Each <em>atomic</em> sentence consists of a single (propositional) symbol and the fixed symbols TRUE &amp; FALSE. In BNF the atomic sentences or formulas are also called terminal elements. Complex sentences can be constructed from sentences using logical <em>operators</em> (connectives that connect two or more sentences). In evaluating complex sentences the operator precedence shown in the figure below must be followed.</p>
-<p><img alt="BNF-grammar-prop-logic" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/BNF-grammar-prop-logic.png#center" />
+<p><img alt="BNF-grammar-prop-logic" src="../../../../_images/BNF-grammar-prop-logic.png" />
 <em>BNF grammar of propositional logic</em></p>
 <p>Out of all the operators, two are worthy of further explanation.</p>
 <ol class="simple">
@@ -690,7 +690,7 @@
 <div class="section" id="propositional-logic-semantics">
 <h2>Propositional Logic Semantics<a class="headerlink" href="#propositional-logic-semantics" title="Permalink to this headline">¶</a></h2>
 <p>The semantics for propositional logic specify how to compute the value of <em>any</em> sentence given a model. To do so we use the following truth table.</p>
-<p><img alt="truth-table" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/truth-table.png#center" />
+<p><img alt="truth-table" src="../../../../_images/truth-table.png" />
 <em>Truth tables for three primary and five derived logical operators. Note the presence of the XOR connective.</em></p>
 <p>Given a world model in the KB</p>
 <div class="math notranslate nohighlight">
@@ -758,7 +758,7 @@
 <div class="math notranslate nohighlight">
 \[ KB \models \alpha \]</div>
 <p>To answer such question we will use the model checking algorithm outlined in this chapter: enumerate all models and check that <span class="math notranslate nohighlight">\(\alpha\)</span> is true for in every model where the KB is true. We construct the truth table that involves the symbols and sentences present in the KB:</p>
-<p><img alt="truth-table-kb" src="aiml-common/lectures/logical-reasoning/propositional-logic/images/truth-table-kb.png#center" /></p>
+<p><img alt="truth-table-kb" src="../../../../_images/truth-table-kb.png" /></p>
 <p>As described in the figure caption, 3 models out of the <span class="math notranslate nohighlight">\(2^7=128\)</span> models make the KB true and in these rows the <span class="math notranslate nohighlight">\(P_{1,2}\)</span> is false.</p>
 <p>Although the model checking approach was instructive, there is an issue with its complexity. Notice that if there are <span class="math notranslate nohighlight">\(n\)</span> symbols in the KB there will be <span class="math notranslate nohighlight">\(2^n\)</span> models, the time complexity is <span class="math notranslate nohighlight">\(O(2^n)\)</span>.</p>
 <p>The symbolic representation together with the explosive increase in the number of sentences in the KB as time goes by, cant scale. Another approach to do entailment, potentially more efficient, is  <em>theorem proving</em> where we are applying <em>inference rules</em> directly to the sentences of the KB to construct a proof of the desired sentence/query. Even better, we can invest in new representations as described in the [PDDL]() chapter to develop planning approaches that combine search and logic and do not suffer necessarily from the combinatorial explosion problem.</p>

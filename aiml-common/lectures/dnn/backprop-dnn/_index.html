@@ -474,7 +474,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="backpropagation-in-deep-neural-networks">
 <h1>Backpropagation in Deep Neural Networks<a class="headerlink" href="#backpropagation-in-deep-neural-networks" title="Permalink to this headline">¶</a></h1>
 <p>Following the [introductory]() section, we have seen that backpropagation is a procedure that involves the repetitive application of the chain rule. Let us now treat its application to neural networks and the gates that we usually meet there. In DNNs we are dealing with vectors, matrices and in general <a class="reference external" href="https://www.tensorflow.org/guide/tensor">tensors</a> and therefore its required to review first how we can expand on the template above for these data types.</p>
-<p><img alt="backpropagation-dnn" src="aiml-common/lectures/dnn/backprop-dnn/images/backpropagation-dnn.png#center" /></p>
+<p><img alt="backpropagation-dnn" src="../../../../_images/backpropagation-dnn.png" /></p>
 <div class="section" id="dnn-gates">
 <h2>DNN Gates<a class="headerlink" href="#dnn-gates" title="Permalink to this headline">¶</a></h2>
 <p>In the following we heavily borrow from <a class="reference external" href="https://web.stanford.edu/class/cs224n/readings/gradient-notes.pdf">this</a> text. The basic building block of vectorized gradients is the <em>Jacobian Matrix</em>. In the [introductory]() section we dealt with functions <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span>. Suppose that we have a more complicated function <span class="math notranslate nohighlight">\(\bm f: \mathbb{R}^n \to \mathbb{R}^m\)</span> that maps a vector of length <span class="math notranslate nohighlight">\(n\)</span> to a vector of length <span class="math notranslate nohighlight">\(m\)</span>:</p>
@@ -497,25 +497,25 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="identity1" src="aiml-common/lectures/dnn/backprop-dnn/images/identity1.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span></p></td>
+<tr class="row-even"><td><p><img alt="identity1" src="../../../../_images/identity1.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial \mathbf z}{\partial \mathbf x} = \mathbf W\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><img alt="identity2" src="aiml-common/lectures/dnn/backprop-dnn/images/identity2.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf x \mathbf W\)</span></p></td>
+<tr class="row-odd"><td><p><img alt="identity2" src="../../../../_images/identity2.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf x \mathbf W\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial \mathbf z}{\partial \mathbf x} = \mathbf W^T\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><img alt="identity3" src="aiml-common/lectures/dnn/backprop-dnn/images/identity3.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z =  \mathbf x\)</span></p></td>
+<tr class="row-even"><td><p><img alt="identity3" src="../../../../_images/identity3.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z =  \mathbf x\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial \mathbf z}{\partial \mathbf x} = \mathbf I\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><img alt="identity4" src="aiml-common/lectures/dnn/backprop-dnn/images/identity4.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z =  f(\mathbf x)\)</span> element-wise</p></td>
+<tr class="row-odd"><td><p><img alt="identity4" src="../../../../_images/identity4.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z =  f(\mathbf x)\)</span> element-wise</p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial \mathbf z}{\partial \mathbf x} = \text{Diag}[ f'(\mathbf x) ]\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><img alt="identity5" src="aiml-common/lectures/dnn/backprop-dnn/images/identity5.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span>, <span class="math notranslate nohighlight">\(\mathbf \delta =  \frac{\partial L}{\partial \mathbf z}\)</span></p></td>
+<tr class="row-even"><td><p><img alt="identity5" src="../../../../_images/identity5.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span>, <span class="math notranslate nohighlight">\(\mathbf \delta =  \frac{\partial L}{\partial \mathbf z}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf W} = \mathbf \delta^T \mathbf x^T\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><img alt="identity6" src="aiml-common/lectures/dnn/backprop-dnn/images/identity6.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf x \mathbf W\)</span>, <span class="math notranslate nohighlight">\(\mathbf \delta =  \frac{\partial L}{\partial \mathbf z}\)</span></p></td>
+<tr class="row-odd"><td><p><img alt="identity6" src="../../../../_images/identity6.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf x \mathbf W\)</span>, <span class="math notranslate nohighlight">\(\mathbf \delta =  \frac{\partial L}{\partial \mathbf z}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf W} = \mathbf x^T \mathbf \delta\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><img alt="identity4" src="aiml-common/lectures/dnn/backprop-dnn/images/identity7.png#center" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span>, <span class="math notranslate nohighlight">\(\hat \mathbf y = \mathtt{softmax}(\mathbf z)\)</span>, <span class="math notranslate nohighlight">\(L=CE(\mathbf y , \hat \mathbf y )\)</span></p></td>
+<tr class="row-even"><td><p><img alt="identity4" src="../../../../_images/identity7.png" /> <br> <span class="math notranslate nohighlight">\(\mathbf z = \mathbf W \mathbf x\)</span>, <span class="math notranslate nohighlight">\(\hat \mathbf y = \mathtt{softmax}(\mathbf z)\)</span>, <span class="math notranslate nohighlight">\(L=CE(\mathbf y , \hat \mathbf y )\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf z} = \hat \mathbf y - \mathbf y\)</span></p></td>
 </tr>
 </tbody>

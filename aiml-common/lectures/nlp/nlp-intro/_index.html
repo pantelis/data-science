@@ -487,28 +487,28 @@
 <td><p>The next step tags each word with a classification result of its part - whether it is a noun, a verb, an adjective and so on. We can do this by feeding each word (and some extra words around it for context) into a pre-trained part-of-speech classification model:</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p><img alt="pos-classification" src="aiml-common/lectures/nlp/nlp-intro/images/pos-classification.png#center" /></p></td>
+<td><p><img alt="pos-classification" src="../../../../_images/pos-classification.png" /></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p><img alt="pos-example" src="aiml-common/lectures/nlp/nlp-intro/images/pos-example.png#center" /></p></td>
+<td><p><img alt="pos-example" src="../../../../_images/pos-example.png" /></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Lematization</strong></p></td>
 <td><p>This is one of the stages of <em>vocabulary normalization</em>.  At this stage we are figuring out the most basic form or lemma of each word in the sentence.</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p><img alt="lemmatization" src="aiml-common/lectures/nlp/nlp-intro/images/lemmatization.png#center" /></p></td>
+<td><p><img alt="lemmatization" src="../../../../_images/lemmatization.png" /></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Stop words identification</strong></p></td>
 <td><p>This is one of the stages of <em>vocabulary normalization</em>.  Stop words are common words in any language that occur with a high frequency but carry much less substantive information about the meaning of a phrase.</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p><img alt="stop-words" src="aiml-common/lectures/nlp/nlp-intro/images/stop-words.png#center" /></p></td>
+<td><p><img alt="stop-words" src="../../../../_images/stop-words.png" /></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Dependency Parsing</strong></p></td>
 <td><p>The next step is to figure out how all the words in our sentence relate to each other. This is called dependency parsing. The goal is to build a tree that assigns a single parent word to each word in the sentence. The root of the tree will be the main verb in the sentence. In addition to identifying the parent word of each word, we can also predict the type of relationship that exists between those parent and child. This parse tree shows us that the subject of the sentence is the noun “London” and it has a “be” relationship with “capital”. We finally know something useful — London is a capital. Dependency parsing in NLP stacks circa 2017 was heavily based on <a class="reference external" href="https://ai.googleblog.com/2017/03/an-upgrade-to-syntaxnet-new-models-and.html">deep learning</a> architectures - <a class="reference external" href="https://explosion.ai/demos/displacy?text=the%20students%20of%20CS-GY-6613%20are%20having%20a%20difficult%20time%20with%20professor%20Pantelis&amp;model=en_core_web_sm&amp;cpu=1&amp;cph=1">demo</a></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p><img alt="dependency-parsing" src="aiml-common/lectures/nlp/nlp-intro/images/dependency-parsing.png#center" /></p></td>
+<td><p><img alt="dependency-parsing" src="../../../../_images/dependency-parsing.png" /></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Named Entity Recognition (NER)</strong></p></td>
 <td><p>The goal of Named Entity Recognition, or NER, is to detect and label nouns with the real-world concepts that they represent. NER systems aren’t just doing a simple dictionary lookup. Instead, they are using the context of how a word appears in the sentence and a statistical model to guess which type of noun a word represents. <a class="reference external" href="https://explosion.ai/demos/displacy-ent?text=A%20rapid%20increase%20in%20virtual%20visits%20during%20the%202019%20coronavirus%20disease%20(COVID-19)%20pandemic%20could%20transform%20the%20way%20physicians%20provide%20care%20in%20the%20United%20States%20going%20forward%2C%20according%20to%20a%20new%20study%20led%20by%20researchers%20from%20NYU%20Grossman%20School%20of%20Medicine.%0A%0A%E2%80%9CThe%20pandemic%20created%20an%20urgent%20need%20to%20divert%20patients%20from%20inpatient%20care%20and%20prevent%20the%20flooding%20of%20our%20emergency%20rooms%20beyond%20capacity%2C%E2%80%9D%20says%20Devin%20Mann%2C%20MD%2C%20associate%20professor%20in%20the%20Departments%20of%20Population%20Health%20and%20Medicine%2C%20senior%20director%20for%20informatics%20innovation%20and%20the%20information%20technology%20team%20at%20NYU%20Langone%2C%20and%20the%20study%E2%80%99s%20lead%20author.%20%E2%80%9CThrough%20telemedicine%2C%20we%20pushed%20the%20front%20lines%20to%20locations%20far%20from%20our%20hospitals%20and%20doctor%E2%80%99s%20offices.%20And%20because%20NYU%20%0ALangone%20invested%20early%20in%20this%20technology%2C%20we%20quickly%20leveraged%20it%20to%20help%20hundreds%20of%20thousands%20of%20patients.%E2%80%9D&amp;model=en_core_web_sm&amp;ents=person%2Corg%2Cgpe%2Cloc%2Cproduct%2Cnorp%2Cdate%2Cper%2Cmisc">demo</a></p></td>
@@ -517,7 +517,7 @@
 <td><p>Coreference resolution is the task of finding all expressions that refer to the same entity in a text. It is an important step for a lot of higher level NLP tasks that involve natural language understanding such as document summarization, question answering, and information extraction. Coreference resolution is one of the most difficult steps in our pipeline to <a class="reference external" href="https://huggingface.co/coref/">implement</a></p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p><img alt="coreference-resolution" src="aiml-common/lectures/nlp/nlp-intro/images/coreference-resolution.png#center" /></p></td>
+<td><p><img alt="coreference-resolution" src="../../../../_images/coreference-resolution.png" /></p></td>
 </tr>
 </tbody>
 </table>

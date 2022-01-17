@@ -6,7 +6,7 @@ title: World Models
 
 Humans build an internal mental model of the world and routinely use simulation to update it state. The work in [World Models](https://worldmodels.github.io/) uses RNNs to tackle Reinforcement Learning (RL) tasks and divide the agent into a substantial world model and a smaller controller model. 
 
-![true-traj](images/true_traj.gif#center)
+![true-traj](images/true_traj.gif)
 
 ## Task 1 (20 points)
 

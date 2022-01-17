@@ -472,9 +472,9 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="autonomous-agents">
 <h1>Autonomous Agents<a class="headerlink" href="#autonomous-agents" title="Permalink to this headline">¶</a></h1>
 <p>In this section we treat examples that combine deep learning based perceptive tasks and real-world motion planning. If you as an aspiring data scientist wonder which application theme to specialize on, look no further than  <strong>mission critical</strong> industries - they are the drivers of the economy of every country.  The <strong>robotics / self-driving cars</strong> domain requires the design of advanced agents that perceive the environment using noisy sensors, make decisions under uncertainty, actuate a host of electronics to execute decisions, all while communicate with humans in natural language or sense driver psychological / physiological state. A real world manifestation of the above architecture is shown below.</p>
-<p><img alt="carla-system" src="aiml-common/lectures/autonomous-cars/images/carla-system.png#center" />
+<p><img alt="carla-system" src="../../../_images/carla-system1.png" />
 <em>Example of an agent (Udacity’s CARLA serf-driving car) in the late 2010s</em></p>
-<p><img alt="carla-car" src="aiml-common/lectures/autonomous-cars/images/carla-car.png#center" /></p>
+<p><img alt="carla-car" src="../../../_images/carla-car.png" /></p>
 <p>There are <a class="reference external" href="https://arxiv.org/pdf/2003.06404.pdf">two main schools of thought</a> in this subdomain.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -491,13 +491,13 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="planning-approaches" src="aiml-common/lectures/autonomous-cars/images/planning-approaches.png#center" />
+<p><img alt="planning-approaches" src="../../../_images/planning-approaches.png" />
 <em>Modular vs End-to-End pipeline for real-world motion planning</em></p>
 <div class="section" id="modular-pipeline">
 <h2>Modular pipeline<a class="headerlink" href="#modular-pipeline" title="Permalink to this headline">¶</a></h2>
 <p>The modular pipeline as shown below, consists of four main modules:</p>
 <p>NOTE: In the description below the motion planning module mentioned in the figure is called trajectory generation.</p>
-<p><img alt="modular-pipeline" src="aiml-common/lectures/autonomous-cars/images/modular-pipeline.png#center" />
+<p><img alt="modular-pipeline" src="../../../_images/modular-pipeline.png" />
 <em>Modular pipeline functional flow -from <a class="reference external" href="https://arxiv.org/pdf/1604.07446.pdf">here</a>.</em></p>
 <ol class="simple">
 <li><p><strong>Global (Route) planning</strong>. In global route planning we are given a graph <span class="math notranslate nohighlight">\(G=(V, E)\)</span> and the agent must solve the problem of finding a shortest path (cost) route from the source vertex <span class="math notranslate nohighlight">\(s\)</span> to a destination or goal <span class="math notranslate nohighlight">\(g\)</span>.  The route planning scenarios can be fairly complicated involving a mixture of  road network restricted and unrestricted (eg. parking lot) modes. Route planning is usually decoupled from the other latency-sensitive subsystems of planning - it is being very infrequently executed.</p></li>
@@ -510,7 +510,7 @@
 <h2>End to end pipeline<a class="headerlink" href="#end-to-end-pipeline" title="Permalink to this headline">¶</a></h2>
 <p>The modular approach allows for engineering teams to divide and conquer each module almost independently of the others, provided that the system architecture governed by the interfaces of the modules allows it. But advantages go beyond the clear separation of tasks and extend to <em>explainability</em>: each module is free to invent the representations that is best suited for its task and compartmentalize the final decision about the trajectory of the agent, allowing us humans to go back and understand how the decision was reached.</p>
 <p>Having said that, modular architectures are working fine as long as the representations, their transformations and the individual module decisions support the real world environment that the agent is to operate. The moment the environment deviates from the typically expected one, modular architectures require <em>retuning</em> to be able to accommodate more corner cases never thought during the initial design.</p>
-<p><img alt="ball-road" src="aiml-common/lectures/autonomous-cars/images/ball-road.jpg#center" />
+<p><img alt="ball-road" src="../../../_images/ball-road.jpg" />
 <em>There are potentially tens of scenarios each with a different decision making process (reasoning) involving kids playing with balls</em></p>
 <p>Take for example, the case where the perception system detects children playing on the side of the road and a ball suddenly rolling onto the road - a decision to slam the brakes would have been prudent in a residential street but very risky in a higher speed road where e.g. changing the lane would be more prudent to avoid a rear end collision. The context of decision making is complex and the end to end pipeline approach if there are enough data (supervised or reinforcing) can <em>generalize</em> to cover cases that were not designed in. As there is a single task, the degrees of freedom of the end to end pipeline are spent in <em>learning</em> the right attentional representations and the right decisions at the expense of interpretability.</p>
 </div>

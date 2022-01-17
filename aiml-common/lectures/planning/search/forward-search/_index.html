@@ -559,7 +559,7 @@
 <h3>Depth-first search (DFS)<a class="headerlink" href="#depth-first-search-dfs" title="Permalink to this headline">¶</a></h3>
 <p>In undirected graphs, depth-first search answers the question: What parts of the graph are reachable from a given vertex.
 It also finds explicit paths to these vertices, summarized in its search tree as shown below.</p>
-<p><img alt="depth-first" src="aiml-common/lectures/planning/search/forward-search/images/depth-first.png#center" />
+<p><img alt="depth-first" src="../../../../../_images/depth-first.png" />
 <em>Depth-first can’t find optimal (shortest) paths. Vertex C is reachable from S by traversing just one edge, while the DFS tree
 shows a path of length 3. On the right the DFS search tree is shown assuming alphabetical order in breaking up ties. Can you explain the DFS search tree?</em></p>
 <p>DFS can be run verbatim on directed graphs, taking care to traverse edges only in their prescribed directions.</p>
@@ -567,23 +567,23 @@ shows a path of length 3. On the right the DFS search tree is shown assuming alp
 <div class="section" id="breadth-first-search-bfs">
 <h3>Breadth-first search (BFS)<a class="headerlink" href="#breadth-first-search-bfs" title="Permalink to this headline">¶</a></h3>
 <p>In BFS the lifting of the starting state <span class="math notranslate nohighlight">\(s\)</span>, partitions the graph into layers: <span class="math notranslate nohighlight">\(s\)</span> itself (vertex at distance 0), the vertices at distance 1 from it, the vertices at distance 2 from it etc.</p>
-<p><img alt="breadth-first" src="aiml-common/lectures/planning/search/forward-search/images/breadth-first.png#center" />
+<p><img alt="breadth-first" src="../../../../../_images/breadth-first.png" />
 <em>BFS expansion in terms of layers of vertices - each layer at increasing distance from the layer that follows</em>.</p>
-<p><img alt="breadth-first-2" src="aiml-common/lectures/planning/search/forward-search/images/breadth-first-2.png#center" />
+<p><img alt="breadth-first-2" src="../../../../../_images/breadth-first-2.png" />
 <em>Queue contents during BFS and the BFS search tree assuming alphabetical order. Can you explain the BFS search tree? Is the BFS search tree a shortest-path tree?</em></p>
 </div>
 <div class="section" id="dijkstra-s-algorithm">
 <h3>Dijkstra’s Algorithm<a class="headerlink" href="#dijkstra-s-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Breadth-first search finds shortest paths in any graph whose edges have unit length. Can we adapt it to a more general graph G = (V, E) whose edge lengths <span class="math notranslate nohighlight">\(l(e)\)</span> are positive integers? These lengths effectively represent the cost of traversing the edge. fHere is a simple trick for converting G into something BFS can handle: break G’s long edges into unit-length pieces, by introducing “dummy” nodes as shown next.</p>
-<p><img alt="dijkstras-graph" src="aiml-common/lectures/planning/search/forward-search/images/dijkstras-graph.png#center" />
+<p><img alt="dijkstras-graph" src="../../../../../_images/dijkstras-graph.png" />
 <em>To construct the new graph <span class="math notranslate nohighlight">\(G'\)</span> for any edge <span class="math notranslate nohighlight">\(e = (s, s^\prime)\)</span> of <span class="math notranslate nohighlight">\(E\)</span>, replace it by <span class="math notranslate nohighlight">\(l(e)\)</span> edges of length 1, by adding <span class="math notranslate nohighlight">\(l(e) − 1\)</span>
 dummy nodes between nodes <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(s^\prime\)</span></em>.</p>
 <p>With the shown transformation, we can now run BFS on <span class="math notranslate nohighlight">\(G'\)</span> and the search tree will reveal the shortest path of each goal node from the starting point.</p>
 <p>The transformation allows us to solve the problem but it did result in an inefficient search where most of the nodes involved are searched but definitely will never be goal nodes. To look for more efficient ways to absorb the edge length <span class="math notranslate nohighlight">\(l(e)\)</span> we use the following of cost.</p>
-<p><img alt="search-cost-definitions" src="aiml-common/lectures/planning/search/forward-search/images/search-cost-defintions.png#center" />
+<p><img alt="search-cost-definitions" src="../../../../../_images/search-cost-defintions.png" />
 <em>Cost-to-come(<span class="math notranslate nohighlight">\(s\)</span>) or PastCost(<span class="math notranslate nohighlight">\(s\)</span>) vs. Cost-to-Go(<span class="math notranslate nohighlight">\(s\)</span>) or FutureCost(<span class="math notranslate nohighlight">\(s\)</span>). PastCost(<span class="math notranslate nohighlight">\(s\)</span>) is the minimum cost from the start state <span class="math notranslate nohighlight">\(s_I\)</span> to state <span class="math notranslate nohighlight">\(s\)</span>. FutureCost(<span class="math notranslate nohighlight">\(s\)</span>) is the minimum cost from the state <span class="math notranslate nohighlight">\(s\)</span> to the goal state <span class="math notranslate nohighlight">\(s_G\)</span>. The PastCost is used as the prioritization metric of the queue in Dijkstra’s algorithm. The addition of the PastCost with an estimate of the FutureCost, the heuristic <span class="math notranslate nohighlight">\(h(s)\)</span>, i.e. <span class="math notranslate nohighlight">\(G(s) =\)</span> PastCost(<span class="math notranslate nohighlight">\(s\)</span>)+<span class="math notranslate nohighlight">\(h(s)\)</span>, is used as the corresponding metric in the A* algorithm. What would be the ideal metric?</em></p>
 <p>The following example is instructive of the execution steps of the algorithm.</p>
-<p><img alt="dijkstras-example" src="aiml-common/lectures/planning/search/forward-search/images/dijkstras-example.png#center" />
+<p><img alt="dijkstras-example" src="../../../../../_images/dijkstras-example.png" />
 <em>Example of Dijkstra’s algorithm execution steps and with <span class="math notranslate nohighlight">\(s_I=A\)</span></em></p>
 <p>The exact same pseudo-code is executed as before but the priority metric <span class="math notranslate nohighlight">\(C(s^\prime)=C^*(s) + l(e)\)</span> now accounts for costs as they are calculated causing the queue to be reordered accordingly.</p>
 <p>Here, <span class="math notranslate nohighlight">\(C(s^\prime)\)</span> represents the best cost-to-come that is known so far, but we do not write <span class="math notranslate nohighlight">\(C^*\)</span> because it is not yet known whether <span class="math notranslate nohighlight">\(s^\prime\)</span> was reached optimally.</p>

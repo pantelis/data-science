@@ -10,24 +10,24 @@ draft: false
 
 We start by reviewing the agent-environment interface with this evolved notation and provide additional definitions that will help in grasping the concepts behind DRL. We treat MDP analytically effectively deriving the four Bellman equations.
 
-![agent-env-interface](images/agent-env-interface.png#center)
+![agent-env-interface](images/agent-env-interface.png)
 *Agent-Environment Interface*
 
 {{<hint info>}}
 
 The following table summarizes the notation and contains useful definitions that we will use to describe required concepts later.  With capital letters we denote the random variables involved and with small letters their specific realizations (values) - for example $S_t$ is the random state variable and $s_t$ is the actual state at time $t$. 
 
-| **Symbol**  | **Description**  |
-|:-:|---|
-| $S_t$ | environment state at time step $t$, $s \in \mathcal{S}$ the finite set of states |
-| $A_t$ | agent action at time step $t$, $a \in \mathcal{A}$ the finite set of actions |
+|        **Symbol**        | **Description**                                                                                              |
+| :----------------------: | ------------------------------------------------------------------------------------------------------------ |
+|          $S_t$           | environment state at time step $t$, $s \in \mathcal{S}$ the finite set of states                             |
+|          $A_t$           | agent action at time step $t$, $a \in \mathcal{A}$ the finite set of actions                                 |
 | $R_{t+1} \in \mathbb{R}$ | numerical reward sent by the environment after taking action $A_t$ and transition to next state $S_{t+1}=s'$ |
-| $t$ | time step index associated with each experience that is defined as the tuple ($S_t, A_t, R_{t+1}$). | 
-| $T$ | maximum time step beyond which the interaction terminates |
-| _episode_ | the time horizon from $t=0$ to $T-1$ |
-| $\tau$ | _trajectory_ - the sequence of experiences over an episode |
-| $G_t$ | _return_ - the total discounted rewards from time step $t$ - it will be qualified shortly. |
-| $\gamma$ | the discount factor $\gamma \in [0,1]$ embedded into the return $G_t$ |
+|           $t$            | time step index associated with each experience that is defined as the tuple ($S_t, A_t, R_{t+1}$).          |
+|           $T$            | maximum time step beyond which the interaction terminates                                                    |
+|        _episode_         | the time horizon from $t=0$ to $T-1$                                                                         |
+|          $\tau$          | _trajectory_ - the sequence of experiences over an episode                                                   |
+|          $G_t$           | _return_ - the total discounted rewards from time step $t$ - it will be qualified shortly.                   |
+|         $\gamma$         | the discount factor $\gamma \in [0,1]$ embedded into the return $G_t$                                        |
 {{</hint>}}
 
 In fully observed MDP problems, the agent *perceives fully* the environment state $S_t$  - you can assume that there is a bank of sensors but they are ideal. In other words the agent knows which state the environment is in, perfectly[^2].

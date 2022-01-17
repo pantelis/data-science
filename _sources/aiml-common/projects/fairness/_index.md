@@ -4,7 +4,7 @@ title: Identifying Bias and Correcting for Fairness
 
 #  Identifying Bias and Correcting for Fairness
 
-![ibm-fairness-pipeline](images/ibm-fair-pipeline.png#center)
+![ibm-fairness-pipeline](images/ibm-fair-pipeline.png)
 *IBM's Fairness Pipeline*
 
 When you are asked to perform a data mining task (e.g. classification, regression) you are more often than not given "dirty" data that you need to glean to address a number of issues such as data errors, missing data etc. These gleaning tasks are the easy part and standard APIs do exist to enable you to analyze data for each of these issues and perform the necessary corrective actions. 

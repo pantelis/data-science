@@ -44,7 +44,7 @@ $$l = \\{  (x,y,z) \in \R^3 | (x,y,z) = \bm 0 + t \bm u \\} $$
 
 we can define the projection onto the line
 
-![line-projection](images/line-projection.png#center)
+![line-projection](images/line-projection.png)
 *Projection of $\bm u$ onto the line $l$*
 
 The space $S^\perp ≡ l^\perp$ is a plane since it consists of all the vectors that are perpendicular to the line. What is shown in the figure as a dashed line is simply the projection of $\bm u$ on the $l^\perp$ subspace,

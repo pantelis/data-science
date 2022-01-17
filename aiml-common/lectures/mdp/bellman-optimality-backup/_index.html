@@ -473,21 +473,21 @@
 \[\begin{split}\pi_*(a|s) = \begin{cases}1 &amp; \text{if }\ a = \argmax_{a \in \mathcal A} q_*(s,a), \\\\ 
 0 &amp; \text{otherwise}\end{cases}\end{split}\]</div>
 <p>So the problem now becomes how to calculate the optimal value functions. We return to the tree structures that helped us understand the interdependencies between the two and this time we look at the optimal equivalents.</p>
-<p><img alt="optimal-state-value-tree" src="aiml-common/lectures/mdp/bellman-optimality-backup/images/optimal-state-value-tree.png#center" />
+<p><img alt="optimal-state-value-tree" src="../../../../_images/optimal-state-value-tree.png" />
 <em>Actions can be taken from that state <span class="math notranslate nohighlight">\(s\)</span> according to the policy <span class="math notranslate nohighlight">\(\pi_*\)</span></em></p>
 <p>Following similar reasoning as in the Bellman expectation equation where we calculated the value of state <span class="math notranslate nohighlight">\(s\)</span> as an average of the values that can be claimed by taking all possible actions, now we simply replace the average with the max.</p>
 <div class="math notranslate nohighlight">
 \[v_*(s) = \max_a q_*(s,a)\]</div>
-<p><img alt="optimal-action-value-tree" src="aiml-common/lectures/mdp/bellman-optimality-backup/images/optimal-action-value-tree.png#center" />
+<p><img alt="optimal-action-value-tree" src="../../../../_images/optimal-action-value-tree.png" />
 <em>Successor states that can be reached from state <span class="math notranslate nohighlight">\(s\)</span> if the agent selects action <span class="math notranslate nohighlight">\(a\)</span>. <span class="math notranslate nohighlight">\(R_{t+1}=r\)</span> we denote the instantaneous reward for each of the possibilities.</em></p>
 <p>Similarly, we can express  <span class="math notranslate nohighlight">\(q_*(s,a)\)</span> as a function of <span class="math notranslate nohighlight">\(v_*(s)\)</span> by looking at the corresponding tree above.</p>
 <div class="math notranslate nohighlight">
 \[q_*(s,a) = \mathcal R_s^a + \gamma \sum_{s^\prime \in \mathcal S} \mathcal{P}^a_{ss^\prime} v_*(s^\prime)\]</div>
 <p>Notice that there is no <span class="math notranslate nohighlight">\(\max\)</span> is this expression as we have no control on the successor state - that is something the environment controls. So all we can do is average.</p>
 <p>Now we can similarly attempt to create a <em>recursion</em> that will lead to the <strong>Bellman optimality backup equations</strong> that effectively solve the MDP, by expanding the trees above.</p>
-<p><img alt="optimal-state-action-state-value-tree" src="aiml-common/lectures/mdp/bellman-optimality-backup/images/optimal-state-action-state-value-tree.png#center" />
+<p><img alt="optimal-state-action-state-value-tree" src="../../../../_images/optimal-state-action-state-value-tree.png" />
 <em>Tree that represents the optimal state-value function after a two-step look ahead.</em></p>
-<p><img alt="optimal-action-state-action-value-tree" src="aiml-common/lectures/mdp/bellman-optimality-backup/images/optimal-action-state-action-value-tree.png#center" />
+<p><img alt="optimal-action-state-action-value-tree" src="../../../../_images/optimal-action-state-action-value-tree.png" />
 <em>Tree that represents the optimal action-value function after a two-step look ahead.</em></p>
 <p><strong>Bellman Optimality Backup</strong></p>
 <div class="math notranslate nohighlight">

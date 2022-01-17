@@ -11,7 +11,7 @@ title: Batch Normalization
 
 It is instructive to see the training process as a control system. 
 
-![control-system-training](images/control-system-training.drawio.svg#center)
+![control-system-training](images/control-system-training.drawio.svg)
 _Control System view of training_
 
 The system takes input $\mathbf x$ and produces a loss that is used to update the parameters $\mathbf w$ for each of the layers based on a estimate of how much the loss $L$ changed for that input. There are multiple concepts in this sentence that is worth highlighting. First lets repeat the SGD equation below as it will used to drive the discussion. 
@@ -20,7 +20,7 @@ $$\mathbf w_{k+1} = \mathbf w_k - \eta \nabla_{\mathbf w} L(\mathbf w_k)$$
  
 It is enough to discuss the limiting case with just two parameters to visualize the loss as shown below. This is obviously a 3D plot with x and y axes on parameters and the z axis assigned to loss. 
 
-![visualizer](images/visualizer.gif#center)
+![visualizer](images/visualizer.gif)
 _Optimizer Visualization (from [here](https://github.com/Kitsunetic/Optimizer-Visualization))_
 
 Recall that back-propagation starts from where forward propagation ends, so the _input_ is the driving force of the learning process and the noisy negative gradient of the loss with respect to weights is a search direction of where to look for significant reductions of that loss. The control system's optimizer feedbacks the parameter updates every mini-batch hopping that successive updates will converge to some _good_ local minimum. 
@@ -33,7 +33,7 @@ So what we do at the input is important and as you can see from even this very l
 
 We also have seen that whitening the input to a neural network manages to change the input distribution significantly and in this section we would like to connect this to learning efficiency. Starting from the operation of normalization let us consider a limiting example of two parameters as shown below. 
 
-![sgd-convergence2](images/sgd-convergence2.png#center)
+![sgd-convergence2](images/sgd-convergence2.png)
 
 _Contour of the loss with respect to two parameters_
 
@@ -55,11 +55,11 @@ In practice networks that use Batch Normalization are significantly more robust 
 
 The effects of BN is reflected clearly in the distribution of the gradients for the same set of parameters as shown below.
 
-![histograms-bn](images/histograms-bn.png#center)
+![histograms-bn](images/histograms-bn.png)
 _Histograms over the gradients at initialization for (midpoint) layer 55 of a network with BN (left) and
 without (right). For the unnormalized network, the gradients are distributed with heavy tails, whereas for the normalized networks the gradients are concentrated around the mean._
 
-![learning-rate-bn](images/learning-rate-bn.png#center)
+![learning-rate-bn](images/learning-rate-bn.png)
 _BN allows us to learn much faster and operate efficiently at deeper architectures compared to without_
 
 {{<hint>}}

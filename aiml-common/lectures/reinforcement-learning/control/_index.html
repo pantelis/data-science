@@ -477,12 +477,12 @@
 <div class="math notranslate nohighlight">
 \[\pi^\prime = \argmax_{a \in \mathcal A} Q(s,a)\]</div>
 <p>This is shown next:</p>
-<p><img alt="generalized-policy-iteration" src="aiml-common/lectures/reinforcement-learning/control/images/generalized-policy-iteration.png#center" />
+<p><img alt="generalized-policy-iteration" src="../../../../_images/generalized-policy-iteration.png" />
 <em>Generalized policy iteration using action-value function</em></p>
 <p>The only complication is that many state–action pairs may never be visited.  If <span class="math notranslate nohighlight">\(π\)</span> is a deterministic policy, then in following <span class="math notranslate nohighlight">\(π\)</span> one will observe returns only for one of the actions from each state.  With no returns to average, the Monte Carlo estimates of the other actions will not improve with experience.  This is a serious problem because the purpose of learning action values is to help in choosing among the actions available in each state.  To compare alternatives we need to estimate the value of all the actions from each state, not just the one we currently favor. <strong>This is the general problem of maintaining exploration</strong> and we solve it by flipping a bent coin with probability <span class="math notranslate nohighlight">\(\epsilon\)</span> as the probability of “heads” and if we get a heads we do a greedy action while with tails (with probability <span class="math notranslate nohighlight">\(1-\epsilon\)</span>) we are taking a random action.</p>
 <p>This is allowed under the general interaction afforded by the Generalized Policy Iteration (GPI) framework.</p>
 <p>The MC pseudocode encompassing <span class="math notranslate nohighlight">\(\epsilon\)</span>-greedy control is shown below:</p>
-<p><img alt="mc-pseudocode" src="aiml-common/lectures/reinforcement-learning/control/images/mc-epsilon-greedy-pseudocode.png#center" /></p>
+<p><img alt="mc-pseudocode" src="../../../../_images/mc-epsilon-greedy-pseudocode.png" /></p>
 <p>Motivated by the advantages of TD prediction we can now replace the MC with TD and obtain SARSA - one of the most important RL algorithms.</p>
 </div>
 </div>

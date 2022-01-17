@@ -19,10 +19,10 @@ You must run step by step the notebook below to fully understand what kind of tr
 
 One of the most popular visualization methods is the Gradient weighted Class Activation Mapping ([Grad-CAM](http://gradcam.cloudcv.org/)) that uses the class-specific gradient information flowing into the final convolutional layer of a CNN to produce a coarse localization map of the important regions in the image. 
 
-![gradcam](images/gradcam.png#center)
+![gradcam](images/gradcam.png)
 _GradCAM block diagram_
 
-![gradcam-result](images/gradcam-result.png#center)
+![gradcam-result](images/gradcam-result.png)
 [_Results of GradCAM_](https://www.kaggle.com/nguyenhoa/dog-cat-classifier-gradcam-with-tensorflow-2-0) _for ResNet50 training on ImageNet_
 
 ## Occlusion Sensitivity

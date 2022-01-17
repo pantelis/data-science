@@ -29,12 +29,12 @@ On top of the automated feature construction advantage, that even shallow networ
 
 Deep Learning is benefiting from big data as the last 5 years trend shown below.  
 
-![dataset-size](images/dataset-size.png#center)
+![dataset-size](images/dataset-size.png)
 *Dataset size over time*
 
 However [big data](https://www.kaggle.com/datasets?sortBy=relevance&group=featured&search=image) has lead to several side effects and tradeoffs [cite](https://papers.nips.cc/paper/3323-the-tradeoffs-of-large-scale-learning.pdf). The success of DNNs with big data hides well documented failures to e.g. perceive infrequent corner cases that are all too important in mission critical industries. 
 
-![tesla-crash](images/tesla-crash.jpeg#center)
+![tesla-crash](images/tesla-crash.jpeg)
 
 For example, autonomous vehicles [used to crash more frequently on stopped emergency vehicles](https://www.theguardian.com/technology/2018/may/29/tesla-crash-autopilot-california-police-car) simply because there are not many examples in the training dataset of stopped emergency vehicles occupying portion of the lane that the autonomous car is on. 
 
@@ -50,7 +50,7 @@ Even without the smart selection of examples to label though, we have big-data d
 
 Deeper models tend to perform better.This is not merely because the model is larger. Increasing the number of parameters in layers of convolutional networks without increasing their depth is not nearly as eﬀective at increasing test set performance,as illustrated in the ﬁgure below. 
 
-![generalization-shallow-vs-deep-networks](images/generalization-shallow-vs-deep-networks.png#center)
+![generalization-shallow-vs-deep-networks](images/generalization-shallow-vs-deep-networks.png)
 *The legend indicates the depth of network used to make each curve and whether the curve represents variation in the size of the convolutional or the fully connected layers.*
 
 We observe that shallow models in this context overﬁt at around 20 million parameters while deep ones can beneﬁt from having over 60 million.This suggests that using a deep model expresses a useful preference over the space of functions the model can learn. Speciﬁcally, **it expresses a belief that the function should consist of many simpler functions composed together. This could result either in learning a representation that is composed in turn of simpler representations (e.g., corners deﬁned in terms of edges) or in learning a program with sequentially dependent steps (e.g., ﬁrst locate a set of objects, then segment them from each other, then recognize them).**
@@ -58,7 +58,7 @@ We observe that shallow models in this context overﬁt at around 20 million par
 ![accuracy-vs-depth](images/accuracy-vs-depth.png)
 *Empirical results showing that deeper networks generalize better when used to transcribe multi digit numbers from photographs of addresses. The test set accuracy consistently increases with increasing depth.*
 
-![object-detection-accuracy-over-time](images/object-detection-accuracy-over-time.png#center)
+![object-detection-accuracy-over-time](images/object-detection-accuracy-over-time.png)
 *Rapid improvements in performance over the last few years for the VOC and the popular Microsoft COCO datasets*
 
 ## Playground 

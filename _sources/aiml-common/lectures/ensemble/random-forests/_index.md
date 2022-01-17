@@ -17,10 +17,10 @@ These  two  techniques  are  not  mutually  exclusive  and  could  be  used toge
 
 When sampling is performed with replacement, this is called bootstrap aggregating or **bagging** for short. Sampling with replacement shown below, simply samples from a population records the features of the sample and we replace the sample with one identical unit in the population. 
 
-![sampling-with-replacement](images/sampling-with-replacement.png#center)
+![sampling-with-replacement](images/sampling-with-replacement.png)
 *In sampling with replacement, in each draw, all examples have equally probability to be selected.*
 
-![bagging](images/bagging.png#center)
+![bagging](images/bagging.png)
 *Bagging principle - it applies to either classification (shown here) or regression.*
 
 Note something important. The chance of not being selected in any of the $m$ draws from $m$ samples with replacement is $(1−\frac{1}{m})^m$ or approximately 1/3 = 33.33% for large $m$. Each predictor therefore may see several instances of the same sample while not see at all other instances (with probability 33.33%). This is because the probability of each predictor seeing one of the examples at least once in $m$ samples is 1-P(not seeing this example) = 1 - 33.33% = 66.66%. Obviously, however the unseen population differs between predictors. 
@@ -42,7 +42,7 @@ $p(c|\mathbf x) = \frac{1}{T} \sum_{t=1}^T p_t(c|\mathbf x) $
 
 As can be seen below, ensemble methods such as random forest result into much smoother decision boundaries than those of decision trees. 
 
-![decision-tree-vs-random-forest](images/decision-tree-vs-random-forest.png#center)
+![decision-tree-vs-random-forest](images/decision-tree-vs-random-forest.png)
 *Random forest decision boundary in an example dataset*
 
 <!-- ## Impact of random forest parameters

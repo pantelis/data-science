@@ -17,7 +17,7 @@ The problem as will see, will be described via a set of four equations called Be
 
 Computationally we will go through approaches that solve the MDP as efficiently as possible - namely, the value and policy iteration algorithms.
 
-![solving-mpd](images/solving-mdp.png#center)
+![solving-mpd](images/solving-mdp.png)
 *Solving MDP Problems*
 
 {{<hint info>}}

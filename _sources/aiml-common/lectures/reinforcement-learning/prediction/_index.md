@@ -19,7 +19,7 @@ For example, if an agent follows policy $\pi$ and maintains an average, for each
 
 We call estimation methods of this kind _Monte Carlo_ methods because they involve averaging over many random samples of returns. In MC prediction more specifically, for every state at time $t$ we sample one complete trajectory (episode) as shown below.  
 
-![mc-value-iteration-tree](images/mc-value-iteration-tree.png#center)
+![mc-value-iteration-tree](images/mc-value-iteration-tree.png)
 _Backup tree with value iteration based on the MC approach. MC samples a complete trajectory to the terminating node T shown with red._
 
 There is some rationale of doing so, if we recall that the state-value function that was defined in the introductory [MDP section]({{<ref "../../mdp/mdp-intro">}}) i.e. the _expected_ return.
@@ -72,12 +72,12 @@ If one had to identify one idea as central and novel to reinforcement learning, 
 
 In TD, instead of getting an estimated value function at the end of multiple episodes, we can use the incremental mean approximation to update the value function after each step. 
 
-![td-value-iteration-tree](images/td-value-iteration-tree.png#center)
+![td-value-iteration-tree](images/td-value-iteration-tree.png)
 *Backup tree for value iteration with the TD approach. TD samples a single step ahead as shown with red.* 
 
 Going back to the example of crossing the room optimally, we take one step towards the goal and the we  _bootstrap_ the value function of the state we were in from an estimated return for the remaining trajectory. We repeat this as we go along effectively adjusting the value estimate of the starting state from the true returns we have experienced up to now, _gradually grounding_ the whole estimate as we approach the goal. 
 
-![td-driving-to-work-example](images/td-driving-to-work-example.png#center)
+![td-driving-to-work-example](images/td-driving-to-work-example.png)
 *Two value approximation methods: MC (left), TD (right) as converging in their predictions of the value of each of the states in the x-axis. The example is from a hypothetical commute from office back home. In MC you have to wait until the episode ended (reach the goal) to update the value function at each state of the trajectory. In contrast, TD updates the value function at each state based on the estimates of the total travel time. The goal state is "arrive home", while the reward function is time.*
 
 As you can notice in the figure above the solid arrows in the MC case, adjust the predicted value of each state to the _actual_ return while in the TD case the value prediction happens every step in the way. We call TD for this reason an _online_ learning scheme. Another characteristic of TD is that it does not depend on reaching the goal, it _continuously_ learns. MC does depend on the goal and therefore is _episodic_. This is important in many mission critical applications eg self-driving cars where you dont wait to "crash" to apply corrections to your state value based on what you experienced.
@@ -108,7 +108,7 @@ We now define the so called $\lambda$-return that combines all n-step return $G_
 
 $$G_t^{(n)} = (1-\lambda) \sum_{n=1}^\infty \lambda^{n-1} G_t^{(n)}$$
 
-![lambda-weighting-function](images/lambda-weighting-function.png#center)
+![lambda-weighting-function](images/lambda-weighting-function.png)
 *$\lambda$ weighting function for TD($\lambda$)*
 
 the TD(n) learning equation becomes

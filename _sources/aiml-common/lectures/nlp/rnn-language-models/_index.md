@@ -8,7 +8,7 @@ title: RNN Language Models
 
 ## What is a language model? 
 
-![language-model-google-search](images/language-model-google-search.png#center)
+![language-model-google-search](images/language-model-google-search.png)
 *Language model example that completes the search query. We need a language model that given a sequence of words $\{ \mathbf w_1, ..., \mathbf w_t \}$ it returns
 
 $$p(\mathbf w_{t+1} | \mathbf w_1, ..., \mathbf w_t)$$
@@ -35,7 +35,7 @@ When we focus on making predictions based on a fixed window of context (i.e. the
 
 Out of the many neural architectures and to provide the required long memory (up to a point that is) we will use the [LSTM]({{<ref "../../rnn/lstm">}}) architectures as shown next. 
 
-![rnn-language-model](images/rnn-language-model-words.png#center)
+![rnn-language-model](images/rnn-language-model-words.png)
 _RNN Language Model. Note the different notation and certain replacements must be made: $W_h → W$, $W_e \rightarrow U$, $U → V$_
 
 To train an LSTM language model 
@@ -50,7 +50,7 @@ $$J(\theta) = \frac{1}{T} \sum_t J_t(\theta)$$
 
 This is visually shown in the next figure for a hypothetical example of the shown sequence of words. 
 
-![rnn-language-model-loss](images/rnn-language-model-loss.png#center)
+![rnn-language-model-loss](images/rnn-language-model-loss.png)
 *RNN Language Model Training Loss. For each input word (at step t$t$), the RNN predicts the next word and is penalized with a loss $J_t(\theta)$. The total loss is the average across the corpus.*
 
 In practice **we don't compute the total loss over the whole corpus but we train over a finite span** and compute gradients over that span iterating on a stochastic gradient decent optimization algorithm. 
@@ -59,13 +59,13 @@ In practice **we don't compute the total loss over the whole corpus but we train
 
 Character-level language models have achieved [state of the art NLP results by Facebook Research](https://github.com/flairNLP/flair).  As a simple example, lets assume the very small vocabulary {'h','e','l','o'} and tokens are single letters represented in the input with a one-hot encoded vector. 
 
-![rnn-language-model](images/rnn-language-model.png#center)
+![rnn-language-model](images/rnn-language-model.png)
 _RNN language model example - training [ref](https://www.youtube.com/watch?v=6niqTuYFZLQ&t=521s). Note that in practice instead of one-hot encoded word vectors we will have word embeddings._
 
  Let feed into the RNN the sequence "hello". The letters will come in one at a time, each letter going through the forward pass that produces at the output the $\mathbf y_t$ that indicates which letter is expected to arrive next.  You can see, since we are just started training,  that this network is not predicting correctly - this will improve over time as the model is trained with more sequence permutations form our limited vocabulary. 
  
  During inference we will use the language model to generate the next token. 
 
-![rnn-language-model-inference](images/rnn-language-model-inference.png#center)
+![rnn-language-model-inference](images/rnn-language-model-inference.png)
 *RNN language model example - generate the next token [reference](https://www.youtube.com/watch?v=6niqTuYFZLQ&t=521s)*
 

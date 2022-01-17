@@ -492,7 +492,7 @@
 <div class="math notranslate nohighlight">
 \[ s = \mathtt{hotel}^T \mathtt{motel} = 0.0\]</div>
 <p>One of key ideas that made NLP successful is the <em>distributional semantics</em> that originated from Firth’s work: <em>a word’s meaning is given by the words that frequently appear close-by</em>. When a word <span class="math notranslate nohighlight">\(x\)</span> appears in a text, its context is the set of words that appear nearby (within a fixed-size window). Use the many contexts of <span class="math notranslate nohighlight">\(x\)</span> to build up a representation of <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p><img alt="distributional-similarity" src="aiml-common/lectures/nlp/word2vec/images/distributional-similarity.png#center" />
+<p><img alt="distributional-similarity" src="../../../../_images/distributional-similarity.png" />
 <em>Distributional similarity representations - <code class="docutils literal notranslate"><span class="pre">banking</span></code> is represented by the words left and right across all sentences of our corpus.</em></p>
 <p>This is the main idea behind word2vec word embeddings (representations) that we address next.</p>
 <p>Before we deal with embeddings though its important to address a conceptual question:</p>
@@ -501,17 +501,17 @@
 <div class="section" id="features-of-word2vec-embeddings">
 <h2>Features of Word2Vec embeddings<a class="headerlink" href="#features-of-word2vec-embeddings" title="Permalink to this headline">¶</a></h2>
 <p>In 2012, Thomas Mikolov, an <em>intern</em> at Microsoft, <a class="reference external" href="https://arxiv.org/abs/1310.4546">found a way</a><a class="footnote-reference brackets" href="#id3" id="id1">2</a> to encode the meaning of words in a modest number of vector dimensions <span class="math notranslate nohighlight">\(d\)</span>. Mikolov trained a neural network to predict word occurrences near each target word. In 2013, once at Google, Mikolov and his teammates released the software for creating these word vectors and called it word2vec.</p>
-<p><img alt="banking-vector" src="aiml-common/lectures/nlp/word2vec/images/banking-vector.png#center" />
+<p><img alt="banking-vector" src="../../../../_images/banking-vector.png" />
 <em>word2vec generated embedding for the word <code class="docutils literal notranslate"><span class="pre">banking</span></code> in d=8 dimensions</em></p>
 <p>Here is a <a class="reference external" href="http://projector.tensorflow.org/">visualization</a> of these embeddings in the re-projected 3D space (from <span class="math notranslate nohighlight">\(d\)</span> to 3). Try searching for the word “truck” for the visualizer to show the <em>distorted</em> neighbors of this work - distorted because of the 3D re-projection. In another example, word2vec embeddings of US cities projected in the 2D space result in poor topological but excellent <em>semantic</em> mapping which is exactly what we are after.</p>
-<p><img alt="semantic-map-word2vec" src="aiml-common/lectures/nlp/word2vec/images/semantic-map-word2vec.png#center" />
+<p><img alt="semantic-map-word2vec" src="../../../../_images/semantic-map-word2vec.png" />
 <em>Semantic Map produced by word2vec for US cities</em></p>
 <p>Another classic example that shows the power of word2vec representations to encode analogies, is  classical king + woman − man ≈ queen example shown below.</p>
-<p><img alt="queen-example" src="aiml-common/lectures/nlp/word2vec/images/queen-example.png#center" />
+<p><img alt="queen-example" src="../../../../_images/queen-example.png" />
 <em>Classic queen example where <code class="docutils literal notranslate"><span class="pre">king</span> <span class="pre">−</span> <span class="pre">man</span> <span class="pre">≈</span> <span class="pre">queen</span> <span class="pre">−</span> <span class="pre">woman</span></code>, and we can visually see that in the red arrows. There are 4 analogies one can construct, based on the parallel red arrows and their direction. This is slightly idealized; the vectors need not be so similar to be the most similar from all word vectors. The similar direction of the red arrows indicates similar relational meaning.</em></p>
 <p>So what is the more formal description of the word2vec algorithm? We will focus on one of the two computational algorithms<a class="footnote-reference brackets" href="#id4" id="id2">1</a> - the skip-gram method and use the following diagrams as examples to explain how it works.</p>
-<p><img alt="word2vec-idea" src="aiml-common/lectures/nlp/word2vec/images/word2vec-idea.png#center" />
-<img alt="word2vec-idea2" src="aiml-common/lectures/nlp/word2vec/images/word2vec-idea2.png#center" />
+<p><img alt="word2vec-idea" src="../../../../_images/word2vec-idea.png" />
+<img alt="word2vec-idea2" src="../../../../_images/word2vec-idea2.png" />
 <em>In the skip-gram we predict the <strong>context given the center word</strong>.We need to calculate the probability <span class="math notranslate nohighlight">\(p(w_{t+j} | w_t)\)</span>.</em></p>
 <p>We go through each position <span class="math notranslate nohighlight">\(t\)</span> in each sentence and for the center word at that location <span class="math notranslate nohighlight">\(w_t\)</span> we predict the outside words <span class="math notranslate nohighlight">\(w_{t+j}\)</span> where <span class="math notranslate nohighlight">\(j\)</span> is over a window of size <span class="math notranslate nohighlight">\(C = |\\{ j: -m \le j \le m \\}|-1\)</span> around <span class="math notranslate nohighlight">\(w_t\)</span>.</p>
 <p><strong>For example, the meaning of <code class="docutils literal notranslate"><span class="pre">banking</span></code> is predicting the context (the words around it) in which <code class="docutils literal notranslate"><span class="pre">banking</span></code> occurs across our corpus.</strong></p>
@@ -519,11 +519,11 @@
 <div class="math notranslate nohighlight">
 \[J(\theta) = -\frac{1}{V} \log L(\theta) = -\frac{1}{V} \sum_{t=1}^V \sum_{-m\le j \le m, j \neq 0} \log p(w_{t+j} | w_t; \theta)\]</div>
 <p>where <span class="math notranslate nohighlight">\(|V|\)</span> is the size of the vocabulary (words).<span class="math notranslate nohighlight">\(|V|\)</span> could be very large, e.g. 1 billion words. The ML principle, powered by a corresponding algorithm, will result in a model that for each word at the input (center) will predict the context words around it.  The model parameters <span class="math notranslate nohighlight">\(\theta\)</span> will be determined at the end of the training process that uses a training dataset easily generated from our corpus assuming we fix the context window <span class="math notranslate nohighlight">\(m\)</span>. Lets see an example:</p>
-<p><img alt="training-data-word2vec" src="aiml-common/lectures/nlp/word2vec/images/training-data-word2vec.png#center" />
+<p><img alt="training-data-word2vec" src="../../../../_images/training-data-word2vec.png" />
 <em>Training data generation for the sentence ‘Claude Monet painted the Grand Canal of Venice in 1908’</em></p>
 <!-- The parameters $\theta$ are just the vector representations of each word in the training dataset.  -->
 <p>So the question now becomes how to calculate <span class="math notranslate nohighlight">\(p(w_{t+j} | w_t; \theta)\)</span> and we do so with the network architecture below.</p>
-<p><img alt="word2vec-network" src="aiml-common/lectures/nlp/word2vec/images/word2vec-network.png#center" />
+<p><img alt="word2vec-network" src="../../../../_images/word2vec-network.png" />
 <em>Conceptual architecture of the neural network that learns word2vec embeddings. The text refers to the hidden layer dimensions as <span class="math notranslate nohighlight">\(d\)</span> rather than <span class="math notranslate nohighlight">\(N\)</span> and hidden layer <span class="math notranslate nohighlight">\(\mathbf z\)</span> rather than <span class="math notranslate nohighlight">\(\mathbf h\)</span>.</em></p>
 <p>The network accepts the center word and via an embedding layer <span class="math notranslate nohighlight">\(\mathbf W_{|V| \times d}\)</span> produces a hidden layer <span class="math notranslate nohighlight">\(\mathbf z\)</span>. The same hidden layer output is then mapped to an output layer of size <span class="math notranslate nohighlight">\(C \times |V|\)</span>, via <span class="math notranslate nohighlight">\(\mathbf W^\prime_{d \times |V|}\)</span>. One mapping is done for each of the words that we include in the context. In the output layer we then convert the metrics <span class="math notranslate nohighlight">\(\mathbf z^\prime\)</span> to a probability distribution <span class="math notranslate nohighlight">\(\hat{\mathbf y}\)</span> via the softmax. This is summarized next:</p>
 <div class="math notranslate nohighlight">

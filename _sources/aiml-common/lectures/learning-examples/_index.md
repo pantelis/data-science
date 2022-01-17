@@ -8,10 +8,10 @@ title: Learning examples
 
 A couple of examples of supervised learning are shown below:
 
-![usps](images/usps.png#center)
+![usps](images/usps.png)
 *Examples from the MNIST training dataset used for classification*
 
-![home-prices-area](images/home-prices-area.png#center)
+![home-prices-area](images/home-prices-area.png)
 *Zillow predicts prices for similar homes in the same market. This is a regression problem.*
 
 ## Semi-supervised Learning 

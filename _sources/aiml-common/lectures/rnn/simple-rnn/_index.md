@@ -8,12 +8,12 @@ weight: 132
 
 The simple RNN architecture with just a single layer of neurons that receive the input $\mathbf{x}$ is shown below.
 
-![simple-rnn-single-layer](images/simple-rnn-simple-layer.png#center)
+![simple-rnn-single-layer](images/simple-rnn-simple-layer.png)
 *Simple RNN with just a single layer of $n_neurons$ mapping the input to the hidden-state at each time step*
 
 A more practical simple RNN architecture is shown below. 
 
-![rnn-hidden-recurrence](images/rnn-hidden-recurrence.png#center)
+![rnn-hidden-recurrence](images/rnn-hidden-recurrence.png)
 
 *Simple RNN with recurrences between hidden units. This architecture can compute any computable function and therefore is a [Universal Turing Machine](http://alvyray.com/CreativeCommons/BizCardUniversalTuringMachine_v2.3.pdf).* 
 
@@ -23,16 +23,16 @@ Notice how the path from input $\bm x_{t-1}$ affects the label $\bm y_{t}$ and a
 
 In the table below $m$ is the number of examples in the mini-batch. 
 
-| Variable | Dimensions | 
-| --- | --- |
-| $\bm{h}_t$ | $n_{neurons} \times 1$ or $m \times n_{neurons}$| 
-| $\bm{x}_t$ | $n_{input} \times 1$ or $m \times n_{input}$ | 
-| $\bm{U}$ | $n_{neurons} \times n_{input}$ |
-| $\bm{W}$ | $n_{neurons} \times n_{neurons}$ |
-| $\bm{b}$ | $n_{neurons} \times 1$ |
-| $\bm{V}$ | $n_{output} \times n_{neurons}$ |
-| $\bm{o}$ | $n_{output} \times 1$ |
-| $\bm{c}$ | $n_{output} \times 1$ |
+| Variable   | Dimensions                                       |
+| ---------- | ------------------------------------------------ |
+| $\bm{h}_t$ | $n_{neurons} \times 1$ or $m \times n_{neurons}$ |
+| $\bm{x}_t$ | $n_{input} \times 1$ or $m \times n_{input}$     |
+| $\bm{U}$   | $n_{neurons} \times n_{input}$                   |
+| $\bm{W}$   | $n_{neurons} \times n_{neurons}$                 |
+| $\bm{b}$   | $n_{neurons} \times 1$                           |
+| $\bm{V}$   | $n_{output} \times n_{neurons}$                  |
+| $\bm{o}$   | $n_{output} \times 1$                            |
+| $\bm{c}$   | $n_{output} \times 1$                            |
 
 Please note that there may be multiple layers that can be stacked on top of each other and they can individually keep a hidden state. 
 
@@ -60,7 +60,7 @@ In many instances we have problems where it only matters the label $y_\tau$ at t
 
 Lets see an example to understand better the forward propagation equations.
 
-![example-sentence](images/example-sentence.png#center)
+![example-sentence](images/example-sentence.png)
 *Example sentence as input to the RNN*
 
 In the figure above you have a hypothetical document (a sentence) that is broken into what in natural language processing called _tokens_. Lets say that a token is a word in this case. In the simpler case where we need a classification of the whole document, given that $\tau=6$, we are going to receive at t=1, the first token $\bm x_1$ and with an input hidden state  $\bm h_0 = 0$ we will calculate the forward equations for $\bm h_1$, ignoring the output $\bm o_1$ and repeat the unrolling when the next input $\bm x_2$ comes in until we reach the end of sentence token $\bm x_6$ which in this case will calculate the output $y_6$ and loss 
@@ -74,7 +74,7 @@ where $\bm w = \\{ \bm W, \bm U, \bm V, \bm b, \bm c \\}$.
 
 Lets now see how the training through backward propagation would work for RNNs. 
 
-![rnn-BPTT](images/rnn-BPTT.png#center)
+![rnn-BPTT](images/rnn-BPTT.png)
 *Understanding RNN memory through BPTT procedure*
 
 Backpropagation is similar to that of feed-forward (FF) networks simply because the unrolled architecture resembles a FF one. But there is an important difference and we explain this using the above computational graph for the unrolled recurrences $t$ and $t-1$. During computation of the variable $\bm h_t$ we use the value of the variable $\bm h_{t-1}$ calculated in the previous recurrence. So when we apply the chain rule in the backward phase of BP, for all nodes that involve the such variables with recurrent dependencies, the end result is that _non local_ gradients from previous backpropagation steps ($t$ in the figure) appear. This is effectively why we say that simple RNNs feature _memory_. This is in contrast to the FF network case where during BP only local to each gate gradients where involved as we have seen in the the [DNN chapter]({{<ref "../../dnn/backprop-dnn">}}). 
@@ -90,7 +90,7 @@ Ian Goodfellow's book section 10.2.2 provides the exact equations - please note 
 
 In the figure below we have drafted a conceptual version of what is happening with recurrences over time. Its called an infinite impulse response filter for reasons that will be apparent shortly. 
 
-![rnn-IIR](images/rnn-IIR.png#center)
+![rnn-IIR](images/rnn-IIR.png)
 *Infinite Impulse Response (IIR) filter with weight $w$*
 
 With $D$ denoting a unit delay, the recurrence formula for this system is:
@@ -111,7 +111,7 @@ Using this primitive IIR filter as an example, we can see that the weight plays 
 
 Simplistically thinking, the gradient of the $\tanh$ non-linearity shown below, is between 0 and 1 suppressing the gradients and slowing down training. 
 
-![tanh-derivative](images/tanh-derivative.png#center)
+![tanh-derivative](images/tanh-derivative.png)
 _Derivative of $\tanh$ non-linearity_
 
 Similar the successive application of the $W$ matrix is causing explosive gradients as simplistically (ignoring the non-linearity) the hidden state can be written as 

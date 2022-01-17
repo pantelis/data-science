@@ -13,7 +13,7 @@ In the [introductory]({{<ref "../scene-understanding-intro">}}) section, we have
 
 Work on object detection spans 20 years and is impossible to cover every algorithmic approach in this section - the interested reader can trace these developments by reading in [this](https://arxiv.org/abs/1905.05055) paper. 
 
-![object-detection-roadmap](images/object-detection-roadmap.png#center)
+![object-detection-roadmap](images/object-detection-roadmap.png)
 
 As expected, since 2014, deep learning has surpassed classical ML in the detection competitions - we therefore focus only on such architectures. More specifically we will be focusing on the so called _two stage_ detectors that employ two key ingredients: 
 

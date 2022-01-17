@@ -6,24 +6,24 @@ title: k-Nearest Neighbors (kNN) Classification
 
 [kNN](https://www.semanticscholar.org/paper/Nearest-neighbor-pattern-classification-Cover-Hart/0efb841403aa6252b39ae6975c1cc5410554ef7b) belongs to the class of algorithms that were extensively treated in pattern recognition literature. It is still extensively being used today especially in settings that require very fast decision/classifications involving massive datasets. The general block diagram governing such systems is shown below.
 
-![pattern-recognition](images/pattern-recognition.png#center)
+![pattern-recognition](images/pattern-recognition.png)
 
 *General nearest neighbor feature recognition*
 
 Originally treated by Patrick Winston (MIT) is the conveyor belt classification use case shown below.
 
-![conveyor-belt](images/conveyor-belt.png#center)
+![conveyor-belt](images/conveyor-belt.png)
 *Widget classification system based on computer vision*
 
 Lets assume that in a factory a high speed conveyor belt is carrying hundreds of widgets per minute and a system of cameras is used to classify them and instruct actuators that place them into bins. Obviously the system must satisfy strict throughput requirements. Lets assume for purely instructive purposes that the assignment of each widget is based on two features that shown below. 
 
-![example-widget-decision-boundaries](images/widget-example-decision-boundaries.png#center)
+![example-widget-decision-boundaries](images/widget-example-decision-boundaries.png)
 
 *Example decision boundaries between labels in the feature space.Stars are the distinct widgets (labels)*
 
 Each pair of prototype widgets can be considered as defining a linear decision boundary - the line perpendicular to the line that connects them. So if the widget was screws, figure below shows two features categories, head-type and length.
 
-![screws](images/screwlength.jpg#center)
+![screws](images/screwlength.jpg)
 
 *Widgets that need to be classified in the conveyor belt system*
 
@@ -34,10 +34,10 @@ As screws go through the conveyor depth, manufacturing defects cause each screw 
 
 In a sightly more formal setting, and to be able to address far more complex decision boundaries than the above, we are given data points in a training set $D = \{(x_i,y_i)\}, i=\{1, ..., m\}$ and we are asked to classify points that are in the test set. The only variable of the kNN algorithm is the number $k$ which is the number of nearest neighbors that we consider in the classification decision. An example for two classes is shown in the figures below for two cases of $k$. The plot corresponds to the case we have two features like before $x_1, x_2$.
 
-![knn-dataset](images/Figure2.27b.png#center)
+![knn-dataset](images/Figure2.27b.png)
 *Decision boundary for k=1*
 
-![knn-dataset](images/Figure2.27a.png#center)
+![knn-dataset](images/Figure2.27a.png)
 *The point to be classified is the black diamond and the closest data points for $k=3$ are also shown.*
 
 The algorithm effectively positions a *sphere* on the data point we want to classify whose radius is large as the it needs to be to enclose $k$ closest points _irrespectively_ of their class. Obviously for the dimensions of the examples above, the sphere is a circle. As expected, we see that $k$ affects the degree of smoothing, so that small $k$ produces many small regions of each class, whereas large $k$ leads to fewer larger regions. In essence the algorithm for $k>1$, considers a majority vote between the $k$ closest points to the point we need to classify with ties broken at random.  

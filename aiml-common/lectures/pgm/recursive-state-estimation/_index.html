@@ -545,11 +545,11 @@
 <div class="section" id="bayes-filter">
 <h2>Bayes Filter<a class="headerlink" href="#bayes-filter" title="Permalink to this headline">¶</a></h2>
 <p>We are introducing this algorithm, by considering a embodied agent (a robot) that moves in an environment.</p>
-<p><img alt="belief" src="aiml-common/lectures/pgm/recursive-state-estimation/images/belief.png#center" />
+<p><img alt="belief" src="../../../../_images/belief.png" />
 <em>Agent belief and environment interactions</em></p>
 <p>The state of such environment contain variables that capture dynamics such as pose (6D) that includes location and orientation, agent velocity, other objects poses, etc., as well as static state variables such as location of obstacles, walls etc. Most practical algorithms for state estimation assume that the stochastically evolving environment is not affected from state variables prior to <span class="math notranslate nohighlight">\(s_t\)</span>.</p>
 <p>This is the <em>Markovian</em> assumption and is key in making such algorithms tractable. Note that the assumption does not constraint the actual time internal that it is impactful for the future as we are free to define anyway we want the state <span class="math notranslate nohighlight">\(s_t\)</span>. It may for example use a super-state that consists of two states in corresponding time intervals <span class="math notranslate nohighlight">\(s_t=[s_{t-1}, s_t]\)</span>.  We call this the Markov order - in this case the order is two. In the figure below you can see the PGM that corresponds to the Markov assumption.</p>
-<p><img alt="dynamic-bayesin-network" src="aiml-common/lectures/pgm/recursive-state-estimation/images/dynamic-bayes-network.png#center" />
+<p><img alt="dynamic-bayesin-network" src="../../../../_images/dynamic-bayes-network.png" />
 <em>Dynamic Bayesian Network that characterizes the Markov evolution of states, measurements and controls  - in the text we use for states the letter <span class="math notranslate nohighlight">\(s\)</span> instead of <span class="math notranslate nohighlight">\(x\)</span> and for actions the letter <span class="math notranslate nohighlight">\(a\)</span> instead of <span class="math notranslate nohighlight">\(u\)</span>.</em></p>
 <p>The above graph decomposes as follows:</p>
 <div class="math notranslate nohighlight">
@@ -580,7 +580,7 @@
 <div class="section" id="door-state-estimation">
 <h3>Door state estimation<a class="headerlink" href="#door-state-estimation" title="Permalink to this headline">¶</a></h3>
 <p>The problem we are considering is estimating the state of a door using an agent (robot) equipped with a monocular camera.</p>
-<p><img alt="robot-door" src="aiml-common/lectures/pgm/recursive-state-estimation/images/robot-door.jpg#center" /></p>
+<p><img alt="robot-door" src="../../../../_images/robot-door.jpg" /></p>
 <p>For simplicity lets assume that the door can be in any of two possible states (open or closed) and that the agent does not know the initial state of the door. Therefore initially, its beliefs are:</p>
 <div class="math notranslate nohighlight">
 \[\mathtt{bel}(s_0=open) = 0.5\]</div>

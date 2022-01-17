@@ -15,7 +15,7 @@ $$\bm w^* = \argmax_w L(\bm w)$$
 
 As the simplest possible example the following figure show the simplest possible objective function and what an optimization algorithm is doing. 
 
-![derivative](images/derivative.png#center)
+![derivative](images/derivative.png)
 *Gradient descent. An illustration of how the gradient descent algorithm uses the derivatives of a function to follow the function downhill to a minimum*
 
 The global minimum of such nicely convex function can be obtained by solving the following equation for $w$: 
@@ -28,7 +28,7 @@ $$ L(w + \epsilon) \approx L(w) + \epsilon L'(w)$$
 
 The derivative is therefore useful for minimizing a function because it tells us how to change $w$ in order to make a small changes in $L(w$). We can thus reduce $L(w)$ by moving $w$ in small steps with the opposite sign of the derivative.This technique is called gradient descent (Cauchy, 1847) 
 
-![local-min](images/local-min.png#center)
+![local-min](images/local-min.png)
 *Local minima in optimizing over complex loss functions*
 
 We often minimize loss functions that have multiple inputs: $L: \mathbb R^n→ \mathbb R$. For functions with multiple inputs, we must make use of the concept of partial derivatives. The partial derivative $\frac{\partial L}{\partial \bm w_i}$ measures how $L$ changes as only the variable $\bm w_i$ increases at point $\bm w$. The _gradient_ generalizes the notion of derivative to the case where the derivative is with respect to a vector: the gradient of $L$ is the vector containing all the partial derivatives, denoted
@@ -43,7 +43,7 @@ $$\bm w_{k+1} = \bm w_k - \eta \nabla_{\bm w} L(\bm w_k)$$
 
 where $\eta$ is the scalar learning rate that is a hyperparameter that needs to be optimized (searched over). 
 
-![gradient-descent](images/gradient-descent.png#center)
+![gradient-descent](images/gradient-descent.png)
 *Iterations in gradient descent towards the global in this case min*
 
 

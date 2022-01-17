@@ -19,14 +19,14 @@ $$\pi_*(a|s) = \begin{cases}1 & \text{if }\ a = \argmax_{a \in \mathcal A} q_*(s
 
 So the problem now becomes how to calculate the optimal value functions. We return to the tree structures that helped us understand the interdependencies between the two and this time we look at the optimal equivalents. 
 
-![optimal-state-value-tree](images/optimal-state-value-tree.png#center)
+![optimal-state-value-tree](images/optimal-state-value-tree.png)
 _Actions can be taken from that state $s$ according to the policy $\pi_*$_
 
 Following similar reasoning as in the Bellman expectation equation where we calculated the value of state $s$ as an average of the values that can be claimed by taking all possible actions, now we simply replace the average with the max. 
 
 $$v_*(s) = \max_a q_*(s,a)$$
 
-![optimal-action-value-tree](images/optimal-action-value-tree.png#center)
+![optimal-action-value-tree](images/optimal-action-value-tree.png)
 _Successor states that can be reached from state $s$ if the agent selects action $a$. $R_{t+1}=r$ we denote the instantaneous reward for each of the possibilities._
 
 Similarly, we can express  $q_*(s,a)$ as a function of $v_*(s)$ by looking at the corresponding tree above. 
@@ -37,10 +37,10 @@ Notice that there is no $\max$ is this expression as we have no control on the s
 
 Now we can similarly attempt to create a _recursion_ that will lead to the **Bellman optimality backup equations** that effectively solve the MDP, by expanding the trees above.
 
-![optimal-state-action-state-value-tree](images/optimal-state-action-state-value-tree.png#center)
+![optimal-state-action-state-value-tree](images/optimal-state-action-state-value-tree.png)
 *Tree that represents the optimal state-value function after a two-step look ahead.*
 
-![optimal-action-state-action-value-tree](images/optimal-action-state-action-value-tree.png#center)
+![optimal-action-state-action-value-tree](images/optimal-action-state-action-value-tree.png)
 *Tree that represents the optimal action-value function after a two-step look ahead.*
 
 {{<hint danger>}}

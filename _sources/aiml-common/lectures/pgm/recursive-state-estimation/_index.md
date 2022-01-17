@@ -20,14 +20,14 @@ Such expansion, will allow us to form using the Bayes rule, perhaps one of the m
 
 We are introducing this algorithm, by considering a embodied agent (a robot) that moves in an environment. 
 
-![belief](images/belief.png#center)
+![belief](images/belief.png)
 *Agent belief and environment interactions*
 
 The state of such environment contain variables that capture dynamics such as pose (6D) that includes location and orientation, agent velocity, other objects poses, etc., as well as static state variables such as location of obstacles, walls etc. Most practical algorithms for state estimation assume that the stochastically evolving environment is not affected from state variables prior to $s_t$. 
 
 This is the _Markovian_ assumption and is key in making such algorithms tractable. Note that the assumption does not constraint the actual time internal that it is impactful for the future as we are free to define anyway we want the state $s_t$. It may for example use a super-state that consists of two states in corresponding time intervals $s_t=[s_{t-1}, s_t]$.  We call this the Markov order - in this case the order is two. In the figure below you can see the PGM that corresponds to the Markov assumption. 
 
-![dynamic-bayesin-network](images/dynamic-bayes-network.png#center)
+![dynamic-bayesin-network](images/dynamic-bayes-network.png)
 *Dynamic Bayesian Network that characterizes the Markov evolution of states, measurements and controls  - in the text we use for states the letter $s$ instead of $x$ and for actions the letter $a$ instead of $u$.* 
 
 The above graph decomposes as follows: 
@@ -77,7 +77,7 @@ To illustrate how the Bayes filter is useful, lets look at a practical example. 
 
 The problem we are considering is estimating the state of a door using an agent (robot) equipped with a monocular camera. 
 
-![robot-door](images/robot-door.jpg#center)
+![robot-door](images/robot-door.jpg)
 
 For simplicity lets assume that the door can be in any of two possible states (open or closed) and that the agent does not know the initial state of the door. Therefore initially, its beliefs are:
 
@@ -88,12 +88,12 @@ $$\mathtt{bel}(s_0=closed) = 0.5$$
 
 No real agent has ideal sensing abilities so the sensor or measurement model is noisy and lets assume for simplicity that its given by:
 
-|  Description   | Probabilistic Model   |
-| --- | --- |
-|  if its open, agent can sense it as such with prob 60\%   |   $p(z_t = sense-open \| s_t = open) = 0.6$  |
-|  if its closed, agent can sense it as such with prob 40\%   |   $p(z_t = sense-closed \| s_t = open) = 0.4$ |
-|  if its closed, agent senses it open with prob 20\%   |  $p(z_t = sense-open \| s_t = closed) = 0.2$   |
-|  if its closed, agent can sense it as such with prob 80\%   |  $p(z_t = sense-closed \| s_t = closed) = 0.8$   |
+| Description                                              | Probabilistic Model                           |
+| -------------------------------------------------------- | --------------------------------------------- |
+| if its open, agent can sense it as such with prob 60\%   | $p(z_t = sense-open \| s_t = open) = 0.6$     |
+| if its closed, agent can sense it as such with prob 40\% | $p(z_t = sense-closed \| s_t = open) = 0.4$   |
+| if its closed, agent senses it open with prob 20\%       | $p(z_t = sense-open \| s_t = closed) = 0.2$   |
+| if its closed, agent can sense it as such with prob 80\% | $p(z_t = sense-closed \| s_t = closed) = 0.8$ |
 
 The values in the measurement model above are not necessarily chosen randomly as computer vision algorithms (or LIDAR) may find it easier to detect a closed door from an open door, since with an open door the camera sees the clutter inside the room and the LIDAR may confuse the clutter returns with a closed door. 
 
@@ -101,16 +101,16 @@ The values in the measurement model above are not necessarily chosen randomly as
 
 Lets also assume that the agent is using a arm manipulator to _push_ the door open _if its closed_. Note So we have the following transition distribution:
 
-| Transition description    | Probabilistic Finite State Machine  |
-| --- | --- |
-|  if its open, a push leaves it open   |  $p(s_t = \mathtt{open} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{open}) = 1$   |
-|  if its open, a push does not close it   |  $p(s_t = \mathtt{closed} \| a_t= \mathtt{push}, s_{t-1} = \mathtt{open}) = 0$   |
-|  if its closed, a push opens it with probability 80\%   | $p(s_t = \mathtt{open} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{closed}) = 0.8$    |
-|  if its closed, a push leaves it closed with probability 20\%   |  $p(s_t = \mathtt{closed} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{closed}) = 0.2$   |
-|  if its open, doing nothing leaves it open   | $p(s_t = \mathtt{open} \| a_t=\mathtt{inaction}, s_{t-1} = \mathtt{open}) = 1$    |
-|  if its open, doing nothing does not close it  |  $p(s_t = \mathtt{closed} \| a_t = \mathtt{inaction}, s_{t-1} = \mathtt{open}) = 0$   |
-|  if its closed, doing nothing does not open it  |  $p(s_t = \mathtt{open} \| a_t=\mathtt{inaction}, s_{t-1} = \mathtt{closed}) = 0$  |
-|  if its closed, doing nothing leaves it closed   |  $p(s_t = \mathtt{closed} \| a_t= \mathtt{inaction}, s_{t-1} =\mathtt{closed}) = 1$   |
+| Transition description                                       | Probabilistic Finite State Machine                                                 |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| if its open, a push leaves it open                           | $p(s_t = \mathtt{open} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{open}) = 1$         |
+| if its open, a push does not close it                        | $p(s_t = \mathtt{closed} \| a_t= \mathtt{push}, s_{t-1} = \mathtt{open}) = 0$      |
+| if its closed, a push opens it with probability 80\%         | $p(s_t = \mathtt{open} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{closed}) = 0.8$     |
+| if its closed, a push leaves it closed with probability 20\% | $p(s_t = \mathtt{closed} \| a_t=\mathtt{push}, s_{t-1} = \mathtt{closed}) = 0.2$   |
+| if its open, doing nothing leaves it open                    | $p(s_t = \mathtt{open} \| a_t=\mathtt{inaction}, s_{t-1} = \mathtt{open}) = 1$     |
+| if its open, doing nothing does not close it                 | $p(s_t = \mathtt{closed} \| a_t = \mathtt{inaction}, s_{t-1} = \mathtt{open}) = 0$ |
+| if its closed, doing nothing does not open it                | $p(s_t = \mathtt{open} \| a_t=\mathtt{inaction}, s_{t-1} = \mathtt{closed}) = 0$   |
+| if its closed, doing nothing leaves it closed                | $p(s_t = \mathtt{closed} \| a_t= \mathtt{inaction}, s_{t-1} =\mathtt{closed}) = 1$ |
 
 
 As we mentioned before, by  _convention_ the agent first acts and then senses. If you reverse sensing and action you arrive in the same equations with just some index differences. 

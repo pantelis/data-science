@@ -10,19 +10,19 @@ As we have seen from the syllabus, this course approaches the subject from an ap
 
 ## The four pipelines of an end-to-end ML platform
 
-![E2E ML Pipeline](images/acumos-E2E.svg#center)
+![E2E ML Pipeline](images/acumos-E2E.svg)
 *Example of end to end pipeline - serial arrangement*
 
-![Data Pipeline](images/acumos-DP1.svg#center)
+![Data Pipeline](images/acumos-DP1.svg)
 *Example of Data Pipeline (DP)*
 
-![Model Training Pipeline](images/acumos-MTP.svg#center)
+![Model Training Pipeline](images/acumos-MTP.svg)
 *Example of Model Training Pipeline (MTP)*
 
-![Model Evaluation and Validation Pipeline](images/acumos-MEVP.svg#center)
+![Model Evaluation and Validation Pipeline](images/acumos-MEVP.svg)
 *Example of Model Evaluation and Validation Pipeline (MEVP)*
 
-![Serving Pipeline](images/acumos-SP.svg#center)
+![Serving Pipeline](images/acumos-SP.svg)
 *Example of Serving Pipeline (SP)*
 
 ## Roles in data science product development

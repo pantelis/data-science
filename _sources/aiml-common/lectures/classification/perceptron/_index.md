@@ -5,7 +5,7 @@ weight: 7
 
 # The Neuron (Perceptron)
 
-![Frank-Rosenblatt](images/frankrosenblatt.png#center)
+![Frank-Rosenblatt](images/frankrosenblatt.png)
 *Frank Rosenblatt*
 
 This section captures the main principles of the perceptron algorithm which is the essential building block for neural networks. 
@@ -14,12 +14,12 @@ This section captures the main principles of the perceptron algorithm which is t
 
 The perceptron algorithm invented 60 years ago by Frank Rosenblatt in Cornell Aeronautical Laboratory. Neural networks are constructed from neurons - each neuron is a perceptron with a specific activation function.  A single neuron is itself capable of learning -- indeed,various standard statistical methods can be viewed in terms of single neurons -- so this model will serve as a first and simple example of a *supervised* neural network.
 
-![real-neuron](images/real-neuron.png#center)
+![real-neuron](images/real-neuron.png)
 
-![perceptron-architecture-2](images/perceptron-architecture-2.png#center)
+![perceptron-architecture-2](images/perceptron-architecture-2.png)
 *Model of a single neuron. Note that in this course we use the conventions of the GCB book for notations of number of features $n$ (dimensions) and number of examples $m$. This figure has them flipped.*
 
-![perceptron-architecture](images/perceptron-architecture.png#center)
+![perceptron-architecture](images/perceptron-architecture.png)
 *Model of a single neuron (compressed). Notation alignment: $I \rightarrow n$*
 
 A single neuron has a number $n$ of  inputs $x_i$ (note the figure is not compatible with this notation) and one output which we will here call $\hat{y}$. Associated with each input is a weight $w_i$ ($i = 1 ,\ldots, n$). The additional parameter $w_0$ of the neuron called a bias which we may view as being the weight associated with an input $x_0$ that is permanently set to 1. The single neuron is a *feedforward* device -- the connections 

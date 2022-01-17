@@ -9,19 +9,19 @@ title: Eigenvectors and Eigenvalues
 
 ## Dot Product
 
-![dot-product](images/dot-product.png#center)
+![dot-product](images/dot-product.png)
 *The projection interpretation is still valid even of the dot product is 0 or negative*
 
-![basis-vectors](images/basis-vectors.png#center)
+![basis-vectors](images/basis-vectors.png)
 *Basis vectors*
 
 ## Eigenvectors
 
-![off-span](images/off-span.png#center)
+![off-span](images/off-span.png)
 *Effect of transformation on the span of the vector*
 
-![on-span](images/on-span.png#center)
+![on-span](images/on-span.png)
 *Effect of transformation on the span of a vector*
 
-![eigenvectors](images/eigenvectors.png#center)
+![eigenvectors](images/eigenvectors.png)
 *Eigenvectors*

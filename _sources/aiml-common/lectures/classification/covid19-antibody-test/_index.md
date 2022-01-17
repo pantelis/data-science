@@ -4,7 +4,7 @@ title: COVID-19 Antibody Test
 
 # COVID-19 Antibody Test
 
-![drive-through-covid-test](images/drive-through-covid-test.jpeg#center)
+![drive-through-covid-test](images/drive-through-covid-test.jpeg)
 
 You are a member of a data science team of a screening (test) site and the governor tasked you to provide statistics to his office about the aggregate antibody test results of former COVID19 patients. 
 

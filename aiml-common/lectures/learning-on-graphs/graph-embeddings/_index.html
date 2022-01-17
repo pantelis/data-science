@@ -556,42 +556,42 @@
 <div class="section" id="the-node-embedding-goal">
 <h2>The Node-embedding goal<a class="headerlink" href="#the-node-embedding-goal" title="Permalink to this headline">¶</a></h2>
 <p>Assume that we have an input graph <span class="math notranslate nohighlight">\(G=(V,E)\)</span>.</p>
-<p><img alt="graph-embedding" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/goal-graph-embedding.png#center" /></p>
+<p><img alt="graph-embedding" src="../../../../_images/goal-graph-embedding.png" /></p>
 <p>The goal of graph embedding is to embed the nodes of the graph in a vector space (encoding process) such that two nodes that are dependent (e.g. connected, share neighbors, etc.) on each other in the graph space, appear in the embedding space as vectors that possess strong similarity according to a metric. In other words, we are after the coordinates of the vectors in the embedding space that preserve the similarity evident in the graph space.</p>
 <p>More explicitly we need to specify three things:</p>
-<p><img alt="encoder-goal" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/encoder-goal.png#center" /></p>
-<p><img alt="encoder-goal2" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/encoder-goal-2.png#center" /></p>
+<p><img alt="encoder-goal" src="../../../../_images/encoder-goal.png" /></p>
+<p><img alt="encoder-goal2" src="../../../../_images/encoder-goal-2.png" /></p>
 </div>
 <div class="section" id="encoder-design">
 <h2>Encoder Design<a class="headerlink" href="#encoder-design" title="Permalink to this headline">¶</a></h2>
 <p>The encoder function is a LUT with each row being the node graph index and the d-dim embedding of that node (<span class="math notranslate nohighlight">\(\mathbf z_v\)</span>)</p>
-<p><img alt="encoder-lut" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/encoder-lut.png#center" /></p>
-<p><img alt="encoder-lut-2" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/encoder-lut-2.png#center" /></p>
+<p><img alt="encoder-lut" src="../../../../_images/encoder-lut.png" /></p>
+<p><img alt="encoder-lut-2" src="../../../../_images/encoder-lut-2.png" /></p>
 </div>
 <div class="section" id="similarity">
 <h2>Similarity<a class="headerlink" href="#similarity" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="random-walks-on-graphs">
 <h3>Random Walks on Graphs<a class="headerlink" href="#random-walks-on-graphs" title="Permalink to this headline">¶</a></h3>
-<p><img alt="random-walk-example" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/random-walk-example.png#center" />
+<p><img alt="random-walk-example" src="../../../../_images/random-walk-example.png" />
 <em>Random walk example</em></p>
 </div>
 <div class="section" id="deepwalk-embeddings">
 <h3>DeepWalk Embeddings<a class="headerlink" href="#deepwalk-embeddings" title="Permalink to this headline">¶</a></h3>
-<p><img alt="random-walk-similarity" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/random-walk-similarity.png#center" /></p>
-<p><img alt="random-walk-similarity-2" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/random-walk-similarity-2.png#center" /></p>
+<p><img alt="random-walk-similarity" src="../../../../_images/random-walk-similarity.png" /></p>
+<p><img alt="random-walk-similarity-2" src="../../../../_images/random-walk-similarity-2.png" /></p>
 <p>Why random walks are useful abstraction mechanisms? First, they provide the flexibility of a stochastic definition of node similarity that incorporates both local and higher-order neighborhood information. Second, during training we not need to consider all node pairs; only need to consider pairs that co-occur on random walks.</p>
 <div class="section" id="deepwalk-objective">
 <h4>Deepwalk Objective<a class="headerlink" href="#deepwalk-objective" title="Permalink to this headline">¶</a></h4>
-<p><img alt="deepwalk-objective" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/deepwalk-objective.png#center" /></p>
+<p><img alt="deepwalk-objective" src="../../../../_images/deepwalk-objective.png" /></p>
 </div>
 <div class="section" id="deep-walk-method">
 <h4>Deep walk method<a class="headerlink" href="#deep-walk-method" title="Permalink to this headline">¶</a></h4>
-<p><img alt="deep-walk-method" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/deep-walk-method.png#center" /></p>
+<p><img alt="deep-walk-method" src="../../../../_images/deep-walk-method.png" /></p>
 </div>
 <div class="section" id="likelihood-parameterization">
 <h4>Likelihood parameterization<a class="headerlink" href="#likelihood-parameterization" title="Permalink to this headline">¶</a></h4>
-<p><img alt="likelihood-parameterisation" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/likelihood-parameterisation.png#center" /></p>
-<p><img alt="minimizing-loss-deepwalk" src="aiml-common/lectures/learning-on-graphs/graph-embeddings/images/minimizing-loss-deepwalk.png#center" /></p>
+<p><img alt="likelihood-parameterisation" src="../../../../_images/likelihood-parameterisation.png" /></p>
+<p><img alt="minimizing-loss-deepwalk" src="../../../../_images/minimizing-loss-deepwalk.png" /></p>
 </div>
 </div>
 </div>

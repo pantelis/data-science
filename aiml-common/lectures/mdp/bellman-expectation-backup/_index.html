@@ -486,7 +486,7 @@
 <div class="math notranslate nohighlight">
 \[q_\pi(s,a) = \mathop{\mathbb{E}_\pi} \left[ R_{t+1} + \gamma ~ q_\pi(S_{t+1}=s^\prime, A_{t+1}) | S_t=s, A_t=a \right]\]</div>
 <p>We now face the problem that we need to compute these two value functions and we start by considering what is happening at each time step. At each time step while in state <span class="math notranslate nohighlight">\(S_t=s\)</span> we have a number of actions we can choose, the probabilities of which depend on the policy <span class="math notranslate nohighlight">\(\pi(a|s)\)</span>. What value we can reap from each action is given to us by <span class="math notranslate nohighlight">\(q_\pi(s,a)\)</span>.  This is depicted below.</p>
-<p><img alt="state-value-tree" src="aiml-common/lectures/mdp/bellman-expectation-backup/images/state-value-tree.png#center" />
+<p><img alt="state-value-tree" src="../../../../_images/state-value-tree.png" />
 <em>Actions can be taken from that state <span class="math notranslate nohighlight">\(s\)</span> according to the policy <span class="math notranslate nohighlight">\(\pi\)</span>. Actions are represented in this simple tree with action nodes (solid circles) while state nodes are represented by empty circles.</em></p>
 <p>Translating what we have just described in equation form, allows us to write the state-value equation as,</p>
 <div class="math notranslate nohighlight">
@@ -496,20 +496,20 @@
 <div class="math notranslate nohighlight">
 \[q_\pi(s,a)  = \mathop{\mathbb{E}_\pi} \left[ R_{t+1} |  S_t=s, A_t= a \right] + \gamma ~ \mathop{\mathbb{E}_\pi} \left[ v_\pi(S_{t+1}=s^\prime) | S_t=s, A_t= a \right]\]</div>
 <p>The first expectation is the reward function <span class="math notranslate nohighlight">\(\mathcal{R}^a_s\)</span> by definition. The second expectation can be written in matrix form by considering that at each time step if we are to take an action <span class="math notranslate nohighlight">\(A_t=a\)</span>, the environment can transition to a number of successor states <span class="math notranslate nohighlight">\(S_{t+1}=s'\)</span> and signal a reward <span class="math notranslate nohighlight">\(R_{t+1}\)</span> as shown in the next figure.</p>
-<p><img alt="action-value-tree" src="aiml-common/lectures/mdp/bellman-expectation-backup/images/action-value-tree.png#center" />
+<p><img alt="action-value-tree" src="../../../../_images/action-value-tree.png" />
 <em>Successor states that can be reached from state <span class="math notranslate nohighlight">\(s\)</span> if the agent selects action <span class="math notranslate nohighlight">\(a\)</span>. <span class="math notranslate nohighlight">\(R_{t+1}  = r\)</span> is the instantaneous reward for each of the possibilities.</em></p>
 <p>If you recall the agent in the Gridworld, has 80% probability to achieve its intention and make the environment to change the desired state and 20% to make the environment change to not desired states justifying the multiplicity of states given an action in the figure above.</p>
 <p>What successor states we will transition to depends on the <em>transition model</em> <span class="math notranslate nohighlight">\(P^a_{ss^\prime} = p[S_{t+1}=s^\prime | S_t=s, A_t=a ]\)</span> . What value we can reap from each successor state is given by <span class="math notranslate nohighlight">\(v_\pi(s^\prime)\)</span>. The expectation can then be evaluated as a summation over all possible states <span class="math notranslate nohighlight">\(\sum_{s^\prime \in \mathcal S} \mathcal{P}^a_{ss^\prime} v(s^\prime)\)</span>. In conclusion, the action-value function can be written as</p>
 <div class="math notranslate nohighlight">
 \[q_\pi(s,a) = \mathcal R_s^a + \gamma \sum_{s^\prime \in \mathcal S} \mathcal{P}^a_{ss^\prime} v_\pi(s^\prime)\]</div>
 <p>Substituting the  <span class="math notranslate nohighlight">\(v_\pi(s^\prime)\)</span> is represented by the following tree that considers the action-value function over a look ahead step.</p>
-<p><img alt="action-state-action-value-tree" src="aiml-common/lectures/mdp/bellman-expectation-backup/images/action-state-action-value-tree.png#center" />
+<p><img alt="action-state-action-value-tree" src="../../../../_images/action-state-action-value-tree.png" />
 <em>Tree that represents the action-value function after a one-step look ahead.</em></p>
 <p><strong>Bellman State-Action Value Expectation Equation</strong></p>
 <div class="math notranslate nohighlight">
 \[q_\pi(s,a) = \mathcal R_s^a + \gamma \sum_{s^\prime \in \mathcal S} \mathcal{P}^a_{ss^\prime} \sum_{a^\prime \in \mathcal A} \pi(a^\prime|s^\prime) q_\pi(s^\prime,a^\prime)\]</div>
 <p>Now that we have a computable <span class="math notranslate nohighlight">\(q_\pi(s,a)\)</span> value function we can go back and substitute it into the equation of the state-value function. Again we can representing this substitution by the tree structure below.</p>
-<p><img alt="state-action-state-value-tree" src="aiml-common/lectures/mdp/bellman-expectation-backup/images/state-action-state-value-tree.png#center" />
+<p><img alt="state-action-state-value-tree" src="../../../../_images/state-action-state-value-tree.png" />
 <em>Tree that represents the state-value function after a one-step look ahead.</em></p>
 <p>With the substitution we can write the state-value function as,</p>
 <p><strong>Bellman State Value Expectation Equation</strong></p>

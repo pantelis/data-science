@@ -8,7 +8,7 @@ weight: 82
 
 ## The Bayes Rule 
 
-![Bayes](images/bayes.jpg#center)
+![Bayes](images/bayes.jpg)
 *Thomas Bayes (1701-1761)*
 
 

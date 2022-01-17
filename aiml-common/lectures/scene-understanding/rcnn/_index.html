@@ -509,7 +509,7 @@
 <h2>Region Proposals<a class="headerlink" href="#region-proposals" title="Permalink to this headline">¶</a></h2>
 <p>We can think about the detection problem as a classification problem of <em>all possible portions</em> (windows/masks) of the input image since an object can be located at any position and scale in the image. It is natural to search therefore everywhere and an obvious method to generate region proposals, is to slide various width-height ratio windows slide around the image and using a metric to declare that the window contains one or more blob of pixels. Obviously, such method is computationally infeasible and we need think of how to reduce this number by having some means of gauging where to look in the image.</p>
 <p>RCNN can accommodate a number of efficient algorithms that can produce region proposals. The baseline RCNN employs instead <a class="reference external" href="http://www.huppelen.nl/publications/selectiveSearchDraft.pdf"><em>selective search via hierarchical grouping</em></a>.</p>
-<p><img alt="hierarchical-grouping-alg" src="aiml-common/lectures/scene-understanding/rcnn/images/hierarchical-grouping-alg.png#center" /></p>
+<p><img alt="hierarchical-grouping-alg" src="../../../../_images/hierarchical-grouping-alg.png" /></p>
 <p>The algorithm contains another algorithm that segments the image into initial regions.</p>
 <div class="section" id="graph-based-segmentation">
 <h3>Graph-based segmentation<a class="headerlink" href="#graph-based-segmentation" title="Permalink to this headline">¶</a></h3>
@@ -523,10 +523,10 @@ between vertices in different components should have higher weights.</p>
 <p>Before we compute the weights we use the 2D Gaussian kernel / filter we met in the [introductory section to CNNs]() - the end result being a smoothing of the image that helps with noise reduction. For color images we run the algorithm for each of the three channels.</p>
 <p>There is one runtime parameter for the algorithm, which is the value of <span class="math notranslate nohighlight">\(k\)</span> that is used to compute the threshold function <span class="math notranslate nohighlight">\(\tau\)</span> . Recall we use the function <span class="math notranslate nohighlight">\(τ(C) =k/|C|\)</span> where <span class="math notranslate nohighlight">\(|C|\)</span> is the number of elements in C. Thus k effectively sets a scale of observation, in that a larger k causes a preference for larger components.</p>
 <p>The graph algorithm can also accommodate dissimilarity weights between neighbors at a <em>feature space</em> rather at <em>pixel</em> level based on a Euclidean distance metric with other distance functions possible.</p>
-<p><img alt="graph-based-segmentation1" src="aiml-common/lectures/scene-understanding/rcnn/images/graph-based-segmentation1.png#center" />
+<p><img alt="graph-based-segmentation1" src="../../../../_images/graph-based-segmentation1.png" />
 <em>Graph representation of the segmentation problem</em></p>
 <p>Notice that the initial segments may be many and do not necessarily accurately represent distinct objects as shown below:</p>
-<p><img alt="graph-based-segmentation2" src="aiml-common/lectures/scene-understanding/rcnn/images/graph-based-segmentation2.png#center" />
+<p><img alt="graph-based-segmentation2" src="../../../../_images/graph-based-segmentation2.png" />
 <em>Result of the initial segments produced by the graph-based algorithm, <span class="math notranslate nohighlight">\(k=300\)</span></em></p>
 </div>
 <div class="section" id="grouping">
@@ -540,10 +540,10 @@ when merging region <span class="math notranslate nohighlight">\(r_i\)</span> an
 \[ s(r_i ,r_j) = a_1 s_{color}(r_i ,r_j)+a_2 s_{texture}(r_i ,r_j) + a_3 s_{size}(r_i ,r_j) + a_4 s_{fill}(r_i ,r_j) \]</div>
 <p>where <span class="math notranslate nohighlight">\(a_i ∈ {0,1}\)</span> denotes if the similarity measure is used or not.</p>
 <p>The end result of the grouping is a hierarchy of regions ranked according to creation time. As earlier created regions may end up being the largest some permutation in the ranking is applied.</p>
-<p><img alt="hierarchical-grouping-example" src="aiml-common/lectures/scene-understanding/rcnn/images/hierarchical-grouping-example.png#center" />
+<p><img alt="hierarchical-grouping-example" src="../../../../_images/hierarchical-grouping-example.png" />
 <em>Example of hierarchical grouping</em></p>
 <p>The above selective search strategy is diversified (1) by using a variety of colour spaces with different invariance properties, (2) by using different similarity measures <span class="math notranslate nohighlight">\(s(r_i, r_j)\)</span>, and (3) by varying our initial regions. Each strategy results in a different hierarchy and after a permutation that randomizes the ranking the final list of regions is produced. For RCNN we use 2000 such region proposals.</p>
-<p><img alt="region-proposals" src="aiml-common/lectures/scene-understanding/rcnn/images/region-proposals.png#center" />
+<p><img alt="region-proposals" src="../../../../_images/region-proposals.png" />
 <em>Final proposals - in reality we have 2000 of such regions.</em></p>
 </div>
 </div>
@@ -554,12 +554,12 @@ when merging region <span class="math notranslate nohighlight">\(r_i\)</span> an
 <p>The sharing of features allows us to practically aggregate into a matrix all features of all regions (2000 x 4096) we well as aggregate the SVM weights into another matrix (4096 x K), where K is the number of classes we have trained for, and do this combined operation via a matrix-matrix product.</p>
 <p>After the scoring of each proposed region by the SVM we apply a greedy <a class="reference external" href="https://arxiv.org/pdf/1704.04503.pdf">Non-Maximum Suppression (NMS) algorithm</a> <em>for each class</em> independently, that <em>rejects</em> a region if it has an Intersection over Union (IoU) metric higher than a threshold with a higher scoring region. This threshold was empirically determined to be 0.3 for the task outlined in the paper. But it is expected to be a hyperparameter in practice.</p>
 <p>Finally, a bounding box regressor, predicts the location of the bounding boxes using the proposal boxes and nearby ground truth box data so that we can adjust the final detection box and avoid situations that whole objects are detected but partially included in the detection box.</p>
-<p><img alt="iou" src="aiml-common/lectures/scene-understanding/rcnn/images/iou.png#center" /></p>
-<p><img alt="non-max-suppression" src="aiml-common/lectures/scene-understanding/rcnn/images/non-max-supression.png#center" /></p>
+<p><img alt="iou" src="../../../../_images/iou.png" /></p>
+<p><img alt="non-max-suppression" src="../../../../_images/non-max-supression.png" /></p>
 <p>The whole process is partially shown below and the solution is called Region-CNN (RCNN).</p>
-<p><img alt="rcnn" src="aiml-common/lectures/scene-understanding/rcnn/images/rcnn.png#center" />
+<p><img alt="rcnn" src="../../../../_images/rcnn.png" />
 <em>RCNN pipeline</em></p>
-<p><img alt="selective-search" src="aiml-common/lectures/scene-understanding/rcnn/images/selective-search.png#center" />
+<p><img alt="selective-search" src="../../../../_images/selective-search.png" />
 <em>RCNN detection result after processing multiple region proposals</em></p>
 </div>
 <div class="section" id="training">

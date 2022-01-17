@@ -34,7 +34,7 @@ $$q_\pi(s,a) = \mathop{\mathbb{E}_\pi} \left[ R_{t+1} + \gamma ~ q_\pi(S_{t+1}=s
 
 We now face the problem that we need to compute these two value functions and we start by considering what is happening at each time step. At each time step while in state $S_t=s$ we have a number of actions we can choose, the probabilities of which depend on the policy $\pi(a|s)$. What value we can reap from each action is given to us by $q_\pi(s,a)$.  This is depicted below. 
 
-![state-value-tree](images/state-value-tree.png#center)
+![state-value-tree](images/state-value-tree.png)
 *Actions can be taken from that state $s$ according to the policy $\pi$. Actions are represented in this simple tree with action nodes (solid circles) while state nodes are represented by empty circles.*
 
 Translating what we have just described in equation form, allows us to write the state-value equation as,
@@ -49,7 +49,7 @@ $$q_\pi(s,a)  = \mathop{\mathbb{E}_\pi} \left[ R_{t+1} |  S_t=s, A_t= a \right] 
 
 The first expectation is the reward function $\mathcal{R}^a_s$ by definition. The second expectation can be written in matrix form by considering that at each time step if we are to take an action $A_t=a$, the environment can transition to a number of successor states $S_{t+1}=s'$ and signal a reward $R_{t+1}$ as shown in the next figure. 
 
-![action-value-tree](images/action-value-tree.png#center)
+![action-value-tree](images/action-value-tree.png)
 _Successor states that can be reached from state $s$ if the agent selects action $a$. $R_{t+1}  = r$ is the instantaneous reward for each of the possibilities._
 
 If you recall the agent in the Gridworld, has 80% probability to achieve its intention and make the environment to change the desired state and 20% to make the environment change to not desired states justifying the multiplicity of states given an action in the figure above. 
@@ -60,7 +60,7 @@ $$q_\pi(s,a) = \mathcal R_s^a + \gamma \sum_{s^\prime \in \mathcal S} \mathcal{P
 
 Substituting the  $v_\pi(s^\prime)$ is represented by the following tree that considers the action-value function over a look ahead step. 
 
-![action-state-action-value-tree](images/action-state-action-value-tree.png#center)
+![action-state-action-value-tree](images/action-state-action-value-tree.png)
 *Tree that represents the action-value function after a one-step look ahead.*
 
 {{<hint danger>}}
@@ -71,7 +71,7 @@ $$q_\pi(s,a) = \mathcal R_s^a + \gamma \sum_{s^\prime \in \mathcal S} \mathcal{P
 
 Now that we have a computable $q_\pi(s,a)$ value function we can go back and substitute it into the equation of the state-value function. Again we can representing this substitution by the tree structure below.
 
-![state-action-state-value-tree](images/state-action-state-value-tree.png#center)
+![state-action-state-value-tree](images/state-action-state-value-tree.png)
 *Tree that represents the state-value function after a one-step look ahead.*
 
 With the substitution we can write the state-value function as,

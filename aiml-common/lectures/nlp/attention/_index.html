@@ -441,7 +441,7 @@
 <div class="math notranslate nohighlight">
 \[p(\mathbf y | \mathbf x) = g(y_{t-1}, h_{t-1}, \phi_t)\]</div>
 <p>To implement the above equation, we construct the following architecture with the additional capabilities:</p>
-<p><img alt="attention-example" src="aiml-common/lectures/nlp/attention/images/attention-example.png#center" />
+<p><img alt="attention-example" src="../../../../_images/attention-example.png" />
 <em>Attention mechanism in NMT. Instead of just sending the encoder’s final hidden state to the decoder (which is still done, although it is not shown in the figure), we now send all of its outputs to the decoder. At each time step, the decoder’s memory cell computes a weighted sum of all these encoder outputs: this determines which words it will focus on at this step. The weight <span class="math notranslate nohighlight">\(a_t(i)\)</span> is the weight of the ith encoder output at the t-th decoder time step. For example, if the weight <span class="math notranslate nohighlight">\(α_3(2)\)</span> is much larger than the weights <span class="math notranslate nohighlight">\(α_3(0)\)</span> and <span class="math notranslate nohighlight">\(α_3(1)\)</span>, then the decoder will pay much more attention to word number 2 (“milk”) than to the other two words, at least at this time step.</em></p>
 <ol class="simple">
 <li><p>During encoding the output of bidirectional LSTM encoder can provide the contextual representation of <em>each input word</em> <span class="math notranslate nohighlight">\(x_i\)</span> via the encoder hidden vectors <span class="math notranslate nohighlight">\(h_1, ..., h_{Tx}\)</span> where <span class="math notranslate nohighlight">\(Tx\)</span> is the length of the input sentence.</p></li>
@@ -469,9 +469,9 @@
 \[ \phi_t = \sum_i \alpha_{t,i}h_i\]</div>
 <p>Intuitively, this vector captures the relevant contextual information from the original sentence for the t-th step of the decoder. This particular attention mechanism is called Bahdanau attention (named after the paper’s first author). Since it concatenates the encoder output with the decoder’s previous hidden state, it is sometimes called concatenative attention (or additive attention).</p>
 <p>The two figures below showcase what it happening in two different time instances of an example french to english translation. Notice how the attention weights calculated via the softmax that puts a lot of emphasis to the highest score vary. In time zone one the attention mechanism weighs on the pronoun and in time step 6 it weighs on the object.</p>
-<p><img alt="seq2seq-attention" src="aiml-common/lectures/nlp/attention/images/seq2seq-attention-step1.png#center" />
+<p><img alt="seq2seq-attention" src="../../../../_images/seq2seq-attention-step1.png" />
 <em>Attention in seq2seq neural machine translation - time step 1</em></p>
-<p><img alt="seq2seq-attention" src="aiml-common/lectures/nlp/attention/images/seq2seq-attention-step5.png#center" />
+<p><img alt="seq2seq-attention" src="../../../../_images/seq2seq-attention-step5.png" />
 <em>Attention in seq2seq neural machine translation - time step 6</em></p>
 </div>
 

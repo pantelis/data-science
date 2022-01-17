@@ -23,7 +23,7 @@ There are multiple layers:
 
 Since the input to the network is trivial we focus on the hidden and output layers starting from the latter. 
 
-![hierarchical-features-classification](images/hierarchical-features-classification.png#center)
+![hierarchical-features-classification](images/hierarchical-features-classification.png)
 _Example DNN Architecture_
 ### Output Layer
 

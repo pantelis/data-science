@@ -4,7 +4,7 @@ title: Going Back to Work
 
 # Going Back to Work
 
-![taxi-dropoffs-map](images/taxi-dropoffs-map.png#center)
+![taxi-dropoffs-map](images/taxi-dropoffs-map.png)
 
 In the spring of 2020 the world has experienced an unprecedented in modern history event - a pandemic that killed tens of thousands of people and resulted in a global economic recession; tens of millions lost their jobs. You are called to help rebuild the economy and develop an system that can protect people from infection while still allow them to go back to work. 
 
@@ -28,7 +28,7 @@ There are two steps to do:
 
 1. Preprocessing step. In this step you generate the demand model before the intervention by the decision making process.  Think about it as the pre-pandemic demand for the address. You need to take the (lat, long) drop off data and using a [geocoder](https://geopy.readthedocs.io/en/latest/#geocoders) convert them to addresses. See also [here](https://nycdatascience.com/blog/student-works/predict-new-york-city-taxi-demand/) for some preprocessing ideas and [here](https://github.com/toddwschneider/nyc-taxi-data) for code that does preprocessing. Below is a sample result of the [preprocessing](https://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/) mapping the drop off data into addresses. 
 
-![gs-dropoffs](images/gs-dropoffs.png#center)
+![gs-dropoffs](images/gs-dropoffs.png)
 
 2. Optimal Decision Policy. You will use the demand model from (1) as input to simulate the requested reservations at a location. Obviously the optimal policy will involve a closed loop feedback where the actual arrivals into each building are streamed in almost real time to the web service such as from video surveillance cameras. **You are free to make assumptions** in determining the policy such as knowing the actual capacity of each of the addresses / neighborhoods you are demonstrating. As an example, the decision policy can be a **scheduling** policy. The scheduler at any instant in time determines whether to accept or reject incoming reservations requests. 
 

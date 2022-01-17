@@ -512,12 +512,12 @@
 <h3>Financial Planning<a class="headerlink" href="#financial-planning" title="Permalink to this headline">¶</a></h3>
 <p>Uber launched in San Francisco and this meant that they would be interacting regularly with the tech community who are continually looking for new tools and services that improve their quality of life. Uber took aim at those people by sponsoring tech events, providing free rides, and in general driving awareness among this audience. By <a class="reference external" href="https://growthhackers.com/growth-studies/uber">seeding</a> this audience, they were able to create a growth engine that hinged on the fact that these adopters would show their friends, who would become new users after their first Uber experience. Leading to a growing network of passionate customers <a class="reference external" href="https://eng.uber.com/transforming-financial-forecasting-machine-learning/">ref</a>.</p>
 <p>Uber needs to do budget allocation for thousands of markets (cities) across the globe of their seeding moneys.  This resource allocation is implemented via financial planning backend services that generate and evaluate <em>scenarios</em> for each market. The solution involves a combination of optimization approaches such as the Stochastic Gradient Descent (SGD) that we will treat in a later chapter and the usage of the Michelangelo platform to clean data, train, and serve models that will create the necessary metrics for each scenario - these are the variables of the objective or constraints in the budget optimization.</p>
-<p><img alt="uber-ride-sharing-scenario-instance" src="aiml-common/lectures/uber-ml-arch-case-study/images/uber-ride-sharing-scenario-instance.png#center" />
+<p><img alt="uber-ride-sharing-scenario-instance" src="../../../_images/uber-ride-sharing-scenario-instance.png" />
 <em>Financial planning per market. Squares are metric (aggregations) and ovals are computational elements (models). Suppose the seeding process gives the São Paulo city team 200 dollars for new user acquisitions (acquisition_spending metric) and 100 dollars for existing user retention (engagement_spending metric). The cost curve model tells us that setting 200 dollars for the acquisition_spending metric will get us 35 new rider signups. By running our models in topological order, we can compute our metrics, including the very last one, a net_inflow of 1,274 dollars.</em></p>
 </div>
 <div class="section" id="ubereats">
 <h3>UberEATS<a class="headerlink" href="#ubereats" title="Permalink to this headline">¶</a></h3>
-<p><img alt="uber-eats" src="aiml-common/lectures/uber-ml-arch-case-study/images/uber-eats.png#center" />
+<p><img alt="uber-eats" src="../../../_images/uber-eats.png" />
 <em>Estimated Delivery Time (EDT) is the most important prediction affecting customer experience in the delivery industry.</em></p>
 <p>Predicting meal estimated time of delivery (ETD) is not simple. When an UberEATS customer places an order it is sent to the restaurant for processing. The restaurant then needs to acknowledge the order and prepare the meal which will take time depending on the complexity of the order and how busy the restaurant is. When the meal is close to being ready, an Uber delivery-partner is dispatched to pick up the meal. Then, the delivery-partner needs to get to the restaurant, find parking, walk inside to get the food, then walk back to the car, drive to the customer’s location (which depends on route, traffic, and other factors), find parking, and walk to the customer’s door to complete the delivery. To predict ETD Uber uses _Gradient Boosted Decision Tree regression models. Features for the model include</p>
 <ol class="simple">
@@ -530,7 +530,7 @@
 </div>
 <div class="section" id="michelangelo">
 <h2><a class="reference external" href="https://eng.uber.com/michelangelo-machine-learning-platform/">Michelangelo</a><a class="headerlink" href="#michelangelo" title="Permalink to this headline">¶</a></h2>
-<p><img alt="uber-michelangelo" src="aiml-common/lectures/uber-ml-arch-case-study/images/uber-michelangelo.png#center" />
+<p><img alt="uber-michelangelo" src="../../../_images/uber-michelangelo.png" />
 <em>Uber’s Michelangelo system architecture (data flow view)</em></p>
 <p>The data processing pipeline elements we should be familiar with are listed below.</p>
 <table class="colwidths-auto table">
@@ -547,15 +547,15 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://spark.apache.org/">Spark</a></p></td>
 <td><p>DP Batch Processing</p></td>
-<td><p><img alt="spark-stack" src="aiml-common/lectures/uber-ml-arch-case-study/images/spark-stack.png#center" /> Apache Spark is a <em>unified</em> computing engine and a set of libraries for parallel data processing on computer clusters. Spark is the most actively developed open source engine for this task - its for more traditional batch <em>analytics</em> what Tensorflow and PyTorch is for deep learning.</p></td>
+<td><p><img alt="spark-stack" src="../../../_images/spark-stack.png" /> Apache Spark is a <em>unified</em> computing engine and a set of libraries for parallel data processing on computer clusters. Spark is the most actively developed open source engine for this task - its for more traditional batch <em>analytics</em> what Tensorflow and PyTorch is for deep learning.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://kafka.apache.org/">Kafka</a></p></td>
 <td><p>DP Messaging</p></td>
-<td><p><img alt="kafka-apis" src="aiml-common/lectures/uber-ml-arch-case-study/images/kafka-apis.png#center" />  Kafka is a distributed streaming platform. It can (a) Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system. (b) Store streams of records in a fault-tolerant durable way. (c) Process streams of records as they occur.</p></td>
+<td><p><img alt="kafka-apis" src="../../../_images/kafka-apis.png" />  Kafka is a distributed streaming platform. It can (a) Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system. (b) Store streams of records in a fault-tolerant durable way. (c) Process streams of records as they occur.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="http://samza.apache.org/learn/documentation/0.7.0/introduction/architecture.html">Samza</a></p></td>
 <td><p>DP Stream Processing</p></td>
-<td><p><img alt="samza-stack" src="aiml-common/lectures/uber-ml-arch-case-study/images/samza-stack.png#center" />  Samza is an open source stream/event processing system that was <a class="reference external" href="https://engineering.linkedin.com/blog/2018/11/samza-1-0--stream-processing-at-massive-scale">developed at LinkedIn</a>. The use-cases include detecting anomalies, combating fraud, monitoring performance, notifications, real-time analytics, and many more. Today, Samza integrates not only with Apache Kafka, but also with many other systems, including Azure EventHubs, Amazon Kinesis, HDFS, ElasticSearch, and Brooklin. Multiple companies like Slack, TripAdvisor, eBay, and Optimizely have adopted Samza. As you probably noticed, Kafka has the ability for stream processing but where Samza shines is on its ability to integrate and process events from other systems such as Azure and AWS.</p></td>
+<td><p><img alt="samza-stack" src="../../../_images/samza-stack.png" />  Samza is an open source stream/event processing system that was <a class="reference external" href="https://engineering.linkedin.com/blog/2018/11/samza-1-0--stream-processing-at-massive-scale">developed at LinkedIn</a>. The use-cases include detecting anomalies, combating fraud, monitoring performance, notifications, real-time analytics, and many more. Today, Samza integrates not only with Apache Kafka, but also with many other systems, including Azure EventHubs, Amazon Kinesis, HDFS, ElasticSearch, and Brooklin. Multiple companies like Slack, TripAdvisor, eBay, and Optimizely have adopted Samza. As you probably noticed, Kafka has the ability for stream processing but where Samza shines is on its ability to integrate and process events from other systems such as Azure and AWS.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://cassandra.apache.org/">Cassandra</a></p></td>
 <td><p>DP Feature Store</p></td>

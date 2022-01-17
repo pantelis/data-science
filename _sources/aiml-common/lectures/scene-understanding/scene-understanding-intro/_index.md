@@ -16,7 +16,7 @@ Object detection is demonstrated in this short video clip that shows the end res
 
 Its important to understand the difference between classification and object detection as shown below.
 
-![classification-detection](images/classification-detection.png#center)
+![classification-detection](images/classification-detection.png)
 *Difference between classification and detection*
 
 In classification we are given images (we can consider video clips as a sequence of images) and we are asked to produce the array of labels assigned to objects that are present in the frame. Typically in many datasets there is only one class and the images are cropped around the object. In localization, in addition to classification we are interested in locating (using for example a bounding box) each class in the frame. In object detection we are localizing multiple objects (some objects can be of the same class.) Localization is a regression problem fundamentally. Mathematically we have,
@@ -27,7 +27,7 @@ We try to come up with a function approximation to the true function $p_{data}$ 
 
 ## Assign semantic labels to each pixel in this image. 
 
-![semantic-segmentation](images/semantic-segmentation.png#center)
+![semantic-segmentation](images/semantic-segmentation.png)
 *Sementic Segmentation in medical, robotic and sports analytics applications*
 
 Both of these abilities enable the _reflexive_ part of perception where the inference ends up being a classification or regression or search problem and in practice, depending on the algorithm, it can range from few ms to 100s of ms. Both of these reflexive inferences are essential parts of many mission critical almost real time applications such as robotics e.g. self driving cars. 
@@ -38,7 +38,7 @@ There are other abilities that we need for scene understanding that don't cover 
 
 ### COCO
 
-![coco-example](images/coco-example.png#center)
+![coco-example](images/coco-example.png)
 *Typical example for Detection, Semantic Segmentation, and Image Captioning Tasks*
 
 After its [publication](https://arxiv.org/abs/1405.0312) by Microsoft, the COCO dataset has become the reference [dataset](http://cocodataset.org/#home) to train models in perception tasks and it is constantly evolving through yearly competitions. The competitions are challenging as compared to earlier ones (e.g. [VOC](https://link.springer.com/article/10.1007%2Fs11263-009-0275-4)) (see performance section) since many objects are small. COCO's 330K images are annotated with  

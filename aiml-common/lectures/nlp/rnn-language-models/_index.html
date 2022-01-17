@@ -476,7 +476,7 @@
 </div></blockquote>
 <div class="section" id="what-is-a-language-model">
 <h2>What is a language model?<a class="headerlink" href="#what-is-a-language-model" title="Permalink to this headline">¶</a></h2>
-<p><img alt="language-model-google-search" src="aiml-common/lectures/nlp/rnn-language-models/images/language-model-google-search.png#center" />
+<p><img alt="language-model-google-search" src="../../../../_images/language-model-google-search.png" />
 *Language model example that completes the search query. We need a language model that given a sequence of words <span class="math notranslate nohighlight">\(\{ \mathbf w_1, ..., \mathbf w_t \}\)</span> it returns</p>
 <div class="math notranslate nohighlight">
 \[p(\mathbf w_{t+1} | \mathbf w_1, ..., \mathbf w_t)\]</div>
@@ -496,7 +496,7 @@
 <h2>LSTM Language Models<a class="headerlink" href="#lstm-language-models" title="Permalink to this headline">¶</a></h2>
 <p>When we focus on making predictions based on a fixed window of context (i.e. the <span class="math notranslate nohighlight">\(n\)</span> previous words), in some cases, the window may not be sufficient to capture the context. For instance, consider a case where an article discusses the history of Spain and France and somewhere later in the text, it reads “The two countries went on a battle”; clearly the information presented in this sentence alone is not sufficient to identify the name of the two countries.</p>
 <p>Out of the many neural architectures and to provide the required long memory (up to a point that is) we will use the [LSTM]() architectures as shown next.</p>
-<p><img alt="rnn-language-model" src="aiml-common/lectures/nlp/rnn-language-models/images/rnn-language-model-words.png#center" />
+<p><img alt="rnn-language-model" src="../../../../_images/rnn-language-model-words.png" />
 <em>RNN Language Model. Note the different notation and certain replacements must be made: <span class="math notranslate nohighlight">\(W_h → W\)</span>, <span class="math notranslate nohighlight">\(W_e \rightarrow U\)</span>, <span class="math notranslate nohighlight">\(U → V\)</span></em></p>
 <p>To train an LSTM language model</p>
 <ol class="simple">
@@ -509,16 +509,16 @@ $<span class="math notranslate nohighlight">\(J_t(\theta) = CE(\hat  \mathbf y_t
 <div class="math notranslate nohighlight">
 \[J(\theta) = \frac{1}{T} \sum_t J_t(\theta)\]</div>
 <p>This is visually shown in the next figure for a hypothetical example of the shown sequence of words.</p>
-<p><img alt="rnn-language-model-loss" src="aiml-common/lectures/nlp/rnn-language-models/images/rnn-language-model-loss.png#center" />
+<p><img alt="rnn-language-model-loss" src="../../../../_images/rnn-language-model-loss.png" />
 <em>RNN Language Model Training Loss. For each input word (at step t<span class="math notranslate nohighlight">\(t\)</span>), the RNN predicts the next word and is penalized with a loss <span class="math notranslate nohighlight">\(J_t(\theta)\)</span>. The total loss is the average across the corpus.</em></p>
 <p>In practice <strong>we don’t compute the total loss over the whole corpus but we train over a finite span</strong> and compute gradients over that span iterating on a stochastic gradient decent optimization algorithm.</p>
 <p><strong>Example</strong>:</p>
 <p>Character-level language models have achieved <a class="reference external" href="https://github.com/flairNLP/flair">state of the art NLP results by Facebook Research</a>.  As a simple example, lets assume the very small vocabulary {‘h’,’e’,’l’,’o’} and tokens are single letters represented in the input with a one-hot encoded vector.</p>
-<p><img alt="rnn-language-model" src="aiml-common/lectures/nlp/rnn-language-models/images/rnn-language-model.png#center" />
+<p><img alt="rnn-language-model" src="../../../../_images/rnn-language-model.png" />
 <em>RNN language model example - training <a class="reference external" href="https://www.youtube.com/watch?v=6niqTuYFZLQ&amp;t=521s">ref</a>. Note that in practice instead of one-hot encoded word vectors we will have word embeddings.</em></p>
 <p>Let feed into the RNN the sequence “hello”. The letters will come in one at a time, each letter going through the forward pass that produces at the output the <span class="math notranslate nohighlight">\(\mathbf y_t\)</span> that indicates which letter is expected to arrive next.  You can see, since we are just started training,  that this network is not predicting correctly - this will improve over time as the model is trained with more sequence permutations form our limited vocabulary.</p>
 <p>During inference we will use the language model to generate the next token.</p>
-<p><img alt="rnn-language-model-inference" src="aiml-common/lectures/nlp/rnn-language-models/images/rnn-language-model-inference.png#center" />
+<p><img alt="rnn-language-model-inference" src="../../../../_images/rnn-language-model-inference.png" />
 <em>RNN language model example - generate the next token <a class="reference external" href="https://www.youtube.com/watch?v=6niqTuYFZLQ&amp;t=521s">reference</a></em></p>
 </div>
 </div>

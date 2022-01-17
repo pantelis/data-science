@@ -12,7 +12,7 @@ We can think about the detection problem as a classification problem of _all pos
 
 RCNN can accommodate a number of efficient algorithms that can produce region proposals. The baseline RCNN employs instead [_selective search via hierarchical grouping_](http://www.huppelen.nl/publications/selectiveSearchDraft.pdf). 
 
-![hierarchical-grouping-alg](images/hierarchical-grouping-alg.png#center)
+![hierarchical-grouping-alg](images/hierarchical-grouping-alg.png)
 
 The algorithm contains another algorithm that segments the image into initial regions. 
 
@@ -35,12 +35,12 @@ There is one runtime parameter for the algorithm, which is the value of $k$ that
 
 The graph algorithm can also accommodate dissimilarity weights between neighbors at a _feature space_ rather at _pixel_ level based on a Euclidean distance metric with other distance functions possible. 
 
-![graph-based-segmentation1](images/graph-based-segmentation1.png#center) 
+![graph-based-segmentation1](images/graph-based-segmentation1.png) 
 *Graph representation of the segmentation problem*
 
 Notice that the initial segments may be many and do not necessarily accurately represent distinct objects as shown below:
 
-![graph-based-segmentation2](images/graph-based-segmentation2.png#center) 
+![graph-based-segmentation2](images/graph-based-segmentation2.png) 
 *Result of the initial segments produced by the graph-based algorithm, $k=300$*
 
 ### Grouping 
@@ -59,12 +59,12 @@ where $a_i ∈ {0,1}$ denotes if the similarity measure is used or not.
 
 The end result of the grouping is a hierarchy of regions ranked according to creation time. As earlier created regions may end up being the largest some permutation in the ranking is applied.  
 
-![hierarchical-grouping-example](images/hierarchical-grouping-example.png#center)
+![hierarchical-grouping-example](images/hierarchical-grouping-example.png)
 *Example of hierarchical grouping*
 
 The above selective search strategy is diversified (1) by using a variety of colour spaces with different invariance properties, (2) by using different similarity measures $s(r_i, r_j)$, and (3) by varying our initial regions. Each strategy results in a different hierarchy and after a permutation that randomizes the ranking the final list of regions is produced. For RCNN we use 2000 such region proposals. 
 
-![region-proposals](images/region-proposals.png#center)
+![region-proposals](images/region-proposals.png)
 *Final proposals - in reality we have 2000 of such regions.*
 
 ## CNN Features  and SVM Classification
@@ -79,16 +79,16 @@ After the scoring of each proposed region by the SVM we apply a greedy [Non-Maxi
 
 Finally, a bounding box regressor, predicts the location of the bounding boxes using the proposal boxes and nearby ground truth box data so that we can adjust the final detection box and avoid situations that whole objects are detected but partially included in the detection box. 
 
-![iou](images/iou.png#center)
+![iou](images/iou.png)
 
-![non-max-suppression](images/non-max-supression.png#center)
+![non-max-suppression](images/non-max-supression.png)
 
 The whole process is partially shown below and the solution is called Region-CNN (RCNN). 
 
-![rcnn](images/rcnn.png#center)
+![rcnn](images/rcnn.png)
 *RCNN pipeline*
 
-![selective-search](images/selective-search.png#center)
+![selective-search](images/selective-search.png)
 *RCNN detection result after processing multiple region proposals* 
 
 

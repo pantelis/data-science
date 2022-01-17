@@ -10,7 +10,7 @@ Its popularity stems also from yet another attribute that is becoming very impor
 
 For example, let’s say that you had a basket of fruit in front of you, and you were trying to teach someone who had never seen these types of fruit before how to tell them apart.  How could you do it? The answer is shown pictorially below. 
 
-![fruit-decision-tree](images/fruit-decision-tree.png#center)
+![fruit-decision-tree](images/fruit-decision-tree.png)
 
 A decision tree is a tree where each node represents a feature(attribute), each link (branch) represents a decision (rule) and each leaf represents an outcome(categorical for classification or continual for regression).
 
@@ -18,12 +18,12 @@ If your decision tree is good, you can now pick up an unknown piece of fruit and
 
 In what follows, we focus on a dataset with $m=88$ and $4$ labels: Apples, Oranges,  Bananas,  Grapefruit. Each example has multiple features $n$: color, width and length. 
 
-| Fruit  | Colors  |
-|---|---|
-|  Apples |  Red, Green, or Yellow   |
-| Oranges  |  Orange |
-|  Bananas |  Yellow or Green   |
-| Grapefruit  | Orange or Yellow |
+| Fruit      | Colors                |
+| ---------- | --------------------- |
+| Apples     | Red, Green, or Yellow |
+| Oranges    | Orange                |
+| Bananas    | Yellow or Green       |
+| Grapefruit | Orange or Yellow      |
 
 ![fruit-dataset](images/fruit-dataset.png)
 
@@ -31,7 +31,7 @@ In what follows, we focus on a dataset with $m=88$ and $4$ labels: Apples, Orang
 
 If we are to draw separation lines on feature space of length ($x_1$) and width ($x_2$) without using an ML algorithm but by hand, we probably would come up with the picture below.
 
-![fruit-human](images/fruit-split-human.png#center)
+![fruit-human](images/fruit-split-human.png)
 *Draw by hand partition*
 
 Now, lets try to solve the same problem using an algorithm bearing in mind that many real-life data sets might have dozens or hundreds of different features.  
@@ -45,11 +45,11 @@ At its heart, the algorithm implements a recursive binary partitioning of the in
 
 We start at a **root node** that corresponds to the whole feature space (no partition) and design a **test** that is in its simplest form a conditional statement against a feature (a comparison if you like). Depending on the binary outcome of the test (either the input examples will satisfy the condition or not) we produce the corresponding child nodes each inheriting a subset of the input population and we repeat the exercise. The recursion stops when we reach the so called leaf nodes e.g. when the remaining examples in these nodes cannot be split further. We will come back at this terminal / leaf nodes later. An example tree and corresponding partition is shown in the two figures below.
 
-![Figure14.5](images/Figure14.6.png#center)
+![Figure14.5](images/Figure14.6.png)
 
 *Example tree - $x_1$ and $x_2$ based splits shown.*
 
-![Figure14.5](images/Figure14.5.png#center)
+![Figure14.5](images/Figure14.5.png)
 
 *Partition for the example tree above.*
 
@@ -57,19 +57,19 @@ The test specification consists of the variables $\theta_i$ that are are also ca
 
 Lets see the three recursions of the algorithm as shown below. 
 
-![fruit-split-1](images/fruit-split-1.png#center)
+![fruit-split-1](images/fruit-split-1.png)
 
 *First split*
 
-![fruit-split-2](images/fruit-split-2.png#center)
+![fruit-split-2](images/fruit-split-2.png)
 
 *Second split*
 
-![fruit-split-3](images/fruit-split-3.png#center)
+![fruit-split-3](images/fruit-split-3.png)
 
 *Third split*
 
-![fruit-tree-alg-split](images/fruit-tree-alg-split.png#center)
+![fruit-tree-alg-split](images/fruit-tree-alg-split.png)
 *Final decision tree for the fruit classification problem*
 
 This brings up the question of how we select the test spec parameters $x_k$ and $\theta_k$ to minimize a certain metric that is dependent on the type of the problem we deal with - classification or regression. 
@@ -78,7 +78,7 @@ This brings up the question of how we select the test spec parameters $x_k$ and 
 
 To gauge which feature we will choose split requires a review of certain [probabilistic concepts]({{<relref "../entropy">}}) namely the concept of entropy. We can develop on top of entropy the concept of information gain that is pictorially explained using the example  shown below
 
-![information-gain-example](images/information-gain.png#center)
+![information-gain-example](images/information-gain.png)
 *Information gain for two possible splits*
 
 The input dataset in this example has uniform distribution over classes - we have exactly the same number  of  points  in  each  class.  If  we  split  the  data  horizontally (select feature $x_1$) this  produces  two  sets  of  data.  Each  set  is  associated with a **lower** entropy (higher information, peakier class histograms) that is defined as usual
@@ -102,7 +102,7 @@ Training will result into the heuristically optimal decision tree. Inference is 
 <!-- ## Applicability
 When we use decision trees for regression, the entropy is replaced with the usual MSE. We also have the possibility of parametric clustering in an unsupervised learning setting as shown below where the Gaussian distribution is being used to fit the data before and after the split. The Information Gain concept is generic enough to be applied in both discrete, continuous, supervised and unsupervised problems. 
 
-![unsupervised-training](images/unsupervised-training.png#center) -->
+![unsupervised-training](images/unsupervised-training.png) -->
 
 ## Example
 

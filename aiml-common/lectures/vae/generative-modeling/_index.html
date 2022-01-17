@@ -452,7 +452,7 @@
 \[p(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_M | \mathbf \theta) = \prod_{j=1}^M p(\mathbf x_j | Pa(\mathbf x_j))\]</div>
 <p>where <span class="math notranslate nohighlight">\(Pa()\)</span> is the set of parent nodes that the variable <span class="math notranslate nohighlight">\(\mathbf x_j\)</span> is dependent on (has directed edges with).</p>
 <p>Consider our simple PGM, shown below:</p>
-<p><img alt="vae-pgm" src="aiml-common/lectures/vae/generative-modeling/images/vae-pgm.png#center" />
+<p><img alt="vae-pgm" src="../../../../_images/vae-pgm.png" />
 <em>Probabilistic Graphical Model from <a class="reference external" href="https://arxiv.org/pdf/1606.05908.pdf">here</a></em></p>
 <p>To generate from the marginal we need to implement a generative model that is a direct consequence of the chain and total probability rules.</p>
 <div class="math notranslate nohighlight">

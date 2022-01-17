@@ -8,7 +8,7 @@ NOTE: The following example was copied from [here](https://www.mdpi.com/2079-929
 
 In this section we provide some intuition as to why we need additional metrics for detection and segmentation of objects.  As shown below such metrics are routinely used to compare various networks and approaches and manifest the progress that was made in the field over the last few years. 
 
-![object-detection-performance](images/object-detection-performance.png#center)
+![object-detection-performance](images/object-detection-performance.png)
 _Detection performance_
 
 

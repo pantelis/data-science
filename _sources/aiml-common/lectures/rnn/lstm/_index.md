@@ -8,7 +8,7 @@ weight: 135
 
 In [the simple RNN]({{<ref "../simple-rnn/">}}) we have seen the problem of exploding or vanishing gradients when [the span of back-propagation is large](http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf) (large $\tau$). Using the conceptual IIR filter, that ultimately _integrates_ the input signal, we have seen that in order to avoid an exploding or vanishing impulse response, we need to control $w$. This is exactly what is being done in evolutionary RNN architectures that we will treat in this section called _gated RNNs_. The best known gated RNN architecture is called the LSTM _cell_ and in this case the weight $w$ is not fixed but it is determined based on the input sequence _context_. The architecture is shown below. 
 
-![lstm-cell](images/rnn-LSTM.png#center)
+![lstm-cell](images/rnn-LSTM.png)
 *LSTM architecture: It is divided into three areas: input (green), cell state (blue) and output (red). You can clearly see the outer ($\bm h_{t-1}$ )and the inner ($\bm s_{t-1}$) recurrence loops.*
 
 Because we need to capture the input context that involve going back several time steps in the past, we introduce an _additional_ inner recurrence loop that is effectively a variable length internal to the cell memory - we call this the _cell state_.  We employ another hidden unit called the _forget gate_  to learn the input context and the forgetting factor (equivalent to the $w$ we have seen in the IIR filter) i.e. the extent that the cell forgets the previous hidden state. We employ a couple of other gates as well: the _input gate_ and the _output gate_ as shown in the diagram below. 
