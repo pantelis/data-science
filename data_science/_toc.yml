@@ -6,7 +6,7 @@ root: intro
 parts:
   - caption: Syllabus
     chapters:
-    - file: docs/_index.md
+    - file: syllabus/_index.md
   
   - caption: Introduction to Data Science
     chapters:
