@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syllabus &#8212; Introduction to Data Science</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pantelis.github.io/data-science/syllabus/_index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course Introduction" href="../aiml-common/lectures/ai-intro/course-introduction/_index.html" />
+    <link rel="prev" title="Introduction to Data Science" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ai-intro/course-introduction/_index.html">
+   Course Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ai-intro/data-science-360/_index.html">
+   Data Science 360
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Probabilistic Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ml-math/probability/_index.html">
+   Probability Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/entropy/_index.html">
+   Entropy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/pgm/bayesian-inference/_index.html">
+   Bayesian Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/classification/covid19-antibody-test/_index.html">
+   COVID-19 Antibody Test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/pgm/bayesian-coin/_index.html">
+   Bayesian Coin Flipping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The Learning Problem
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/regression/linear-regression/_index.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/optimization/sgd/_index.html">
+   Stochastic Gradient Descent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/classification/classification-intro/_index.html">
+   Introduction to Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/classification/logistic-regression/_index.html">
+   Logistic Regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Trees and Intelligence of the Crowds
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/decision-trees/_index.html">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ensemble/_index.html">
+   Ensemble Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ensemble/random-forests/_index.html">
+   Random Forests
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ensemble/boosting/_index.html">
+   Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ensemble/boosting-workshop/_index.html">
+   Boosting workshop
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Non-Parametric Methods
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/unsupervised/k-means/_index.html">
+   K-means Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/density-estimation/knn/_index.html">
+   k-Nearest Neighbors (kNN) Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/density-estimation/knn-workshop/_index.html">
+   kNN Workshop
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/classification/perceptron/_index.html">
+   The Neuron (Perceptron)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/dnn/dnn-intro/_index.html">
+   Deep Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/dnn/backprop-intro/_index.html">
+   Introduction to Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/dnn/backprop-dnn/_index.html">
+   Backpropagation in Deep Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/cnn/cnn-intro/_index.html">
+   Introduction to Convolutional Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/cnn/cnn-layers/_index.html">
+   CNN Architectures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/cnn/cnn-example-architectures/_index.html">
+   CNN Example Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dimensionality Reduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/recommenders/recommenders-intro/_index.html">
+   Recommender System Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/recommenders/netflix/_index.html">
+   The Netflix Prize and Singular Value Decomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/pca/_index.html">
+   Principal Component Analysis (PCA)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math Background
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/linear-algebra/vectors/_index.html">
+   Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/linear-algebra/matrices/_index.html">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/ml-math/calculus/_index.html">
+   Calculus
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aiml-common/lectures/python/_index.html">
+   Learn Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Fsyllabus/_index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#books">
+   Books
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schedule">
+   Schedule
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Syllabus</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#books">
+   Books
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schedule">
+   Schedule
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="books">
+<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.amazon.com/Data-Science-Scratch-Principles-Python-dp-1492041130/dp/1492041130/ref=mt_other?_encoding=UTF8&amp;me=&amp;qid=">Data Science from Scratch: First Principles with Python (GRUS)</a>. This book is not free and is required for this course <em>especially by those students that have done limited Python programming</em>.  The code of the book is <a class="reference external" href="https://github.com/joelgrus/data-science-from-scratch.git">here</a></p></li>
+<li><p><a class="reference external" href="https://statlearning.com/">Introduction to Statistical learning (ISL)</a>. This book is <em>free</em> and explains well some of the concepts covered in this course. Is probably the most widely used book as an introduction to data science. The code is in a programming language called <span class="math notranslate nohighlight">\(R\)</span> which is still popular for some business and financial firms but increasingly is being displaced by Python especially in big data applications.  We will therefore cover the same concepts but with Python.</p>
+<ul>
+<li><p>You need to <a class="reference external" href="https://github.com/Harvard-IACS/2019-CS109A">download this Python code</a> to run the examples in Python.</p></li>
+<li><p><a class="reference external" href="https://www.dataschool.io/15-hours-of-expert-machine-learning-videos/">Video lectures</a> of the book authors that you may find useful to supplement mine - you need to omit the Labs.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="schedule">
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
+<p>The schedule is based on <a class="reference external" href="https://www5.njit.edu/registrar/calendars/">Academic Calendar Fall 2021</a>:</p>
+<blockquote>
+<div><p>NOTE: For most lectures you need to read the Notes that are published in this site <em>and</em> the corresponding book chapters quoted.</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lecture</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Reading List</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><strong>Introduction:</strong> We start with an <em>introduction to data science</em>. Through an end to end data science application we understand all the stages of a data science pipeline and the vast open source ecosystem around data science.  You will understand how simple apps like Uber / UberEats hide some really complicated systems that mine data real time,  how literally every aspect of the world economy is powered by data science.</p></td>
+<td><p>ISL Chapter 1 &amp; GRUS Chapter 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><strong>Data and their representations in Python</strong>: We review the types of data that we will be dealing with and while doing so we learn some essential Python language data structures that keep them safe.  We will meet <a class="reference external" href="https://www.kaggle.com/">Kaggle</a> our defacto destination for datasets and Python notebooks that process them and using our first Python libraries we will develop an application that practically showcases data science. We will do all that inside the <a class="reference external" href="https://colab.research.google.com/">Colab</a> cloud computing environment. We start to see our first representations of data in the form of vectors and aggregations of data in the form of matrices.</p></td>
+<td><p>GRUS Chapter 2, 3 and 4.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><strong>The universal language of probability</strong>:  In this course we will speak a couple of languages. We will introduce a new language such as random variables, independence, probability distributions, expected values and other artifacts for the very brave.  We will learn how to use one of the major libraries in probabilistic modeling that will also revisit later in the course - <a class="reference external" href="https://www.tensorflow.org/probability">Tensorflow  Probability</a>.</p></td>
+<td><p>GRUS Chapter 5 &amp; 6</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><strong>The supervised learning problem</strong>: Almost all the tasks you will be called to perform as data scientists and analysts will have a flavor of  <em>supervised learning</em> for regression and classification. This lecture is foundational - we wont’ go into the details of what learning methods we have at our disposal  but what the learning problem is and all the types of learning we are usually dealing with.</p></td>
+<td><p>ISL Chapter 2.1.1, 2.1.2 &amp; GRUS Chapter 14</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><strong>Fitting the data</strong>: This is our very first method that fits a regression model to data. We will learn how to calculate the likelihood function  and  maximize this likelihood (ML). ML-based optimization transverses all aspects of machine learning - we learn what ML means by reviewing basic optimization concepts and study an algorithm that is the workhorse of modern machine learning: the <em>stochastic gradient descent</em> algorithm.</p></td>
+<td><p>ISL Chapter 3.1 &amp; GRUS Chapter 8</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><strong>To be or not to be</strong>: We have seen classification as a supervised learning problem but what governs our pursue to design a good classifier? Do you know that good classifiers won World War II ? You will be surprised that the same metrics allied forces used back then to determine an incoming attack from RADAR signals are the very same that Facebook engineers are using to identify your face in your photos. We will use Logistic Regression as an example of a classifier that gives us an bonus feature: the probabilistic interpretation of its output.</p></td>
+<td><p>ISL Chapter 4.1, 4.2, 4.3, GRUS Chapter 16</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><strong>Good luck in your midterm</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p><strong>One rule to rule them all and model selection</strong>:  The Bayes rule, governs data science like the quantum mechanics rules govern physics. Do you know that for CDC to interpret COVID19 test results correctly they use this rule? We show how we can enhance regression and classification performance (Naive Bayes) by considering prior knowledge.Furthermore Bayes gives us the ability to learn <em>online</em> as data is streamed to applications. It also help us select the right model by avoiding overfitting - something that generically is called <em>regularization</em>.</p></td>
+<td><p>ISL Chapter 6</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p><strong>Intelligence of the crowds</strong> : <em>Ensembles</em> of predictors can do better than any single one.  <em>Decision Trees</em>,  <em>Random Forests</em>  and gradient boosters are probably the most versatile and extensively used tools in data science. Such tools survived the deep learning revolution for a good reason. They can still handle massive datasets, offer partially <em>explainable</em> decisions <em>and</em> win Kaggle competitions.</p></td>
+<td><p>ISL Chapter 8 &amp; GRUS Chapter 17</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p><strong>No labels no problem</strong>: The setting this week changes to that of unsupervised learning reviewing data clustering approaches such as K-means. We review use cases in anomaly and novelty detection.</p></td>
+<td><p>ISL Chapter 10.3 &amp; GRUS Chapter</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p><strong>800-pounds</strong>. At last, we get to see the gorilla in the room.  <em>Neural networks</em> need to introduction - we use the <a class="reference external" href="https://playground.tensorflow.org/">Tensorflow playground</a> to understand the tradeoffs between classical and neural architectures and why deep neural networks dominate in big data applications today.</p></td>
+<td><p>GRUS Chapter 18</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p><strong>Water valves</strong>  We get to build our very own DNN training pipeline but not before understanding how neural networks learn. Backpropagation requires some mathematical rigor but in this course we use analogies of valves / gates to visualize how it works for a simple network. Understanding backpropagation is essential for understanding how DNNs behave during training / hyperparameter optimization.</p></td>
+<td><p>GRUS Chapter 18 &amp; 19</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p><strong>It was you …</strong> Before we put DNNs in action they need the right inputs. Sometimes the inputs are two noisy or very high dimensional. Dimensionality reduction and embeddings are key data representation tools that we need to know. Did you know that your face can be represented as vectors in some space? We demonstrate learning the right representations via a face recognition pipeline.</p></td>
+<td><p>ISL Chapter 10.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p><strong>Final Lecture</strong>  We review what we have learned, preparing for the final.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p><strong>Good luck in your final</strong></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./syllabus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to Data Science</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../aiml-common/lectures/ai-intro/course-introduction/_index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Course Introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Pantelis Monogioudis, Ph.D<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
