@@ -12,8 +12,8 @@ parts:
     chapters:
     - file: aiml-common/lectures/ai-intro/course-introduction/_index.md
     - file: aiml-common/lectures/ai-intro/data-science-360/_index.md
-    - file: aiml-common/lectures/ai-intro/pipelines
-    - file: aiml-common/lectures/uber-ml-arch-case-study
+    - file: aiml-common/lectures/ai-intro/pipelines/_index.md
+    - file: aiml-common/lectures/uber-ml-arch-case-study/_index.md
 
   - caption: Probabilistic Learning
     chapters:
