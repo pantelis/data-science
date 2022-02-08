@@ -29,7 +29,7 @@ $$q(\mathbf z| \mathbf x ; \mathbf \phi) = N(\mathbf z; \mathbf \mu, \textsf{dia
 
 The $DNN_{enc}$ implements amortized variational inference, that is, it estimates the posterior parameters over a batch of datapoints and this offers significant boost in the parameter learning. 
 
-During the treatment of [entropy]({{<ref "../../entropy" >}}), we have met the concept of relative entropy or KL divergence that measures the "distance" between two distributions referenced on one of them. 
+During the treatment of entropy, we have met the concept of relative entropy or KL divergence that measures the "distance" between two distributions referenced on one of them. 
 
 $$KL(q||p)= \mathbb{E}[\log q(\mathbf x) - \ln p(\mathbf x)] = - \sum_{\mathbf x} q(\mathbf x) \log \frac{p(\mathbf x)}{q(\mathbf x)}$$
 
@@ -52,4 +52,4 @@ $$\mathcal L(q, \phi, \theta) =  \log p(\mathbf x) - KL(q(\mathbf z | \mathbf x 
 ![Bishop](images/Figure9.11.png)
 *KL represents the tightness of the ELBO bound - From Bishop's book* 
 
-As the figure above shows $KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta))$ represents the tightness of the ELBO $\mathcal L(q, \phi, \theta)$ since the closest the approximation becomes the smaller the gap between ELBO and the log likelihood. Maximizing the ELBO withe respect to $(\phi, \theta)$ will achieve "two birds with one stone" situation: it will maximize the marginal log likelihood that is used for data generation _and_ minimize the KL divergence improving the approximation in the encoder. On top of that, the ELBO allows joint optimization with respect to all the parameters $\phi$ and $\theta$ using SGD. This is described via an example [here]({{<relref "../elbo-optimization">}}). 
+As the figure above shows $KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta))$ represents the tightness of the ELBO $\mathcal L(q, \phi, \theta)$ since the closest the approximation becomes the smaller the gap between ELBO and the log likelihood. Maximizing the ELBO withe respect to $(\phi, \theta)$ will achieve "two birds with one stone" situation: it will maximize the marginal log likelihood that is used for data generation _and_ minimize the KL divergence improving the approximation in the encoder. On top of that, the ELBO allows joint optimization with respect to all the parameters $\phi$ and $\theta$ using SGD. This is described via an example in the ELBO section.

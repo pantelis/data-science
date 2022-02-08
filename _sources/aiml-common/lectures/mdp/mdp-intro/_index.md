@@ -72,7 +72,7 @@ where one dimension represents the action space and the other two constitute a s
 {{<hint>}}
 **Example**: 
 
-Can you determine the state transition tensor for the 4x3 Gridworld in [MDP slides]({{<ref "../mdp-slides">}})?  
+Can you determine the state transition tensor for the 4x3 Gridworld ?  
 
 {{</hint>}}
 
@@ -104,7 +104,7 @@ Notice the two indices needed for its definition - one is the time step $t$ that
 
 $$ \sum_{k=0}^∞\gamma^k R_{t+1+k} <  \sum_{k=0}^∞\gamma^k R_{max} = \frac{R_{max}}{1-\gamma}$$
 
-The return is itself a random variable - for each trajectory defined by sampling the policy (strategy) of the agent we get a different return. For the Gridworld of the [MDP slides]({{<ref "../mdp-slides">}}) [^3]:
+The return is itself a random variable - for each trajectory defined by sampling the policy (strategy) of the agent we get a different return. For the Gridworld of the MDP section:
 
 $$\tau_1: S_0=s_{11}, S_1 = s_{12},  ... S_T=s_{43} \rightarrow G^{\tau_1}_0 = 5.6$$
 $$\tau_2: S_0=s_{11}, S_1=s_{21}, ... , S_T=s_{43} \rightarrow G^{\tau_2}_0 = 6.9$$
@@ -139,7 +139,7 @@ The value of a state is the total amount of reward an agent can expect to accumu
 
 ### State value
 
-The _state-value function_ $v_\pi(s)$ provides a notion of the long-term value of state $s$. It is equivalent to the _utility_ we have seen in the [MDP slides]({{<ref "../mdp-slides">}}). It is defined as the _expected_ return starting at state $s$ and following policy $\pi(a|s)$, 
+The _state-value function_ $v_\pi(s)$ provides a notion of the long-term value of state $s$. It is equivalent to the _utility_ we have seen in the MDP section. It is defined as the _expected_ return starting at state $s$ and following policy $\pi(a|s)$, 
 
 $$v_\pi(s) = \mathop{\mathbb{E}_\pi}(G_t | S_t=s)$$
 

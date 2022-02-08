@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -471,7 +459,7 @@
 <div class="math notranslate nohighlight">
 \[q(\mathbf z| \mathbf x ; \mathbf \phi) = N(\mathbf z; \mathbf \mu, \textsf{diag} \mathbf \Sigma) )\]</div>
 <p>The <span class="math notranslate nohighlight">\(DNN_{enc}\)</span> implements amortized variational inference, that is, it estimates the posterior parameters over a batch of datapoints and this offers significant boost in the parameter learning.</p>
-<p>During the treatment of [entropy](), we have met the concept of relative entropy or KL divergence that measures the “distance” between two distributions referenced on one of them.</p>
+<p>During the treatment of entropy, we have met the concept of relative entropy or KL divergence that measures the “distance” between two distributions referenced on one of them.</p>
 <div class="math notranslate nohighlight">
 \[KL(q||p)= \mathbb{E}[\log q(\mathbf x) - \ln p(\mathbf x)] = - \sum_{\mathbf x} q(\mathbf x) \log \frac{p(\mathbf x)}{q(\mathbf x)}\]</div>
 <p>We will use KL divergence to obtain a suitable loss function that will be used in the optimization of this approximation via the <span class="math notranslate nohighlight">\(DNN_{enc}\)</span> network. Ultimately we are trying to minimize the KL divergence between the true posterior <span class="math notranslate nohighlight">\(p(\mathbf z| \mathbf x ; \mathbf \theta)\)</span> and the approximate posterior <span class="math notranslate nohighlight">\(q(\mathbf z | \mathbf x ; \mathbf \phi)\)</span></p>
@@ -494,7 +482,7 @@
 <p>$<span class="math notranslate nohighlight">\(\mathcal L(q, \phi, \theta) =  \log p(\mathbf x) - KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta)) \le \log p(\mathbf x)\)</span>$. This is illustrated bellow:</p>
 <p><img alt="Bishop" src="../../../../_images/Figure9.11.png" />
 <em>KL represents the tightness of the ELBO bound - From Bishop’s book</em></p>
-<p>As the figure above shows <span class="math notranslate nohighlight">\(KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta))\)</span> represents the tightness of the ELBO <span class="math notranslate nohighlight">\(\mathcal L(q, \phi, \theta)\)</span> since the closest the approximation becomes the smaller the gap between ELBO and the log likelihood. Maximizing the ELBO withe respect to <span class="math notranslate nohighlight">\((\phi, \theta)\)</span> will achieve “two birds with one stone” situation: it will maximize the marginal log likelihood that is used for data generation <em>and</em> minimize the KL divergence improving the approximation in the encoder. On top of that, the ELBO allows joint optimization with respect to all the parameters <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> using SGD. This is described via an example [here]().</p>
+<p>As the figure above shows <span class="math notranslate nohighlight">\(KL(q(\mathbf z | \mathbf x ; \mathbf \phi) || p(\mathbf z | \mathbf \theta))\)</span> represents the tightness of the ELBO <span class="math notranslate nohighlight">\(\mathcal L(q, \phi, \theta)\)</span> since the closest the approximation becomes the smaller the gap between ELBO and the log likelihood. Maximizing the ELBO withe respect to <span class="math notranslate nohighlight">\((\phi, \theta)\)</span> will achieve “two birds with one stone” situation: it will maximize the marginal log likelihood that is used for data generation <em>and</em> minimize the KL divergence improving the approximation in the encoder. On top of that, the ELBO allows joint optimization with respect to all the parameters <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> using SGD. This is described via an example in the ELBO section.</p>
 </div>
 
     <script type="text/x-thebe-config">

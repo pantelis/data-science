@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -500,7 +488,7 @@
 <p>where using the sum rule we know <span class="math notranslate nohighlight">\(p(y) = \sum_{x'} p(y|x') p(x')\)</span>. This is a very innocent but very powerful concept.</p>
 <div class="section" id="bayesian-vs-maximum-likelihood">
 <h1>Bayesian vs Maximum Likelihood<a class="headerlink" href="#bayesian-vs-maximum-likelihood" title="Permalink to this headline">¶</a></h1>
-<p>In the [linear regression]() section we have seen a simple supervised learning problem that is specified via a joint distribution <span class="math notranslate nohighlight">\(\hat{p}_{data}(\mathbf x, y)\)</span> and are asked to fit the model parameterized by the weights <span class="math notranslate nohighlight">\(\mathbf w\)</span> using ML. Its important to view pictorially perhaps the most important effect of Bayesian update:</p>
+<p>In the linear regression section we have seen a simple supervised learning problem that is specified via a joint distribution <span class="math notranslate nohighlight">\(\hat{p}_{data}(\mathbf x, y)\)</span> and are asked to fit the model parameterized by the weights <span class="math notranslate nohighlight">\(\mathbf w\)</span> using ML. Its important to view pictorially perhaps the most important effect of Bayesian update:</p>
 <ul class="simple">
 <li><p>In ML the <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> is treated as a known quantity with an estimate <span class="math notranslate nohighlight">\(\hat{\mathbf{w}}\)</span> that has a mean and variance resulting from the distribution of <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
 <li><p>In the Bayesian setting, we are integrating over the distribution of <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> given the data i.e. we are not making a point estimate of <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> but we marginalize out <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.

@@ -9,7 +9,7 @@ title: Natural Language Processing
 
 In this chapter we will start discovering how agents can process _and respond_ to input sources that contain natural language. Such inputs are all the the trillions of web pages, billions of captioned videos, real-time multi-modal speech and video etc.  We wil rewind developments in this space starting in 2012 to discover how J.R. Firth's words translate to the NLP space as it evolved over the last 8 years.
 
-We start though by augmenting the overall [agent architecture]({{<ref "../ai-intro/agents">}}) with blocks that bring the language domain in the picture as shown below:
+We start though by augmenting the overall agent architecture with blocks that bring the language domain in the picture as shown below:
 
 ![overall-agent-architecture](images/overall-agent-architecture.png)
 *Overall AI agent architecture and language components*

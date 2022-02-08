@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -466,7 +454,7 @@
 <div class="math notranslate nohighlight">
 \[p(\mathbf x | \mathbf \theta) =  \sum_{\mathbf z} p(\mathbf x, \mathbf z | \mathbf \theta) \]</div>
 <p>to generate new data whose marginal is, ideally, identical to the true but unknown target distribution we need to be able to sample from <span class="math notranslate nohighlight">\(p(\mathbf x, \mathbf z | \mathbf \theta)\)</span>.</p>
-<p>The introduction of the latent variables can be represented as directed graph and we have seen in the [probabilistic graphical models]() introduction, the representation as directed graph allows the factorization of the joint distribution</p>
+<p>The introduction of the latent variables can be represented as directed graph and we have seen in the probabilistic graphical models introduction, the representation as directed graph allows the factorization of the joint distribution</p>
 <div class="math notranslate nohighlight">
 \[p(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_M | \mathbf \theta) = \prod_{j=1}^M p(\mathbf x_j | Pa(\mathbf x_j))\]</div>
 <p>where <span class="math notranslate nohighlight">\(Pa()\)</span> is the set of parent nodes that the variable <span class="math notranslate nohighlight">\(\mathbf x_j\)</span> is dependent on (has directed edges with).</p>

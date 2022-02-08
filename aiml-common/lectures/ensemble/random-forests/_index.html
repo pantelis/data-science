@@ -363,18 +363,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -492,7 +480,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="random-forests">
 <h1>Random Forests<a class="headerlink" href="#random-forests" title="Permalink to this headline">¶</a></h1>
-<p>As the name implies forests use many [tree-based]() learners to improve on their generalization ability. Each of the trees is sometimes called a <em>weak learner</em>. When combined together they form the strong learner.</p>
+<p>As the name implies forests use many tree-based learners to improve on their generalization ability. Each of the trees is sometimes called a <em>weak learner</em>. When combined together they form the strong learner.</p>
 <p>A key aspect of decision forests is the fact that its component trees are all <em>randomly different</em> from one another. This leads to de-correlation between the individual tree predictions and, in turn, to improved generalization. Forest randomness also helps achieve high robustness with respect to noisy data. Obviously all these weak learners will ultimately be fed with some permutation the same data so its not that we have a perfect de-correlation and this limits the performance of the aggregation.</p>
 <p>Randomness  is  injected  into  the  trees  during  the training  phase. Two of the most popular ways of doing so are:</p>
 <ol class="simple">

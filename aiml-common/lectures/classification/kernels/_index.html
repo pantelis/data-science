@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -502,7 +490,7 @@
 <h1>Kernels and the Kernel Trick<a class="headerlink" href="#kernels-and-the-kernel-trick" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In [linear regression]() we have seen a simple dataset from an unknown non-linear target function. We then proceeded and chose a hypothesis from the polynomial family that mapped each input example <span class="math notranslate nohighlight">\(x\)</span> into a function <span class="math notranslate nohighlight">\(g(x, \mathbf w) = \mathbf w^T \phi(\mathbf{x})\)</span>, found the optimal <span class="math notranslate nohighlight">\(\mathbf w\)</span> by maximizing the likelihood (ML) function using the MSE as the loss function. The moment we have <span class="math notranslate nohighlight">\(\mathbf w\)</span> we can use it to do new predictions.  In this regression problem we have used a transformation from the raw data <span class="math notranslate nohighlight">\(\mathbf x\)</span> to the feature <span class="math notranslate nohighlight">\(\phi(\mathbf x)\)</span> and more specifically we have used basis functions <span class="math notranslate nohighlight">\(\phi_i(\mathbf x)\)</span> from the set of polynomials shown below.</p>
+<p>In linear regression, we have seen a simple dataset from an unknown non-linear target function. We then proceeded and chose a hypothesis from the polynomial family that mapped each input example <span class="math notranslate nohighlight">\(x\)</span> into a function <span class="math notranslate nohighlight">\(g(x, \mathbf w) = \mathbf w^T \phi(\mathbf{x})\)</span>, found the optimal <span class="math notranslate nohighlight">\(\mathbf w\)</span> by maximizing the likelihood (ML) function using the MSE as the loss function. The moment we have <span class="math notranslate nohighlight">\(\mathbf w\)</span> we can use it to do new predictions.  In this regression problem we have used a transformation from the raw data <span class="math notranslate nohighlight">\(\mathbf x\)</span> to the feature <span class="math notranslate nohighlight">\(\phi(\mathbf x)\)</span> and more specifically we have used basis functions <span class="math notranslate nohighlight">\(\phi_i(\mathbf x)\)</span> from the set of polynomials shown below.</p>
 <p><img alt="polynomial-basis" src="../../../../_images/Figure6.1a.png" />
 <em>Polynomial basis functions</em></p>
 <p>We could have chosen other sets as well:</p>
@@ -512,7 +500,7 @@
 </div>
 <div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p>Lets revisit the [perceptron algorithm]() where we started from <span class="math notranslate nohighlight">\(\mathbf{w}=\mathbf{0}\)</span> (or a random vector) and we visited each and every example, changing the direction of the decision boundary when we met a miss-classified example. In the plots of that lecture for example we have seen that after two misclassified examples (the green circled examples indexed 9 and 6) the algorithm converged to a final <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>. Note that the indices9 and 6 selected here are arbitrary. These two steps can be written as:</p>
+<p>Lets revisit the perceptron algorithm where we started from <span class="math notranslate nohighlight">\(\mathbf{w}=\mathbf{0}\)</span> (or a random vector) and we visited each and every example, changing the direction of the decision boundary when we met a miss-classified example. In the plots of that lecture for example we have seen that after two misclassified examples (the green circled examples indexed 9 and 6) the algorithm converged to a final <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>. Note that the indices9 and 6 selected here are arbitrary. These two steps can be written as:</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{w}^{(1)} = \mathbf{w}^{(0)} + \mathbf{x}^{(9)}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\mathbf{w}^{(2)} = \mathbf{w}^{(1)} + \mathbf{x}^{(6)}\)</span></p>
 <p>We can compress this into <span class="math notranslate nohighlight">\(\mathbf{w}^{(2)} =  \mathbf{w}^{(0)} + \{\mathbf{x}^{(9)} + \mathbf{x}^{(6)}\}\)</span> and in addition this example indicates that we just need to keep the so called <em>sparse representation</em> where we represent the final <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> with the array <span class="math notranslate nohighlight">\(\{[9, +1], [6, +1]\}\)</span>, where “+1” happened to be the class of the two examples involved in the adjustment of the weight.  Saying it a bit differently, the algorithm results in the set of points that are miss-classified throughput the journey of visiting each and every of our examples.</p>

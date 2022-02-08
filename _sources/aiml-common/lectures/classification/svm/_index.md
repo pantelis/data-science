@@ -5,7 +5,7 @@ weight: 10
 
 # Support Vector Machines
 
-In the development of the concept of [kernels]({{<ref "../kernels">}}), we mentioned that these can be used to derive non-linear decision boundaries. What we haven't addressed, is how good these can be - for example in separable datasets there can be many (or infinite) number of boundaries that separate the two classes but we need a metric to gauge the quality of separation. This metric is called the **margin** and will be geometrically explained next. 
+In the development of the concept of kernels, we mentioned that these can be used to derive non-linear decision boundaries. What we haven't addressed, is how good these can be - for example in separable datasets there can be many (or infinite) number of boundaries that separate the two classes but we need a metric to gauge the quality of separation. This metric is called the **margin** and will be geometrically explained next. 
 
 ## Classification Margin
 Intuitively margin is the distance between the classification boundary and the closest data point(s) of the two classes, as shown below:
@@ -18,7 +18,7 @@ Assuming a linear classifier of $g(\mathbf x) = \mathbf w^T \phi(\mathbf x) + b$
 ![margin](images/Figure7.1b.png)
 *Support Vectors*
 
-Just like in the [perceptron]({{<ref "../perceptron">}}) case, since 
+Just like in the perceptron case, since 
 
 $$y( \mathbf x_i ) = \begin{cases}>0 & \text{if} \ y_i = +1, \\\\ <0 & \text{if} \ y_i = -1 \end{cases}$$
 

@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -490,7 +478,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="support-vector-machines">
 <h1>Support Vector Machines<a class="headerlink" href="#support-vector-machines" title="Permalink to this headline">¶</a></h1>
-<p>In the development of the concept of [kernels](), we mentioned that these can be used to derive non-linear decision boundaries. What we haven’t addressed, is how good these can be - for example in separable datasets there can be many (or infinite) number of boundaries that separate the two classes but we need a metric to gauge the quality of separation. This metric is called the <strong>margin</strong> and will be geometrically explained next.</p>
+<p>In the development of the concept of kernels, we mentioned that these can be used to derive non-linear decision boundaries. What we haven’t addressed, is how good these can be - for example in separable datasets there can be many (or infinite) number of boundaries that separate the two classes but we need a metric to gauge the quality of separation. This metric is called the <strong>margin</strong> and will be geometrically explained next.</p>
 <div class="section" id="classification-margin">
 <h2>Classification Margin<a class="headerlink" href="#classification-margin" title="Permalink to this headline">¶</a></h2>
 <p>Intuitively margin is the distance between the classification boundary and the closest data point(s) of the two classes, as shown below:</p>
@@ -499,7 +487,7 @@
 <p>Assuming a linear classifier of <span class="math notranslate nohighlight">\(g(\mathbf x) = \mathbf w^T \phi(\mathbf x) + b\)</span> and a separable dataset for the moment, the maximization of the margin leads to a decision boundary, <span class="math notranslate nohighlight">\(y(\mathbf x)=0\)</span> that depends only on a subset of data that are calling <strong>support vectors</strong> as shown below for the specific dataset.</p>
 <p><img alt="margin" src="../../../../_images/Figure7.1b.png" />
 <em>Support Vectors</em></p>
-<p>Just like in the [perceptron]() case, since</p>
+<p>Just like in the perceptron case, since</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}y( \mathbf x_i ) = \begin{cases}&gt;0 &amp; \text{if} \ y_i = +1, \\\\ &lt;0 &amp; \text{if} \ y_i = -1 \end{cases}\end{split}\]</div>
 <p>for all training data we have,</p>

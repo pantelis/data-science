@@ -6,7 +6,7 @@ draft: true
 
 # Partially Observed MDP 
 
-In [the MDP chapter]({{<ref "../../mdp/mdp-intro">}}) knows the environment state $S^e_t$. In this chapter the agent uses perception and probabilistic reasoning subsystems to internally estimate the environment state $S^i_t$ using the probabilistic graphical models behind [recursive state estimation]({{<ref "../../pgm">}}) where a _belief_ regarding the environment state was formulated or [RNN models]({{<ref "../../rnn">}}).  This distinction between environment state $S^e$ and what the agent estimates, is the difference between fully observed ($S^i = S^e$) and partially observed ($S^i ≠ S_e$) environments we treat in this chapter.
+In the MDP chapter the environment state $S^e_t$ is known. In this chapter the agent uses perception and probabilistic reasoning subsystems to internally estimate the environment state $S^i_t$ using the probabilistic graphical models behind recursive state estimation where a _belief_ regarding the environment state was formulated or RNN models.  This distinction between environment state $S^e$ and what the agent estimates, is the difference between fully observed ($S^i = S^e$) and partially observed ($S^i ≠ S_e$) environments we treat in this chapter.
 
 ## The POMDP Agent-Environment Interface
 

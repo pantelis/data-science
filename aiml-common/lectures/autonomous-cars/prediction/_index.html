@@ -361,18 +361,6 @@
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments &amp; Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability-assignment-2.html">
-   Probability Assigmment
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -486,12 +474,12 @@
 <li><p>Going straight.</p></li>
 </ol>
 <p>Via the perception subsystem our agent the moment it predicts that the other agent is slowing down (indicating perhaps also its intention to turn right), it can start turning left long before the other agent’s manuever is completed, improving its efficiency / utility - after all the average speed may be one of the desirable metrics.</p>
-<p>Thinking probabilistically, we need to maintain a <em>belief</em>, that was introduced in the [PGM]() chapter, regarding the location of the turning-right agent. This belief will change over time as its updated with new observations.</p>
+<p>Thinking probabilistically, we need to maintain a <em>belief</em>, that was introduced in the probabilistic graphical models section, regarding the location of the turning-right agent. This belief will change over time as its updated with new observations.</p>
 <p><img alt="turn-prediction-prob" src="../../../../_images/turn-prediction-prob.png" />
 <em>Changing belief over time regarding the possible trajectories of the other agent. At time 0, the probabilities for the two trajectories are the prior probabilities determined from historical data.</em></p>
 <div class="section" id="prediction-with-model-vs-ml-driven-approaches">
 <h2>Prediction with Model vs ML-driven approaches<a class="headerlink" href="#prediction-with-model-vs-ml-driven-approaches" title="Permalink to this headline">¶</a></h2>
-<p>Already we have used offline maps that provide the static world that the agent operates in to do [route planning](). Such maps are constructed automatically from aerial imaging and information from the agent’s perception systems is used to simultaneously localize the ego agent and map its surroundings (a function called SLAM). In this section we continue to assume that such maps exists and we now need to determine how we capture the presence of dynamic objects on such maps.</p>
+<p>Already we have used offline maps that provide the static world that the agent operates in to do route planning. Such maps are constructed automatically from aerial imaging and information from the agent’s perception systems is used to simultaneously localize the ego agent and map its surroundings (a function called SLAM). In this section we continue to assume that such maps exists and we now need to determine how we capture the presence of dynamic objects on such maps.</p>
 <p>We assume that the sensing and perception subsystems provide the following information for each dynamic object (other agent).</p>
 <div class="math notranslate nohighlight">
 \[[id, x, y, v_x, v_y, \sigma_x, \sigma_y, \sigma_{vx} \sigma_{vy}]^T\]</div>

@@ -6,7 +6,7 @@ weight: 9
 
 ## Introduction 
 
-In [linear regression]({{< ref "../../regression/_index.md" >}}) we have seen a simple dataset from an unknown non-linear target function. We then proceeded and chose a hypothesis from the polynomial family that mapped each input example $x$ into a function $g(x, \mathbf w) = \mathbf w^T \phi(\mathbf{x})$, found the optimal $\mathbf w$ by maximizing the likelihood (ML) function using the MSE as the loss function. The moment we have $\mathbf w$ we can use it to do new predictions.  In this regression problem we have used a transformation from the raw data $\mathbf x$ to the feature $\phi(\mathbf x)$ and more specifically we have used basis functions $\phi_i(\mathbf x)$ from the set of polynomials shown below. 
+In linear regression, we have seen a simple dataset from an unknown non-linear target function. We then proceeded and chose a hypothesis from the polynomial family that mapped each input example $x$ into a function $g(x, \mathbf w) = \mathbf w^T \phi(\mathbf{x})$, found the optimal $\mathbf w$ by maximizing the likelihood (ML) function using the MSE as the loss function. The moment we have $\mathbf w$ we can use it to do new predictions.  In this regression problem we have used a transformation from the raw data $\mathbf x$ to the feature $\phi(\mathbf x)$ and more specifically we have used basis functions $\phi_i(\mathbf x)$ from the set of polynomials shown below. 
 
 ![polynomial-basis](images/Figure6.1a.png)
 *Polynomial basis functions*
@@ -19,7 +19,7 @@ We could have chosen other sets as well:
 In classification, we have seen lastly logistic regression which despite the non-linear (probabilistic) interpretation of its output it is still a linear classifier as it presents a linear decision boundary - linear in the feature space $(\mathbf{w}^T\mathbf{x})$. Which posses the question: what we do when we have a problem that has a non-linear decision boundary? The answer is via the concept of **kernels** that we describe next.
 
 ## Motivation
-Lets revisit the [perceptron algorithm]({{<ref "../perceptron">}}) where we started from $\mathbf{w}=\mathbf{0}$ (or a random vector) and we visited each and every example, changing the direction of the decision boundary when we met a miss-classified example. In the plots of that lecture for example we have seen that after two misclassified examples (the green circled examples indexed 9 and 6) the algorithm converged to a final $\mathbf{w}$. Note that the indices9 and 6 selected here are arbitrary. These two steps can be written as:
+Lets revisit the perceptron algorithm where we started from $\mathbf{w}=\mathbf{0}$ (or a random vector) and we visited each and every example, changing the direction of the decision boundary when we met a miss-classified example. In the plots of that lecture for example we have seen that after two misclassified examples (the green circled examples indexed 9 and 6) the algorithm converged to a final $\mathbf{w}$. Note that the indices9 and 6 selected here are arbitrary. These two steps can be written as:
 
 $\mathbf{w}^{(1)} = \mathbf{w}^{(0)} + \mathbf{x}^{(9)}$
 

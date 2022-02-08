@@ -17,7 +17,7 @@ where using the sum rule we know $p(y) = \sum_{x'} p(y|x') p(x')$. This is a ver
 
 ### Bayesian vs Maximum Likelihood
 
-In the [linear regression]({{<ref "../../regression/linear-regression">}}) section we have seen a simple supervised learning problem that is specified via a joint distribution $\hat{p}_{data}(\mathbf x, y)$ and are asked to fit the model parameterized by the weights $\mathbf w$ using ML. Its important to view pictorially perhaps the most important effect of Bayesian update: 
+In the linear regression section we have seen a simple supervised learning problem that is specified via a joint distribution $\hat{p}_{data}(\mathbf x, y)$ and are asked to fit the model parameterized by the weights $\mathbf w$ using ML. Its important to view pictorially perhaps the most important effect of Bayesian update: 
 
 * In ML the $\mathbf{w}$ is treated as a known quantity with an estimate $\hat{\mathbf{w}}$ that has a mean and variance resulting from the distribution of $y$.  
   
