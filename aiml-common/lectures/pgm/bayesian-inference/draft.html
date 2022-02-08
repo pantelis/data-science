@@ -405,13 +405,33 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/aiml-common/lectures/pgm/bayesian-inference/draft.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        
+        <a class="repository-button"
+            href="https://pantelis.github.io/data-science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/pgm/bayesian-inference/draft.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
@@ -492,7 +512,7 @@
 <div class="math notranslate nohighlight">
 \[p(\mathbf x, y) = p(\mathbf x) p(y|\mathbf x)\]</div>
 <p>and such distribution can be represented via the simple PGM graph (a) below.</p>
-<img src="images/Figure8.37.png" width="250" align="center">
+<a class="reference internal image-reference" href="../../../../_images/Figure8.37.png"><img alt="../../../../_images/Figure8.37.png" class="align-center" src="../../../../_images/Figure8.37.png" style="width: 250px;" /></a>
 <p><em>Simplest possible PGM example</em></p>
 <p>We introduce now a graphical notation where we shade, nodes that we consider observed. Let us know assume that we observe <span class="math notranslate nohighlight">\(y\)</span> as shown in (b). We can view the marginal <span class="math notranslate nohighlight">\(p(\mathbf x)\)</span>  as a prior over <span class="math notranslate nohighlight">\(x\)</span> and and we can <em>infer</em> the posterior distribution using the Bayes rule</p>
 <div class="math notranslate nohighlight">

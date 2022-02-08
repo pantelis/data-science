@@ -403,13 +403,33 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/aiml-common/lectures/regression/linear-regression/ch03_Linear_Models_for_Regression.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        
+        <a class="repository-button"
+            href="https://pantelis.github.io/data-science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/regression/linear-regression/ch03_Linear_Models_for_Regression.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
@@ -554,39 +574,50 @@
             
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/pantelis/PRML/blob/master/notebooks/ch03_Linear_Models_for_Regression.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+  <p><a href="https://colab.research.google.com/github/pantelis/PRML/blob/master/notebooks/ch03_Linear_Models_for_Regression.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="linear-models-for-regression">
 <h1>3. Linear Models for Regression<a class="headerlink" href="#linear-models-for-regression" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># You need to adjust the directory names below for your own account
-# e.g. you may elect to create ms-notebooks dir or not
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2100</span><span class="o">/</span><span class="mf">1408506528.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 
-# Execute this cell once
-
-# 1. Download the repo and set it as the current directory
-%cd /content/drive/My Drive/Colab Notebooks/ml-notebooks
-!git clone https://github.com/pantelis/PRML
-%cd /content/drive/My Drive/Colab Notebooks/ml-notebooks/PRML
-
-# 2. install the project/module
-!python setup.py install
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Add the project directory to the path</span>
-<span class="o">%</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">My</span> <span class="n">Drive</span><span class="o">/</span><span class="n">Colab</span> <span class="n">Notebooks</span><span class="o">/</span><span class="n">ml</span><span class="o">-</span><span class="n">notebooks</span><span class="o">/</span><span class="n">PRML</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You need to adjust the directory names below for your own account</span>
+<span class="c1"># e.g. you may elect to create ms-notebooks dir or not</span>
+
+<span class="c1"># Execute this cell once</span>
+
+<span class="c1"># 1. Download the repo and set it as the current directory</span>
+<span class="o">%</span><span class="k">cd</span> /content/drive/My Drive/Colab Notebooks/ml-notebooks
+<span class="o">!</span>git clone https://github.com/pantelis/PRML
+<span class="o">%</span><span class="k">cd</span> /content/drive/My Drive/Colab Notebooks/ml-notebooks/PRML
+
+<span class="c1"># 2. install the project/module</span>
+<span class="o">!</span>python setup.py install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Add the project directory to the path</span>
+<span class="o">%</span><span class="k">cd</span> /content/drive/My Drive/Colab Notebooks/ml-notebooks/PRML
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 </pre></div>
@@ -595,7 +626,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import seaborn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import seaborn</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="c1"># Apply the default theme</span>
@@ -606,10 +637,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">from</span> <span class="nn">prml.preprocess</span> <span class="kn">import</span> <span class="n">GaussianFeature</span><span class="p">,</span> <span class="n">PolynomialFeature</span><span class="p">,</span> <span class="n">SigmoidalFeature</span>
 <span class="kn">from</span> <span class="nn">prml.linear</span> <span class="kn">import</span> <span class="p">(</span>
@@ -626,7 +657,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_toy_data</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_toy_data</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">domain</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">domain</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sample_size</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">std</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -639,7 +670,7 @@
 <h2>3.1 Linear Basis Function Models<a class="headerlink" href="#linear-basis-function-models" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">X_polynomial</span> <span class="o">=</span> <span class="n">PolynomialFeature</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>
 <span class="n">X_gaussian</span> <span class="o">=</span> <span class="n">GaussianFeature</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">X_sigmoidal</span> <span class="o">=</span> <span class="n">SigmoidalFeature</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -657,7 +688,7 @@
 <h3>3.1.1 Maximum likelihood and least squares<a class="headerlink" href="#maximum-likelihood-and-least-squares" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sinusoidal</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sinusoidal</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
 
 <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">create_toy_data</span><span class="p">(</span><span class="n">sinusoidal</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
@@ -705,7 +736,7 @@
 <h3>3.1.4 Regularized least squares<a class="headerlink" href="#regularized-least-squares" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">RidgeRegression</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">RidgeRegression</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
@@ -725,7 +756,7 @@
 <h2>3.2 The Bias-Variance Decomposition<a class="headerlink" href="#the-bias-variance-decomposition" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="o">=</span> <span class="n">PolynomialFeature</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="o">=</span> <span class="n">PolynomialFeature</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
 <span class="c1"># feature = GaussianFeature(np.linspace(0, 1, 24), 0.1)</span>
 <span class="c1"># feature = SigmoidalFeature(np.linspace(0, 1, 24), 10)</span>
 
@@ -761,7 +792,7 @@
 <h3>3.3.1 Parameter distribution<a class="headerlink" href="#parameter-distribution" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="mf">0.3</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span>
 
 
@@ -803,7 +834,7 @@
 <h3>3.3.2 Predictive distribution<a class="headerlink" href="#predictive-distribution" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">create_toy_data</span><span class="p">(</span><span class="n">sinusoidal</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">create_toy_data</span><span class="p">(</span><span class="n">sinusoidal</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
 <span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">sinusoidal</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
 
@@ -833,7 +864,7 @@
 <h2>3.5 The Evidence Approximation<a class="headerlink" href="#the-evidence-approximation" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cubic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cubic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">create_toy_data</span><span class="p">(</span><span class="n">cubic</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
