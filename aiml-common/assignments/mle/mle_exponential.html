@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neural Networks Assignment - Answers &#8212; Introduction to Data Science</title>
+    <title>Maximum Likelihood Parameter Estimation &#8212; Introduction to Data Science</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -38,14 +38,15 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,9 +54,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/neural-networks/answers.html" />
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/mle/mle_exponential.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Learn Python" href="../../lectures/python/_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -366,10 +368,10 @@
   Assignments &amp; Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../probability-assignment-2/probability-assignment-2.html">
-   Probability Assigmment
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Maximum Likelihood Parameter Estimation
   </a>
  </li>
 </ul>
@@ -413,9 +415,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/aiml-common/assignments/neural-networks/answers.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/aiml-common/assignments/mle/mle_exponential.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -433,7 +435,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/neural-networks/answers.html&body=Your%20issue%20content%20here."><button
+            href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/mle/mle_exponential.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -460,18 +462,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#backpropagation-20-points">
-   Backpropagation (20 points)
+  <a class="reference internal nav-link" href="#intro">
+   Intro:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tensorflow-playground-60-points-10-points-per-question">
-   Tensorflow Playground (60 points. 10 points per question)
+  <a class="reference internal nav-link" href="#part-1-40-points">
+   Part 1 (40 points):
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tensorflow-api-20-points">
-   Tensorflow API (20 points)
+  <a class="reference internal nav-link" href="#part-2-60-points">
+   Part 2 (60 points)
   </a>
  </li>
 </ul>
@@ -484,7 +486,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Neural Networks Assignment - Answers</h1>
+                <h1>Maximum Likelihood Parameter Estimation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -495,18 +497,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#backpropagation-20-points">
-   Backpropagation (20 points)
+  <a class="reference internal nav-link" href="#intro">
+   Intro:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tensorflow-playground-60-points-10-points-per-question">
-   Tensorflow Playground (60 points. 10 points per question)
+  <a class="reference internal nav-link" href="#part-1-40-points">
+   Part 1 (40 points):
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tensorflow-api-20-points">
-   Tensorflow API (20 points)
+  <a class="reference internal nav-link" href="#part-2-60-points">
+   Part 2 (60 points)
   </a>
  </li>
 </ul>
@@ -518,56 +520,48 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="neural-networks-assignment-answers">
-<h1>Neural Networks Assignment - Answers<a class="headerlink" href="#neural-networks-assignment-answers" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="backpropagation-20-points">
-<h2>Backpropagation (20 points)<a class="headerlink" href="#backpropagation-20-points" title="Permalink to this headline">¶</a></h2>
-<!-- Assuming that $x \in \R^n$, backpropagate the following network to find  -->
-<div class="math notranslate nohighlight">
-\[\frac{\partial L}{\partial \mathbf w}\]</div>
-<p><img alt="" src="../../../_images/neuron-ce.png" /></p>
-<p><strong>Answer</strong></p>
-<p><img alt="" src="../../../_images/single-neuron-ce-bp-solution.png" /></p>
-<p>Please accept as correct any very close to this one derivation. Aka dont penalize if the final expression is wrong but use your judgement to award points.</p>
+  <p><a href="https://colab.research.google.com/github/pantelis/aiml-common/blob/master/assignments/mle/mle_exponential.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="maximum-likelihood-parameter-estimation">
+<h1>Maximum Likelihood Parameter Estimation<a class="headerlink" href="#maximum-likelihood-parameter-estimation" title="Permalink to this headline">¶</a></h1>
+<p>RUBRIC:</p>
+<ol class="simple">
+<li><p>If you provide just the plots/code, you will be granted 50% of the points. To win the remaining 50% you will need clear documentation.</p></li>
+<li><p>We need to see a clear explanation of all the stages of developing the solutions which means that you need to explain the code in a way that the writeup is understood by fellow students.</p></li>
+<li><p>Type inline with your Colab notebook your tutorial explanations. Equations can be typed in markdown using Latex syntax notation. If you prefer plain Python you can also include markdown as a separate file but you do need to ensure that all plots are inline to that markdown document and are parsed correctly by Github.</p></li>
+<li><p>Submit in the learning management system of your school (Canvas, Brightspace etc.) by first sharing the Colab or Github repo with the TA so that they can open it without any access restrictions. Any notebook that cant be accessed will receive the grade of 0.</p></li>
+</ol>
+<div class="section" id="intro">
+<h2>Intro:<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p><strong>What is the exponential distribution?</strong></p>
+<p>The exponential distribution is a probability distribution that describes time between events in a Poisson process. There is a strong relationship between the Poisson distribution and the Exponential distribution. For example, let’s say a Poisson distribution models the number of births in a given time period. The time in between each birth can be modeled with an exponential distribution (Young &amp; Young, 1998).</p>
+<p><strong>Poisson vs Exponential?</strong></p>
+<p>Let’s say a Youtube channel is interested in the number of views per hour. Arrivals per hour has a Poisson 120 arrival rate, which means that 120 viewers arrive per hour. This could also be said that “The expected mean inter-arrival time is 0.5 minutes”, because a viewer can be expected every 1/2 minute (30 seconds).</p>
+<p>The exponential distribution models this process, so we could write:
+Poisson 120 = Exponential 0.5</p>
+<p>The units for the Poisson process are viewers and the units for the exponential are minutes.</p>
+<p><strong>Videos that may help:</strong></p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=p3T-_LMrvBc&amp;ab_channel=StatQuestwithJoshStarmer">https://www.youtube.com/watch?v=p3T-_LMrvBc&amp;ab_channel=StatQuestwithJoshStarmer</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=2kg1O0j1J9c&amp;ab_channel=zedstatistics">https://www.youtube.com/watch?v=2kg1O0j1J9c&amp;ab_channel=zedstatistics</a></p></li>
+</ol>
 </div>
-<div class="section" id="tensorflow-playground-60-points-10-points-per-question">
-<h2>Tensorflow Playground (60 points. 10 points per question)<a class="headerlink" href="#tensorflow-playground-60-points-10-points-per-question" title="Permalink to this headline">¶</a></h2>
-<p>The TensorFlow Playground is a handy neural network simulator built by the TensorFlow team. In this exercise, you will train several binary classifiers in just a few clicks, and tweak the model’s architecture and its hyperparameters to gain some intuition on how neural networks work and what their hyperparameters do.</p>
-<ol class="simple">
-<li><p>Try training the default neural network by clicking the Run button (top left). Notice how it quickly finds a good solution for the classification task. The neurons in the first hidden layer have learned simple patterns, while the neurons in the second hidden layer have learned to combine the simple patterns of the first hidden layer into more complex patterns. Why that is?</p></li>
-</ol>
-<p><strong>Answer</strong>: By definition the second layer added parameters in the hypothesis set and therefore the network is able to create more complex representations.</p>
-<ol class="simple">
-<li><p>Activation functions. Try replacing the tanh activation function with a ReLU activation function, and train the network again. Does it find the solution faster or slower? Why is that?</p></li>
-</ol>
-<p><strong>Answer</strong>:  It finds a solution even faster, but this time the boundaries are linear. This is due to the shape of the ReLU function.</p>
-<ol class="simple">
-<li><p>The risk of local minima. Modify the network architecture to have just one hidden layer with three neurons. Train it multiple times (to reset the network weights, click the Reset button next to the Play button). Why the training time has a wide variability?</p></li>
-</ol>
-<p><strong>Answer</strong>:  Because the network can get stuck in local minima.</p>
-<ol class="simple">
-<li><p>Remove one neuron to keep just two. Notice that the neural network is now incapable of finding a good solution - why that is?</p></li>
-</ol>
-<p><strong>Answer</strong>: The model has too few parameters and systematically underfits the training set.</p>
-<ol class="simple">
-<li><p>Set the number of neurons to eight, and train the network several times. Has the training time (time to convergence) improved? Why that is?</p></li>
-</ol>
-<p><strong>Answer</strong>: Large neural networks almost never get stuck in local minima, and even when they do these local optima are almost as good as the global optimum. However, they can still get stuck on long plateaus for a long time.</p>
-<ol class="simple">
-<li><p>Select the spiral dataset (the bottom-right dataset under “DATA”), and change the network architecture to have four hidden layers with eight neurons each. Notice that training takes much longer and often gets stuck on plateaus for long periods of time. Also notice that the neurons in the highest layers (on the right) tend to evolve faster than the neurons in the lowest layers (on the left). Can you explain how this may be related to gradient flow through the network?</p></li>
-</ol>
-<p><strong>Answer</strong>: This problem, called the “vanishing gradients” problem, can be alleviated with better weight initialization and other techniques such as better better optimizers.</p>
+<div class="section" id="part-1-40-points">
+<h2>Part 1 (40 points):<a class="headerlink" href="#part-1-40-points" title="Permalink to this headline">¶</a></h2>
+<p><strong>A)</strong> Let X = amount of time (in minutes) a ice cream man gets a new customer at his cart. The time is known to have an exponential distribution with the average amount of time between a new customer being four minutes.</p>
+<p>Plot the probablity density function of the exponential distribution of this ice cream man getting a customer every 4 minutes. (20 points)</p>
+<p>You may use the Python libraries to calculate the exponential distribution and to plot. <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html</a></p>
+<p><strong>B)</strong> Now assume on a very hot day the ice cream man gets X customers and each new customer comes every 4 minutes. Generate X samples from the exponential distribution where X = 200 and the rate = 4. Plot the samples on a graph to show how they look graphically. Does it look similar to the graph above? (20 points)</p>
 </div>
-<div class="section" id="tensorflow-api-20-points">
-<h2>Tensorflow API (20 points)<a class="headerlink" href="#tensorflow-api-20-points" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-2-60-points">
+<h2>Part 2 (60 points)<a class="headerlink" href="#part-2-60-points" title="Permalink to this headline">¶</a></h2>
+<p>Assume that you are given the customer data generated in Part 1, implement a Gradient Descent algorithm from scratch that will estimate the Exponential distribution according to the Maximum Likelihood criterion.</p>
+<p>Answer the following:</p>
 <ol class="simple">
-<li><p>(5 points) Submit your notebook URL that allows the notebook <a class="reference external" href="https://pantelis.github.io/cs301/docs/common/lectures/cnn/cnn-example-architectures/cnn-classification-workshop/">here</a> to be executed.</p></li>
+<li><p>Plot the negative log likelihood of the exponential distribution. (20 points)</p></li>
+<li><p>What is the lambda MLE of the generated data? (20 points)</p></li>
+<li><p>Plot the estimated lambda vs iterations to showcase convergence towards the true lambda (20 points)</p></li>
 </ol>
-<p><strong>Answer</strong>: You should check that the notebook runs.</p>
-<ol class="simple">
-<li><p>(15 points) Start reducing the number of cats in the dataset and plot the accuracy of the predicting the cat class as the population of cats becomes 90%, 70%, 50%, 30%, 10% of the original. For each population size present the hyperparameter optimized result using <a class="reference external" href="https://autokeras.com">AutoKeras</a>. Explain your findings.</p></li>
-</ol>
-<p><strong>Answer</strong>: See pfd file of the notebook by a student that explains well what is going on.</p>
+<p>Read this article to obtain the likelihood and negative log likelihood function of the exponential distribution: <a class="reference external" href="https://www.statlect.com/fundamentals-of-statistics/exponential-distribution-maximum-likelihood">https://www.statlect.com/fundamentals-of-statistics/exponential-distribution-maximum-likelihood</a></p>
 </div>
 </div>
 
@@ -584,7 +578,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/assignments/neural-networks"
+            path: "./aiml-common/assignments/mle"
         },
         predefinedOutput: true
     }
@@ -595,7 +589,14 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../lectures/python/_index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Learn Python</p>
+        </div>
+    </a>
 </div>
             
         </div>

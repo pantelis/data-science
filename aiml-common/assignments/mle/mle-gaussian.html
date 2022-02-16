@@ -5,45 +5,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The learning problem - assignment &#8212; Introduction to Data Science</title>
+    <title>MLE of a Gaussian \(p_{model}\) (50 points) &#8212; Introduction to Data Science</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/tabs.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -52,10 +55,10 @@
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/learning-problem-assignment.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/mle/mle-gaussian.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -75,19 +78,19 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Data Science</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -99,7 +102,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../syllabus/_index.html">
+  <a class="reference internal" href="../../../syllabus/_index.html">
    Syllabus
   </a>
  </li>
@@ -111,22 +114,22 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ai-intro/course-introduction/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/course-introduction/_index.html">
    Course Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ai-intro/data-science-360/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/data-science-360/_index.html">
    Data Science 360
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ai-intro/pipelines/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/pipelines/_index.html">
    ML Pipelines
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/uber-ml-arch-case-study/_index.html">
+  <a class="reference internal" href="../../lectures/uber-ml-arch-case-study/_index.html">
    A Case Study of an ML Architecture - Uber
   </a>
  </li>
@@ -138,27 +141,27 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ml-math/probability/_index.html">
+  <a class="reference internal" href="../../lectures/ml-math/probability/_index.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/entropy/_index.html">
+  <a class="reference internal" href="../../lectures/entropy/_index.html">
    Entropy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/pgm/bayesian-inference/_index.html">
+  <a class="reference internal" href="../../lectures/pgm/bayesian-inference/_index.html">
    Bayesian Inference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/classification/covid19-antibody-test/_index.html">
+  <a class="reference internal" href="../../lectures/classification/covid19-antibody-test/_index.html">
    COVID-19 Antibody Test
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/pgm/bayesian-coin/_index.html">
+  <a class="reference internal" href="../../lectures/pgm/bayesian-coin/_index.html">
    Bayesian Coin Flipping
   </a>
  </li>
@@ -170,17 +173,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/learning-problem/_index.html">
+  <a class="reference internal" href="../../lectures/learning-problem/_index.html">
    The Learning Problem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/regression/linear-regression/_index.html">
+  <a class="reference internal" href="../../lectures/regression/linear-regression/_index.html">
    Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/optimization/sgd/_index.html">
+  <a class="reference internal" href="../../lectures/optimization/sgd/_index.html">
    Stochastic Gradient Descent
   </a>
  </li>
@@ -192,12 +195,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/classification/classification-intro/_index.html">
+  <a class="reference internal" href="../../lectures/classification/classification-intro/_index.html">
    Introduction to Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/classification/logistic-regression/_index.html">
+  <a class="reference internal" href="../../lectures/classification/logistic-regression/_index.html">
    Logistic Regression
   </a>
  </li>
@@ -209,27 +212,27 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/decision-trees/_index.html">
+  <a class="reference internal" href="../../lectures/decision-trees/_index.html">
    Decision Trees
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ensemble/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/_index.html">
    Ensemble Methods
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ensemble/random-forests/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/random-forests/_index.html">
    Random Forests
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ensemble/boosting/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/boosting/_index.html">
    Boosting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/ensemble/boosting-workshop/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/boosting-workshop/_index.html">
    Boosting workshop
   </a>
  </li>
@@ -241,17 +244,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/unsupervised/k-means/_index.html">
+  <a class="reference internal" href="../../lectures/unsupervised/k-means/_index.html">
    K-means Clustering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/density-estimation/knn/_index.html">
+  <a class="reference internal" href="../../lectures/density-estimation/knn/_index.html">
    k-Nearest Neighbors (kNN) Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/density-estimation/knn-workshop/_index.html">
+  <a class="reference internal" href="../../lectures/density-estimation/knn-workshop/_index.html">
    kNN Workshop
   </a>
  </li>
@@ -263,37 +266,37 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/classification/perceptron/_index.html">
+  <a class="reference internal" href="../../lectures/classification/perceptron/_index.html">
    The Neuron (Perceptron)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/dnn/dnn-intro/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/dnn-intro/_index.html">
    Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/dnn/backprop-intro/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/backprop-intro/_index.html">
    Introduction to Backpropagation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/dnn/backprop-dnn/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/backprop-dnn/_index.html">
    Backpropagation in Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/cnn/cnn-intro/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-intro/_index.html">
    Introduction to Convolutional Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/cnn/cnn-layers/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-layers/_index.html">
    CNN Architectures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/cnn/cnn-example-architectures/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-example-architectures/_index.html">
    CNN Example Architectures
   </a>
  </li>
@@ -305,17 +308,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/recommenders/recommenders-intro/_index.html">
+  <a class="reference internal" href="../../lectures/recommenders/recommenders-intro/_index.html">
    Recommender System Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/recommenders/netflix/_index.html">
+  <a class="reference internal" href="../../lectures/recommenders/netflix/_index.html">
    The Netflix Prize and Singular Value Decomposition
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/pca/_index.html">
+  <a class="reference internal" href="../../lectures/pca/_index.html">
    Principal Component Analysis (PCA)
   </a>
  </li>
@@ -327,7 +330,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/ml-math/_index.html">
+  <a class="reference internal" href="../../lectures/ml-math/_index.html">
    Math for ML
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -337,12 +340,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/linear-algebra/_index.html">
+    <a class="reference internal" href="../../lectures/linear-algebra/_index.html">
      Linear Algebra for Machine Learning
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/ml-math/calculus/_index.html">
+    <a class="reference internal" href="../../lectures/ml-math/calculus/_index.html">
      Calculus
     </a>
    </li>
@@ -356,7 +359,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/python/_index.html">
+  <a class="reference internal" href="../../lectures/python/_index.html">
    Learn Python
   </a>
  </li>
@@ -368,8 +371,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="probability-assignment-2/probability-assignment-2.html">
-   Probability Assigmment
+  <a class="reference internal" href="mle_exponential.html">
+   Maximum Likelihood Parameter Estimation
   </a>
  </li>
 </ul>
@@ -413,7 +416,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/aiml-common/assignments/learning-problem-assignment.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/aiml-common/assignments/mle/mle-gaussian.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -433,7 +436,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/learning-problem-assignment.html&body=Your%20issue%20content%20here."><button
+            href="https://pantelis.github.io/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/mle/mle-gaussian.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -459,39 +462,27 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-10-points">
-   Github (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MLE of a Gaussian
+   <span class="math notranslate nohighlight">
+    \(p_{model}\)
+   </span>
+   (50 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-the-curve-fitting-notebook-10-points">
-   Run the curve fitting notebook (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mle-of-a-gaussian-p-model-for-a-regression-problem-50-points">
+   MLE of a Gaussian
+   <span class="math notranslate nohighlight">
+    \(p_{model}\)
+   </span>
+   for a regression problem (50 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loss-function-15-points">
-   Loss function (15 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-complexity-15-points">
-   Model complexity (15 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameter-table-20-points">
-   Parameter Table (20 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regularization-20-points">
-   Regularization (20 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Github (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -504,7 +495,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The learning problem - assignment</h1>
+                <h1>MLE of a Gaussian p_{model} (50 points)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -514,39 +505,27 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-10-points">
-   Github (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MLE of a Gaussian
+   <span class="math notranslate nohighlight">
+    \(p_{model}\)
+   </span>
+   (50 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-the-curve-fitting-notebook-10-points">
-   Run the curve fitting notebook (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mle-of-a-gaussian-p-model-for-a-regression-problem-50-points">
+   MLE of a Gaussian
+   <span class="math notranslate nohighlight">
+    \(p_{model}\)
+   </span>
+   for a regression problem (50 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loss-function-15-points">
-   Loss function (15 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-complexity-15-points">
-   Model complexity (15 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameter-table-20-points">
-   Parameter Table (20 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regularization-20-points">
-   Regularization (20 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Github (10 points)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
  </li>
 </ul>
@@ -558,38 +537,20 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-learning-problem-assignment">
-<h1>The learning problem - assignment<a class="headerlink" href="#the-learning-problem-assignment" title="Permalink to this headline">¶</a></h1>
-<p>All the questions below refer to the the cells of the notebook numbered 1.0 and 1.1 (aka not 1.26).</p>
-<iframe src="https://nbviewer.jupyter.org/github/pantelis-classes/PRML/blob/master/notebooks/ch01_Introduction.ipynb" width="900" height="1200"></iframe>
-<div class="section" id="github-10-points">
-<h2>Github (10 points)<a class="headerlink" href="#github-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Clone <a class="reference external" href="https://github.com/pantelis-classes/PRML">the repo</a> in your own Github account. Make the Github repo private. Locate the notebook shown above.</p>
+  <iframe src="https://nbviewer.jupyter.org/github/pantelis-classes/cs634-notebooks/blob/master/maximum_likelihood.ipynb" width="900" height="1200"></iframe>
+<div class="section" id="mle-of-a-gaussian-p-model-50-points">
+<h1>MLE of a Gaussian <span class="math notranslate nohighlight">\(p_{model}\)</span> (50 points)<a class="headerlink" href="#mle-of-a-gaussian-p-model-50-points" title="Permalink to this headline">¶</a></h1>
+<p>The above notebook presents an array of data points called <code class="docutils literal notranslate"><span class="pre">data</span></code> and plots several hypotheses involving the negative log-likelihood. Estimate the parameters of the Gaussian <span class="math notranslate nohighlight">\(p_{model}\)</span> by adding the code that implements this estimation in the placeholder provided (20 points) and explaining what it does (30 points).</p>
 </div>
-<div class="section" id="run-the-curve-fitting-notebook-10-points">
-<h2>Run the curve fitting notebook (10 points)<a class="headerlink" href="#run-the-curve-fitting-notebook-10-points" title="Permalink to this headline">¶</a></h2>
-<p>For the notebook embedded in , load it in your Colab account and ensure it runs with no errors.</p>
+<div class="section" id="mle-of-a-gaussian-p-model-for-a-regression-problem-50-points">
+<h1>MLE of a Gaussian <span class="math notranslate nohighlight">\(p_{model}\)</span> for a regression problem (50 points)<a class="headerlink" href="#mle-of-a-gaussian-p-model-for-a-regression-problem-50-points" title="Permalink to this headline">¶</a></h1>
+<p>Repeat for the regression problem given (20 points for a correct implementation and 30 points for adequate explanation).</p>
 </div>
-<div class="section" id="loss-function-15-points">
-<h2>Loss function (15 points)<a class="headerlink" href="#loss-function-15-points" title="Permalink to this headline">¶</a></h2>
-<p>Add a new text cell and explain why the loss function is called Root Mean Squared Error (RMSE) and what the square root offers, if anything, to finding a better solution.</p>
-</div>
-<div class="section" id="model-complexity-15-points">
-<h2>Model complexity (15 points)<a class="headerlink" href="#model-complexity-15-points" title="Permalink to this headline">¶</a></h2>
-<p>Add a text cell after the corresponding figure explaining the behavior of the test error for M=9 vs M=3.</p>
-</div>
-<div class="section" id="parameter-table-20-points">
-<h2>Parameter Table (20 points)<a class="headerlink" href="#parameter-table-20-points" title="Permalink to this headline">¶</a></h2>
-<p>Extract the weights <span class="math notranslate nohighlight">\(w_i\)</span> (parameters) of the model for M=1, 3, 6, 9 and tabulate them into corresponding columns. What can you observe with respect to their squared norm <span class="math notranslate nohighlight">\(|\mathbf w|\)</span> ?</p>
-</div>
-<div class="section" id="regularization-20-points">
-<h2>Regularization (20 points)<a class="headerlink" href="#regularization-20-points" title="Permalink to this headline">¶</a></h2>
-<p>Read the Linear Regression notes in the course site and add a text paragraph after the regularization cell explaining the output.  Create a plot of the RMSE vs model complexity with regularization.</p>
-</div>
-<div class="section" id="id1">
-<h2>Github (10 points)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Ensure that you save the notebook <strong>with</strong> the results / plots and commit the notebook to your Github account.  Submit (a) the URL of the Github hosted notebook and (b) the URL of the Colab histed URL in the corresponding Assignment in Canvas.</p>
-</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><a class="reference external" href="http://jrmeyer.github.io/machinelearning/2017/08/18/mle.html">Maximum Likelihood Estimation of Gaussian Parameters</a></p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -605,7 +566,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/assignments"
+            path: "./aiml-common/assignments/mle"
         },
         predefinedOutput: true
     }
@@ -635,7 +596,7 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
