@@ -6,7 +6,7 @@
 
 JAX is an extensible system for **composable function transformations**. You can read its groundbraking benefits for a wide range of scientific applications [here](https://github.com/google/jax)
 
-``{eval-rst}
+```{eval-rst}
 .. youtube:: WdTeDXsOSj4
 ```
 
