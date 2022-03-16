@@ -4,7 +4,7 @@
 
 ## Description
 
-JAX is an extensible system for **composable function transformations**. You can read its groundbraking benefits for a wide range of scientific applications [here](https://github.com/google/jax)
+JAX is an extensible system for **composable function transformations**. You can read its groundbraking benefits for a wide range of scientific applications [here](https://github.com/google/jax).
 
 ```{eval-rst}
 .. youtube:: WdTeDXsOSj4
@@ -22,15 +22,17 @@ Usually the domain must be well established but you are free to work  on a domai
 
 You will find the ongoing competitions [here](https://www.kaggle.com/competitions). Read the competition description and store the data in your Gdrive.  
 
-## Step 3: Select sections/chapters of your course site - for example, Ensemble Learning / Gradient Boosting. 
+## Step 3: Select a learning method 
 
-This section/chapter will be the basis of your tutorial. You will demonstrate the usage of JAX in improving the understanding of your audience about this topic. 
+You can use the sections/chapters of your course site. For example, Ensemble Learning / Gradient Boosting. Feel free to select other methods outside the scope of the course. 
 
-For example the team at OptimaLabs selected the Ensemble Learning chapter. They found a library called [GPJax](https://github.com/thomaspinder/GPJax) to demonstrate a hyperparameter optimization of Gradient Boosting methods (XGBoost). 
+This learning method you selected will be the basis of your tutorial. You will demonstrate the usage of JAX in improving the understanding of your audience about this topic *and* solve the Kaggle competition problem statement. 
 
-As an another example,  a company named FakeNews Killer Inc selected the DNN chapter. They found the [WikiGraphs](https://github.com/deepmind/deepmind-research/tree/master/wikigraphs) that powers one of the components of their fake news detection pipeline. 
+For example the team at OptimaLabs selected the Ensemble Learning chapter. They found a library called [GPJax](https://github.com/thomaspinder/GPJax) to demonstrate a hyperparameter optimization of Gradient Boosting methods (XGBoost). They applied this to a Kaggle competition that could be solved with Gradient Boosting. 
 
-You can find plenty of JAX-based libraries [here](https://github.com/n2cholas/awesome-jax) but searching across Github is also needed as this is not an exhaustive list. 
+As an another example,  a company named FakeNews Killer Inc selected the DNN chapter. They found the [WikiGraphs](https://github.com/deepmind/deepmind-research/tree/master/wikigraphs) that powers one of the components of their fake news detection pipeline. They applied this to the [fake news competition](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset)
+
+You can find plenty of JAX-based libraries you can use [here](https://github.com/n2cholas/awesome-jax) but searching across Github is also needed as this is not an exhaustive list. 
 
 ## Step 3: Submit your Proposal
 
