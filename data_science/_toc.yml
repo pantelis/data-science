@@ -40,6 +40,7 @@ parts:
   - caption: Trees and Intelligence of the Crowds
     chapters:    
     - file: aiml-common/lectures/decision-trees/_index.md
+    - file: aiml-common/lectures/regression-trees/regression_trees.ipynb
     - file: aiml-common/lectures/ensemble/_index.md
     - file: aiml-common/lectures/ensemble/random-forests/_index.md
     - file: aiml-common/lectures/ensemble/boosting/_index.md
