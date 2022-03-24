@@ -2,7 +2,7 @@ jupyter-book
 sphinxcontrib-youtube
 sphinx_inline_tabs
 ghp-import
-
+sklearn
 seaborn
 matplotlib
 numpy
@@ -13,3 +13,5 @@ kaleido
 dash
 pandas
 jupyter-dash
+dtreeviz
+lolviz
