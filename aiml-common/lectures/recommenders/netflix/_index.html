@@ -382,6 +382,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../../assignments/neural-networks-1/_index.html">
+   Neural Networks Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../../projects/jaxworld/jax.html">
    Accelerated Functional Programming - The Case for Jax
   </a>
@@ -543,7 +548,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The 10% improvement goal was a lucky number after all. Netflix had no clue as to if this was the <em>right</em> number when they defined the terms. Any small deviation from this number, would have made the competition either too easy or impossibly difficult.</p></li>
 </ol>
 <p>You are given the following dataset structure (will be explained in class) shown below,</p>
-<p><img alt="netflix-dataset" src="../../../../_images/netflix-dataset1.png" />
+<p><img alt="netflix-dataset" src="../../../../_images/netflix-dataset.png" />
 <em>Netflix Prize dataset structure</em></p>
 <p>Assuming that the rating matrix <span class="math notranslate nohighlight">\(A_{[m x n]}\)</span> with m users (500K) and n items (17K movies), this matrix is extremely sparse - it has only 100 million ratings, the remaining 8.4 billion ratings are missing (about 99% of the possible ratings are missing, because a user typically rates only a small portion of the movies).</p>
 </div>
@@ -556,15 +561,27 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[A = U \Sigma V^†\]</div>
 <p>where  <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> is a <span class="math notranslate nohighlight">\(m \times m\)</span> real unitary matrix, <span class="math notranslate nohighlight">\(\mathbf{\Sigma}\)</span> is an <span class="math notranslate nohighlight">\(m \times n\)</span> rectangular diagonal matrix with non-negative real numbers on the diagonal, and <span class="math notranslate nohighlight">\(\mathbf{V}\)</span>  is a <span class="math notranslate nohighlight">\(n \times n\)</span> real unitary matrix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that a unitary matrix <span class="math notranslate nohighlight">\(U\)</span> is a matrix that its conjugate transpose <span class="math notranslate nohighlight">\(U^†\)</span> is also its inverse - its the complex analog of the orthogonal matrix and we have by definition <span class="math notranslate nohighlight">\(UU^†=I\)</span>.</p>
+<p>The columns of <span class="math notranslate nohighlight">\(U\)</span> are eigenvectors of <span class="math notranslate nohighlight">\(AA^T\)</span>, and the columns of <span class="math notranslate nohighlight">\(V\)</span> are eigenvectors of <span class="math notranslate nohighlight">\(A^TA\)</span>. The <span class="math notranslate nohighlight">\(r\)</span> singular values on the diagonal of <span class="math notranslate nohighlight">\(\Sigma\)</span> are the square roots of the nonzero eigenvalues of both <span class="math notranslate nohighlight">\(AA^T\)</span> and <span class="math notranslate nohighlight">\(A^TA\)</span>.</p>
+<p>It is interesting to attribute the columns of these matrices with the four fundamental subspaces:</p>
+<ol class="simple">
+<li><p>The column space of <span class="math notranslate nohighlight">\(A\)</span> is spanned by the first <span class="math notranslate nohighlight">\(r\)</span> columns of <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+<li><p>The left nullspace of <span class="math notranslate nohighlight">\(A\)</span> are the last <span class="math notranslate nohighlight">\(m-r\)</span> columns of <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+<li><p>The row space of <span class="math notranslate nohighlight">\(A\)</span> are the first <span class="math notranslate nohighlight">\(r\)</span> columns of <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p>The nullspace of <span class="math notranslate nohighlight">\(A\)</span> are the last <span class="math notranslate nohighlight">\(n-r\)</span> columns of V.</p></li>
+</ol>
+</div>
 <p>We can write the SVD as,</p>
 <div class="math notranslate nohighlight">
 \[A = U \sqrt{\Sigma} \sqrt{\Sigma} V^†\]</div>
 <p>and given the span of the subspaces above we can now intuitively think what the terms <span class="math notranslate nohighlight">\(\mathbf{p}_u = U \sqrt{\Sigma}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{q}_i = \sqrt{\Sigma} V^†\)</span> represent.</p>
-<p><img alt="svd-netflix" src="../../../../_images/svd-netflix1.png" />
+<p><img alt="svd-netflix" src="../../../../_images/svd-netflix.png" />
 <em>SVD decomposition reveals latent features weighted by the underlying singular values of the data matrix</em></p>
 <p>The first term represents the column space and it provides a representation of all <em>inter-user</em> factors (also called latent (hidden) features).  The second term represents the row space and it provides a representation of all <em>inter-item</em> factors. Which brings us to the major point of what the <span class="math notranslate nohighlight">\(\sqrt{\Sigma}\)</span> is doing to both terms. It represents the <em>significance</em> of those factors and therefore we can very easily use the singular values it contains to “compress” our representation by selecting the <span class="math notranslate nohighlight">\(f\)</span> largest singular values and ignoring the rest.</p>
 <p>Given these vectors of factors we can now use them to predict the rating:</p>
-<p><img alt="svd-netflix-prediction" src="../../../../_images/svd-netflix-prediction1.png" />
+<p><img alt="svd-netflix-prediction" src="../../../../_images/svd-netflix-prediction.png" />
 <em>Prediction of a rating is the product between user latent features and movie latent features matrices.</em></p>
 <p>We have seen above graphically how the matrix factorization models map both users and items to a joint latent factor space of dimensionality <span class="math notranslate nohighlight">\(f\)</span>, such that user-item interactions are modeled as inner products in that space. Each item <span class="math notranslate nohighlight">\(i\)</span> is associated with a vector <span class="math notranslate nohighlight">\(q_i \in \mathbb{R}^f\)</span>, and each user <span class="math notranslate nohighlight">\(u\)</span> is associated with a vector <span class="math notranslate nohighlight">\(p_u \in \mathbb{R}^f\)</span>. For a given item <span class="math notranslate nohighlight">\(i\)</span>, the elements of <span class="math notranslate nohighlight">\(q_i\)</span> measure the extent to which  the  item  possesses  those  factors, positive or negative. For a given user <span class="math notranslate nohighlight">\(u\)</span>, the elements of <span class="math notranslate nohighlight">\(p_u\)</span> measure the extent of interest the user has in items that are high on the corresponding factors, again, positive or negative. The resulting dot product, <span class="math notranslate nohighlight">\(q_i^T p_u\)</span>, captures the interaction between user <span class="math notranslate nohighlight">\(u\)</span> and item <span class="math notranslate nohighlight">\(i\)</span> — the user’s <em>overall interest</em> in the item’s characteristics. This approximates user <span class="math notranslate nohighlight">\(u\)</span>’s rating of item <span class="math notranslate nohighlight">\(i\)</span>, which is denoted by <span class="math notranslate nohighlight">\(r_{ui}\)</span>, leading to the estimate</p>
 <div class="math notranslate nohighlight">
