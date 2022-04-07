@@ -22,7 +22,7 @@ The TensorFlow Playground is a handy neural network simulator built by the Tenso
 
 ## Problem Set 2  (20 points)
 
-1. (5 points) Submit your notebook URL that allows [this notebook](https://pantelis.github.io/data-science/aiml-common/lectures/cnn/cnn-example-architectures/using_convnets_with_small_datasets.ipynb) to be executed. 
+1. (5 points) Submit your notebook URL that allows [this notebook](https://pantelis.github.io/data-science/aiml-common/lectures/cnn/cnn-example-architectures/using_convnets_with_small_datasets.html) to be executed. 
 
 2. (15 points) Start reducing the number of cats in the dataset and plot the accuracy of the predicting the cat class as the population of cats becomes 90%, 70%, 50%, 30%, 10% of the original. For each population size present the hyperparameter optimized result using [AutoKeras](https://autokeras.com). Explain your findings. 
 
