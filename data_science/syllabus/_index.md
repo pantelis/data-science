@@ -16,9 +16,7 @@ draft: false
 
 ## Schedule
 
-The schedule is based on [Academic Calendar Fall 2021](https://www5.njit.edu/registrar/calendars/): 
-
-> NOTE: For most lectures you need to read the Notes that are published in this site _and_ the corresponding book chapters quoted. 
+> NOTE: For all lectures you need to read the Notes that are published in this site _and_ the corresponding book chapters quoted. 
 
 | Lecture     | Description    | Reading List | 
 | --- | --- | --- |
