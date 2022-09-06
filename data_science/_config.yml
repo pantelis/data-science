@@ -12,14 +12,12 @@ execute:
   execute_notebooks: 'off'
   timeout: 300
   exclude_patterns: 
-    - data_science/handson-ml2/*
-    - data_science/handson-ml2/.*
-    - data_mining/aiml-common/lectures/transfer-learning/quantized_transfer_learning.ipynb
+    - data_science/aiml-common/lectures/transfer-learning/quantized_transfer_learning.ipynb
     
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: data-science-book.tex
+    targetname: data-science-course.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -49,13 +47,27 @@ sphinx:
   config:
     html_theme_options:
       use_download_button: true
-      repository_url: https://pantelis.github.io/data-science
+      repository_url: https://github.com/pantelis/data-science
       use_issues_button: true
       use_repository_button: true
       use_edit_page_button: false
+    mathjax3_config:
+      tex:
+        macros:
+          #"N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat": ["\\left[\\begin{array}"]
+          "emat": ["\\end{array}\\right]"]
+    latex_elements:
+        preamble: |
+          \newcommand\N{\mathbb{N}}
+          \newcommand\floor[1]{\lfloor#1\rfloor}
+          \newcommand{\bmat}{\left[\begin{array}}
+          \newcommand{\emat}{\end{array}\right]}
   extra_extensions:
     - sphinxcontrib.youtube
-    - sphinx_inline_tabs 
+    - sphinx_inline_tabs
+    - sphinxcontrib.inkscapeconverter
      
 parse:
   myst_enable_extensions:
