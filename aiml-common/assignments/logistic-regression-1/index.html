@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Entropy &#8212; Introduction to Data Science</title>
+    <title>Logistic Regression Assignment &#8212; Introduction to Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,13 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/lectures/entropy/_index.html" />
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/logistic-regression-1/index.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Bayesian Inference" href="../pgm/bayesian-inference/_index.html" />
-    <link rel="prev" title="Probability Basics" href="../ml-math/probability/_index.html" />
+    <link rel="prev" title="Probability Assignment" href="../probability/probability-assignment-4/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,22 +126,22 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ai-intro/course-introduction/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/course-introduction/_index.html">
    Course Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ai-intro/data-science-360/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/data-science-360/_index.html">
    Data Science 360
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ai-intro/pipelines/_index.html">
+  <a class="reference internal" href="../../lectures/ai-intro/pipelines/_index.html">
    ML Pipelines
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../uber-ml-arch-case-study/_index.html">
+  <a class="reference internal" href="../../lectures/uber-ml-arch-case-study/_index.html">
    A Case Study of an ML Architecture - Uber
   </a>
  </li>
@@ -154,29 +151,29 @@ const thebe_selector_output = ".output, .cell_output"
   Probabilistic Learning
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ml-math/probability/_index.html">
+  <a class="reference internal" href="../../lectures/ml-math/probability/_index.html">
    Probability Basics
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/entropy/_index.html">
    Entropy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pgm/bayesian-inference/_index.html">
+  <a class="reference internal" href="../../lectures/pgm/bayesian-inference/_index.html">
    Bayesian Inference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification/covid19-antibody-test/_index.html">
+  <a class="reference internal" href="../../lectures/classification/covid19-antibody-test/_index.html">
    COVID-19 Antibody Test
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pgm/bayesian-coin/_index.html">
+  <a class="reference internal" href="../../lectures/pgm/bayesian-coin/_index.html">
    Bayesian Coin Flipping
   </a>
  </li>
@@ -188,17 +185,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../learning-problem/_index.html">
+  <a class="reference internal" href="../../lectures/learning-problem/_index.html">
    The Learning Problem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../regression/linear-regression/_index.html">
+  <a class="reference internal" href="../../lectures/regression/linear-regression/_index.html">
    Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../optimization/sgd/_index.html">
+  <a class="reference internal" href="../../lectures/optimization/sgd/_index.html">
    Stochastic Gradient Descent
   </a>
  </li>
@@ -210,12 +207,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification/classification-intro/_index.html">
+  <a class="reference internal" href="../../lectures/classification/classification-intro/_index.html">
    Introduction to Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification/logistic-regression/_index.html">
+  <a class="reference internal" href="../../lectures/classification/logistic-regression/_index.html">
    Logistic Regression
   </a>
  </li>
@@ -227,32 +224,32 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../decision-trees/_index.html">
+  <a class="reference internal" href="../../lectures/decision-trees/_index.html">
    Decision Trees
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../regression-trees/regression_trees.html">
+  <a class="reference internal" href="../../lectures/regression-trees/regression_trees.html">
    Regression tree stumps
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ensemble/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/_index.html">
    Ensemble Methods
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ensemble/random-forests/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/random-forests/_index.html">
    Random Forests
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ensemble/boosting/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/boosting/_index.html">
    Boosting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ensemble/boosting-workshop/_index.html">
+  <a class="reference internal" href="../../lectures/ensemble/boosting-workshop/_index.html">
    Boosting workshop
   </a>
  </li>
@@ -264,17 +261,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../unsupervised/k-means/_index.html">
+  <a class="reference internal" href="../../lectures/unsupervised/k-means/_index.html">
    K-means Clustering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../density-estimation/knn/_index.html">
+  <a class="reference internal" href="../../lectures/density-estimation/knn/_index.html">
    k-Nearest Neighbors (kNN) Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../density-estimation/knn-workshop/_index.html">
+  <a class="reference internal" href="../../lectures/density-estimation/knn-workshop/_index.html">
    kNN Workshop
   </a>
  </li>
@@ -286,42 +283,42 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification/perceptron/_index.html">
+  <a class="reference internal" href="../../lectures/classification/perceptron/_index.html">
    The Neuron (Perceptron)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../dnn/dnn-intro/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/dnn-intro/_index.html">
    Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../dnn/backprop-intro/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/backprop-intro/_index.html">
    Introduction to Backpropagation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../dnn/backprop-dnn/_index.html">
+  <a class="reference internal" href="../../lectures/dnn/backprop-dnn/_index.html">
    Backpropagation in Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../cnn/cnn-intro/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-intro/_index.html">
    Introduction to Convolutional Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../cnn/cnn-layers/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-layers/_index.html">
    CNN Architectures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../cnn/cnn-example-architectures/_index.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-example-architectures/_index.html">
    CNN Example Architectures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../cnn/cnn-example-architectures/using_convnets_with_small_datasets.html">
+  <a class="reference internal" href="../../lectures/cnn/cnn-example-architectures/using_convnets_with_small_datasets.html">
    Using convnets with small datasets
   </a>
  </li>
@@ -333,17 +330,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../recommenders/recommenders-intro/_index.html">
+  <a class="reference internal" href="../../lectures/recommenders/recommenders-intro/_index.html">
    Recommender System Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../recommenders/netflix/_index.html">
+  <a class="reference internal" href="../../lectures/recommenders/netflix/_index.html">
    The Netflix Prize and Singular Value Decomposition
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pca/_index.html">
+  <a class="reference internal" href="../../lectures/pca/_index.html">
    Principal Component Analysis (PCA)
   </a>
  </li>
@@ -355,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ml-math/_index.html">
+  <a class="reference internal" href="../../lectures/ml-math/_index.html">
    Math for ML
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -365,12 +362,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../linear-algebra/_index.html">
+    <a class="reference internal" href="../../lectures/linear-algebra/_index.html">
      Linear Algebra for Machine Learning
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ml-math/calculus/_index.html">
+    <a class="reference internal" href="../../lectures/ml-math/calculus/_index.html">
      Calculus
     </a>
    </li>
@@ -384,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../python/_index.html">
+  <a class="reference internal" href="../../lectures/python/_index.html">
    Learn Python
   </a>
  </li>
@@ -394,14 +391,14 @@ const thebe_selector_output = ".output, .cell_output"
   Assignments &amp; Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/probability/probability-assignment-4/index.html">
+  <a class="reference internal" href="../probability/probability-assignment-4/index.html">
    Probability Assignment
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/logistic-regression-1/index.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Logistic Regression Assignment
   </a>
  </li>
@@ -495,7 +492,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/entropy/_index.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/logistic-regression-1/index.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -523,7 +520,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/aiml-common/lectures/entropy/_index.md"
+        <a href="../../../_sources/aiml-common/assignments/logistic-regression-1/index.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -583,13 +580,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relative-entropy-or-kl-divergence">
-   Relative entropy or KL divergence
+  <a class="reference internal nav-link" href="#environment-setup-10-points">
+   Environment Setup (10 points)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#digging-further">
-   Digging further
+  <a class="reference internal nav-link" href="#data-preprocessing-30-points">
+   Data Preprocessing (30 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression-40-points">
+   Logistic Regression (40 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-results-20-points">
+   Performance Results (20 points)
   </a>
  </li>
 </ul>
@@ -601,7 +608,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Entropy</h1>
+                <h1>Logistic Regression Assignment</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -612,13 +619,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relative-entropy-or-kl-divergence">
-   Relative entropy or KL divergence
+  <a class="reference internal nav-link" href="#environment-setup-10-points">
+   Environment Setup (10 points)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#digging-further">
-   Digging further
+  <a class="reference internal nav-link" href="#data-preprocessing-30-points">
+   Data Preprocessing (30 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression-40-points">
+   Logistic Regression (40 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-results-20-points">
+   Performance Results (20 points)
   </a>
  </li>
 </ul>
@@ -631,35 +648,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="entropy">
-<h1>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h1>
-<p>In this section we take a closer look into the <em>algorithm</em> block of the learning problem. This block implements the underlying optimization problem that produces the weights in regression and classification settings. Any optimization problem requires an objective function and as it turns out in the supervised setting (and not only) there is a whole theory, called <em>information theory</em> pioneered by Claude Shannon at Bell Labs, that guides us in our search to find the best <span class="math notranslate nohighlight">\(p_{model}\)</span> but also in a myriad other things. The important elements of this theory are reviewed here.</p>
-<p><img alt="holland-tunnel" src="../../../_images/holland-tunnel.jpg" />
-<em>Value of information: <code class="docutils literal notranslate"><span class="pre">Low</span> <span class="pre">Manhattan-bound</span> <span class="pre">traffic</span> <span class="pre">flow</span> <span class="pre">in</span> <span class="pre">Holland</span> <span class="pre">tunnel</span> <span class="pre">on</span> <span class="pre">Monday</span> <span class="pre">morning</span></code></em></p>
-<p>An outcome <span class="math notranslate nohighlight">\(x_t\)</span> carries information that is a function of the probability of this outcome <span class="math notranslate nohighlight">\(P(x_t)\)</span> by,</p>
-<p><span class="math notranslate nohighlight">\(I(x_t) = \ln \frac{1}{P(x_t)} = - \ln P(x_t)\)</span></p>
-<p>This can be intuitively understood when you compare two outcomes. For example, consider someone is producing the result of the vehicular traffic flow outside of Holland tunnel on Monday morning. The information that the results is “low” carries much more information when the result is “high” since most people expect that there will be horrendous traffic going into Manhattan on Monday mornings. When we want to represent the amount of uncertainty over a distribution (i.e. the traffic in Holland tunnel over all times) we can take the expectation over all possible outcomes i.e.</p>
-<p><span class="math notranslate nohighlight">\(H(P) =  - \mathbb{E} \ln P(x)\)</span></p>
-<p>and we call this quantity the <strong>entropy</strong> of the probability distribution <span class="math notranslate nohighlight">\(P(x)\)</span>. When <span class="math notranslate nohighlight">\(x\)</span> is continuous the entropy is known as <strong>differential entropy</strong>. Continuing the alphabetical example, we can determine the entropy over the distribution of letters in the sample text we met before as,</p>
-<p><img alt="entropy-english-alphabet" src="../../../_images/entropy-english-alphabet.png" /></p>
-<p>This is 4.1 bits (as the <span class="math notranslate nohighlight">\(\log\)</span> is taken with base 2). This represents the average number of bits required to transmit each letter of this text to a hypothetical receiver. Note that we used the information carried by each “outcome” (the letter) that our source produced. If the source was binary, we can plot the entropy of such source over the probability p that the outcome is a 1 as shown below,</p>
-<p><img alt="entropy-binary" src="../../../_images/entropy-binary.png" /></p>
-<p>The plot simply was produced by taking the definition of entropy and applying to the binary case,</p>
-<p><span class="math notranslate nohighlight">\(H(p) = - [p \ln p + (1-p) \ln(1-p)]\)</span></p>
-<p>As you can see the maximum entropy is when the outcome is most unpredictable i.e. when a 1 can show up with uniform probability (in this case equal probability to a 0). Entropy has widespread implications as it measures our uncertainty in terms of the length of the message/code that we need to communicate the outcome across. Taking to the limit if we were certain about an event (deterministic outcome) we would need 0 bits or require to send any message at all.</p>
-<section id="relative-entropy-or-kl-divergence">
-<h2>Relative entropy or KL divergence<a class="headerlink" href="#relative-entropy-or-kl-divergence" title="Permalink to this headline">#</a></h2>
-<p>In many settings we need to have a metric that compares two probability distributions <span class="math notranslate nohighlight">\(\{P(x),Q(x)\}\)</span> in terms of their “distance” from each other (the quotes will be explained shortly). This is given by the quantity known as <em>relative entropy</em> or <em>KL divergence</em>.</p>
-<div class="math notranslate nohighlight">
-\[KL(P||Q)= \mathbb{E}[\ln P(x) - \ln Q(x)]\]</div>
-<p>If the two distributions are identical, <span class="math notranslate nohighlight">\(KL=0\)</span> - in general however <span class="math notranslate nohighlight">\(KL(P||Q) \ge 0\)</span>. One key element to understand is that <span class="math notranslate nohighlight">\(KL\)</span> is not a true distance metric as its asymmetric.</p>
-<p><img alt="KL-asymmetry" src="../../../_images/KL-asymmetry.png" /></p>
-<p>Very close to the relative entropy is probably one of the most used information theoretic concepts in ML: <strong>the cross-entropy</strong>. We will motivate cross entropy via a diagram shown below,</p>
-<p><img alt="entropy-relations" src="../../../_images/entropy-relations.png" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression-assignment">
+<h1>Logistic Regression Assignment<a class="headerlink" href="#logistic-regression-assignment" title="Permalink to this headline">#</a></h1>
+<p>You are interviewing with Google’s data science team having the responsibility of predicting the Click Through Rate (CTR) of ads they place on multiple web properties. Your hiring manager keen on testing you out, suggests to download <a class="reference external" href="https://www.kaggle.com/competitions/avazu-ctr-prediction/data">this dataset</a> and asks you to code up a model that predicts the CTR based on Logistic Regression.</p>
+<section id="environment-setup-10-points">
+<h2>Environment Setup (10 points)<a class="headerlink" href="#environment-setup-10-points" title="Permalink to this headline">#</a></h2>
+<p>You will deliver this assignment in the form of a Colab notebook (or a Github repo if you like). Both must be configured to allow anyone to run the code (in Colab this is <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">All</span></code>) and get the results. Setup your environment that can automatically download the data from Kaggle and store them in a location. You may <a class="reference external" href="https://www.kaggle.com/docs/api#interacting-with-datasets">want to read for this task</a> and ensure that this task is implemented with Python.</p>
 </section>
-<section id="digging-further">
-<h2>Digging further<a class="headerlink" href="#digging-further" title="Permalink to this headline">#</a></h2>
-<p>If you are a visual learner, <a class="reference external" href="http://colah.github.io/posts/2015-09-Visual-Information/#fn4">the visual information theory</a> blog post is a better starting point to the above.  <a class="reference external" href="https://www.inference.org.uk/itprnn/book.pdf">MacKay’s book (Chapter 2)</a> is an instructive introduction to probability and information theory concepts and you can test your understanding by doing the exercises in that chapter.</p>
+<section id="data-preprocessing-30-points">
+<h2>Data Preprocessing (30 points)<a class="headerlink" href="#data-preprocessing-30-points" title="Permalink to this headline">#</a></h2>
+<p>Preprocess the data you are given to your liking. This may include dropping some columns you wont use, addressing noisy or missing data etc.</p>
+<p>Use Pandas as a  dataframe abstraction for this task. You can learn about Pandas here:</p>
+<p>… youtube::PcvsOaixUh8</p>
+<p>Ultimately this task has to result to a dataframe that you will use for the training and testing the classifier.</p>
+</section>
+<section id="logistic-regression-40-points">
+<h2>Logistic Regression (40 points)<a class="headerlink" href="#logistic-regression-40-points" title="Permalink to this headline">#</a></h2>
+<p>Write <strong>from scratch</strong> the logistic regression solution to the prediction problem that can work with Stochastic Gradient Descent (SGD). You can only use pandas and numpy to do so.</p>
+<p>Show clearly all equations of the gradient and include comments in either markdown or Python (inline to code) explaining every stage of processing. Also, highlight any enhancements you may have done to improve performance such as regularization.</p>
+</section>
+<section id="performance-results-20-points">
+<h2>Performance Results (20 points)<a class="headerlink" href="#performance-results-20-points" title="Permalink to this headline">#</a></h2>
+<p>Plot the precision vs recall curve of your classifier. Clearly explain the tradeoff between the two quantities and the shape of the curve.</p>
 </section>
 </section>
 
@@ -676,7 +686,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/lectures/entropy"
+            path: "./aiml-common/assignments/logistic-regression-1"
         },
         predefinedOutput: true
     }
@@ -690,19 +700,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../ml-math/probability/_index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../probability/probability-assignment-4/index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Probability Basics</p>
+            <p class="prev-next-title">Probability Assignment</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../pgm/bayesian-inference/_index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bayesian Inference</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
