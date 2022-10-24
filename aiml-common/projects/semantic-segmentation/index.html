@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Logistic Regression Assignment &#8212; Introduction to Data Science</title>
+    <title>Semantic Segmentation of Satellite Imagery &#8212; Introduction to Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,11 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/logistic-regression-1/index.html" />
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/projects/semantic-segmentation/index.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Semantic Segmentation of Satellite Imagery" href="../../projects/semantic-segmentation/index.html" />
-    <link rel="prev" title="Probability Assignment" href="../probability/probability-assignment-4/index.html" />
+    <link rel="prev" title="Logistic Regression Assignment" href="../../assignments/logistic-regression-1/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -394,17 +393,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../probability/probability-assignment-4/index.html">
+  <a class="reference internal" href="../../assignments/probability/probability-assignment-4/index.html">
    Probability Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/logistic-regression-1/index.html">
+   Logistic Regression Assignment
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Logistic Regression Assignment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../projects/semantic-segmentation/index.html">
    Semantic Segmentation of Satellite Imagery
   </a>
  </li>
@@ -498,7 +497,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/logistic-regression-1/index.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/projects/semantic-segmentation/index.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -526,7 +525,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/aiml-common/assignments/logistic-regression-1/index.md"
+        <a href="../../../_sources/aiml-common/projects/semantic-segmentation/index.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -586,23 +585,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#environment-setup-10-points">
-   Environment Setup (10 points)
+  <a class="reference internal nav-link" href="#milestone-1-environment-preparation-10-points-by-10-30">
+   Milestone 1: Environment Preparation (10 points by 10/30)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preprocessing-30-points">
-   Data Preprocessing (30 points)
+  <a class="reference internal nav-link" href="#milestone-2-perform-baseline-semantic-segmentation-30-points-by-11-6">
+   Milestone 2: Perform Baseline Semantic Segmentation (30 points by 11/6)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression-40-points">
-   Logistic Regression (40 points)
+  <a class="reference internal nav-link" href="#milestone-3-cs301-101-only-hyperparameter-optimization-30-points-by-11-20">
+   Milestone 3 (CS301-101 ONLY): Hyperparameter Optimization (30 points by 11/20)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performance-results-20-points">
-   Performance Results (20 points)
+  <a class="reference internal nav-link" href="#milestone-3-cs301-103-only-neural-architecture-search-30-points-by-11-20">
+   Milestone 3 (CS301-103 ONLY): Neural Architecture Search (30 points by 11/20)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#milestone-4-model-compression-30-points-by-12-04">
+   Milestone 4: Model Compression (30 points by 12/04)
   </a>
  </li>
 </ul>
@@ -614,7 +618,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Logistic Regression Assignment</h1>
+                <h1>Semantic Segmentation of Satellite Imagery</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -625,23 +629,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#environment-setup-10-points">
-   Environment Setup (10 points)
+  <a class="reference internal nav-link" href="#milestone-1-environment-preparation-10-points-by-10-30">
+   Milestone 1: Environment Preparation (10 points by 10/30)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preprocessing-30-points">
-   Data Preprocessing (30 points)
+  <a class="reference internal nav-link" href="#milestone-2-perform-baseline-semantic-segmentation-30-points-by-11-6">
+   Milestone 2: Perform Baseline Semantic Segmentation (30 points by 11/6)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression-40-points">
-   Logistic Regression (40 points)
+  <a class="reference internal nav-link" href="#milestone-3-cs301-101-only-hyperparameter-optimization-30-points-by-11-20">
+   Milestone 3 (CS301-101 ONLY): Hyperparameter Optimization (30 points by 11/20)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performance-results-20-points">
-   Performance Results (20 points)
+  <a class="reference internal nav-link" href="#milestone-3-cs301-103-only-neural-architecture-search-30-points-by-11-20">
+   Milestone 3 (CS301-103 ONLY): Neural Architecture Search (30 points by 11/20)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#milestone-4-model-compression-30-points-by-12-04">
+   Milestone 4: Model Compression (30 points by 12/04)
   </a>
  </li>
 </ul>
@@ -654,29 +663,142 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression-assignment">
-<h1>Logistic Regression Assignment<a class="headerlink" href="#logistic-regression-assignment" title="Permalink to this headline">#</a></h1>
-<p>You are interviewing with Google’s data science team having the responsibility of predicting the Click Through Rate (CTR) of ads they place on multiple web properties. Your hiring manager keen on testing you out, suggests to download <a class="reference external" href="https://www.kaggle.com/competitions/avazu-ctr-prediction/data">this dataset</a> and asks you to code up a model that predicts the CTR based on Logistic Regression.</p>
-<section id="environment-setup-10-points">
-<h2>Environment Setup (10 points)<a class="headerlink" href="#environment-setup-10-points" title="Permalink to this headline">#</a></h2>
-<p>You will deliver this assignment in the form of a Colab notebook (or a Github repo if you like). Both must be configured to allow anyone to run the code (in Colab this is <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">All</span></code>) and get the results. Setup your environment that can automatically download the data from Kaggle and store them in a location. You may <a class="reference external" href="https://www.kaggle.com/docs/api#interacting-with-datasets">want to read for this task</a> and ensure that this task is implemented with Python.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="semantic-segmentation-of-satellite-imagery">
+<h1>Semantic Segmentation of Satellite Imagery<a class="headerlink" href="#semantic-segmentation-of-satellite-imagery" title="Permalink to this headline">#</a></h1>
+<p><img alt="" src="../../../_images/satellites.jpeg" /></p>
+<p>You have been hired in the data science team at NASA and you are tasked to semantically segment objects that can be seen from space.</p>
+<p><strong>If you miss a milestone deadline you will be forfeited the corresponding points.</strong></p>
+<section id="milestone-1-environment-preparation-10-points-by-10-30">
+<h2>Milestone 1: Environment Preparation (10 points by 10/30)<a class="headerlink" href="#milestone-1-environment-preparation-10-points-by-10-30" title="Permalink to this headline">#</a></h2>
+<p>You are given a seed repo for this project located <a class="reference external" href="https://github.com/bnsreenu/python_for_microscopists">here</a> - look under the directory <code class="docutils literal notranslate"><span class="pre">228_semantic_segmentation_of_aerial_imagery_using_unet</span></code>.</p>
+<ol class="simple">
+<li><p>Create a new repo under one Github account of a member of your team.</p></li>
+<li><p>If you are working on own laptops/desktop: Checkout the code of the seed repo under src/ and incorporate <a class="reference external" href="https://python-poetry.org/">poetry</a> to allow your virtual environment to set up properly.</p></li>
+<li><p>If you are working in Colab:  use pip to install all dependencies bearing in mind that Colab has built in TF/Pytorch installations.</p></li>
+<li><p>Install <a class="reference external" href="https://nni.readthedocs.io/en/stable/index.html">NNI</a>.  For Colab users: ensure that you have followed the instructions <a class="reference external" href="https://nni.readthedocs.io/en/stable/sharings/nni_colab_support.html">here</a>  to allow the UI to be visible.</p></li>
+<li><p>Submit the github repository URL with a branch titled ‘milestone-1’ with the <a class="reference external" href="http://README.md">README.md</a> file containing the installation instructions you followed and a screenshot of your computer of the NNI UI screen. Add as collaborator the TA.</p></li>
+</ol>
 </section>
-<section id="data-preprocessing-30-points">
-<h2>Data Preprocessing (30 points)<a class="headerlink" href="#data-preprocessing-30-points" title="Permalink to this headline">#</a></h2>
-<p>Preprocess the data you are given to your liking. This may include dropping some columns you wont use, addressing noisy or missing data etc.</p>
-<p>Use Pandas as a  dataframe abstraction for this task. You can learn about Pandas here:</p>
+<section id="milestone-2-perform-baseline-semantic-segmentation-30-points-by-11-6">
+<h2>Milestone 2: Perform Baseline Semantic Segmentation (30 points by 11/6)<a class="headerlink" href="#milestone-2-perform-baseline-semantic-segmentation-30-points-by-11-6" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Watch this video that introduces <a class="reference external" href="https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery">the dataset</a> and the approach (<a class="reference external" href="https://arxiv.org/abs/1505.04597">UNet</a>).</p></li>
+</ol>
 <div class="video_wrapper" style="">
-<iframe allowfullscreen="true" src="https://www.youtube.com/embed/PcvsOaixUh8" style="border: 0; height: 345px; width: 560px">
-</iframe></div><p>Ultimately this task has to result to a dataframe that you will use for the training and testing the classifier.</p>
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/jvZm8REF2KY" style="border: 0; height: 345px; width: 560px">
+</iframe></div><ol class="simple">
+<li><p>Run the segmentation and produce plots of (a) 10 segmented images from the validation set (b) training and validation loss vs epochs, (b) Precision and Recall values</p></li>
+<li><p>Submit the github repository URL with a branch titled ‘milestone-2’ and with the docs/ folder containing the markdown file <a class="reference external" href="http://baseline-performance.md">baseline-performance.md</a> where you explain in 2 pages including figures UNet and in separate pages the results obtained.</p></li>
+</ol>
 </section>
-<section id="logistic-regression-40-points">
-<h2>Logistic Regression (40 points)<a class="headerlink" href="#logistic-regression-40-points" title="Permalink to this headline">#</a></h2>
-<p>Write <strong>from scratch</strong> the logistic regression solution to the prediction problem that can work with Stochastic Gradient Descent (SGD). You can only use pandas and numpy to do so.</p>
-<p>Show clearly all equations of the gradient and include comments in either markdown or Python (inline to code) explaining every stage of processing. Also, highlight any enhancements you may have done to improve performance such as regularization.</p>
+<section id="milestone-3-cs301-101-only-hyperparameter-optimization-30-points-by-11-20">
+<h2>Milestone 3 (CS301-101 ONLY): Hyperparameter Optimization (30 points by 11/20)<a class="headerlink" href="#milestone-3-cs301-101-only-hyperparameter-optimization-30-points-by-11-20" title="Permalink to this headline">#</a></h2>
+<p>You are now tasked to improve baseline performance.</p>
+<ol class="simple">
+<li><p>Retrieve your team number from Canvas and consult the following table:</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Method</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>TPE</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Anneal</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Evolution</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>SMAC</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Hyperband</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Metis</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>BOHB</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>GP</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>DNGO</p></td>
+</tr>
+</tbody>
+</table>
+<p>Team 1 is assigned method 1, … Team 10 is assigned method 1, Team 11 is assigned method 2, etc… Empty teams in canvas are also assigned their corresponding index - be careful to assign yourself the right method index and check with the adjacent team(s) to yours to be sure.</p>
+<ol class="simple">
+<li><p>Incorporate the Hyperparameter Optimization (HPO) method in your code and run the code to obtain the best (a) 10 segmented images from the validation set (b) training and validation loss vs epochs, (b) Precision and Recall values</p></li>
+<li><p>Submit the github repository URL with a branch titled ‘milestone-3’ and with the docs/ folder containing the markdown file <a class="reference external" href="http://hyperparameter-optimization.md">hyperparameter-optimization.md</a> where you explain in 2 pages including figures the method and in separate pages the results obtained.</p></li>
+</ol>
+<p>If you run out of compute resources i.e in Colab the GPU is taken away after few hours or your dedicated machine runs for ever or very slow, reduce the search space to produce results and achieve the milestone. If you reduce the space without any reason you will be deducted points.</p>
 </section>
-<section id="performance-results-20-points">
-<h2>Performance Results (20 points)<a class="headerlink" href="#performance-results-20-points" title="Permalink to this headline">#</a></h2>
-<p>Plot the precision vs recall curve of your classifier. Clearly explain the tradeoff between the two quantities and the shape of the curve.</p>
+<section id="milestone-3-cs301-103-only-neural-architecture-search-30-points-by-11-20">
+<h2>Milestone 3 (CS301-103 ONLY): Neural Architecture Search (30 points by 11/20)<a class="headerlink" href="#milestone-3-cs301-103-only-neural-architecture-search-30-points-by-11-20" title="Permalink to this headline">#</a></h2>
+<p>You are now tasked to do compress your model to fit a computer that may not have accelerator (GPUs) or enough memory to fit the original baseline model. Dont underestimate the impact of model compression - managing inference costs are the ranked consistently Number 1 goal for every enterprise that uses ML/AI.</p>
+<ol class="simple">
+<li><p>Review the <a class="reference external" href="https://arxiv.org/abs/1808.05377">seminal paper</a>.</p></li>
+<li><p>Retrieve your team number from Canvas and consult the following table:</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Method</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Random</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>GridSearch</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>RegularizedEvolution</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>TPE</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>PolicyBasedRL</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>DARTS</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>ENAS</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>RandomOneShot</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>ProxyLess</p></td>
+</tr>
+</tbody>
+</table>
+<p>Team 1 is assigned method 1, … Team 10 is assigned method 1, Team 11 is assigned method 2, etc… Empty teams in canvas are also assigned their corresponding index - be careful to assign yourself the right method index and check with the adjacent team(s) to yours to be sure.</p>
+<ol class="simple">
+<li><p>Incorporate the NAS method in your code and run the code to obtain the best (a) 10 segmented images from the validation set (b) training and validation loss vs epochs, (b) Precision and Recall values</p></li>
+<li><p>Submit the github repository URL with a branch titled ‘milestone-3’ and with the docs/ folder containing the markdown file <a class="reference external" href="http://neural-arch-search.md">neural-arch-search.md</a> where you explain in 2 pages including figures the method and in separate pages the results obtained.</p></li>
+</ol>
+<p>If you run out of compute resources i.e in Colab the GPU is taken away after few hours or your dedicated machine runs for ever or very slow, reduce the search space to produce results and achieve the milestone.</p>
+</section>
+<section id="milestone-4-model-compression-30-points-by-12-04">
+<h2>Milestone 4: Model Compression (30 points by 12/04)<a class="headerlink" href="#milestone-4-model-compression-30-points-by-12-04" title="Permalink to this headline">#</a></h2>
+<p>You are now tasked to do compress your model to fit a computer that may not have accelerator (GPUs) or enough memory to fit the original baseline model. Dont underestimate the impact of model compression - managing inference costs are the ranked consistently Number 1 goal for every enterprise that uses ML/AI.</p>
+<ol class="simple">
+<li><p>Read about <a class="reference external" href="https://arxiv.org/abs/1503.02531">the seminal paper</a></p></li>
+<li><p>Implement <a class="reference external" href="https://nni.readthedocs.io/en/stable/sharings/kd_example.html">Knowledge Distillation (KD)</a></p></li>
+<li><p>Run the code to obtain the student’s network (a) 10 segmented images from the validation set (b) training and validation loss vs epochs, (b) Precision and Recall values</p></li>
+<li><p>Submit the github repository URL with a branch titled ‘milestone-4’ and with the docs/ folder containing the markdown file <a class="reference external" href="http://knowledge-distillation.md">knowledge-distillation.md</a> where you explain in 2 pages including figures the method and in separate pages the results obtained.</p></li>
+</ol>
 </section>
 </section>
 
@@ -693,7 +815,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/assignments/logistic-regression-1"
+            path: "./aiml-common/projects/semantic-segmentation"
         },
         predefinedOutput: true
     }
@@ -707,19 +829,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../probability/probability-assignment-4/index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../assignments/logistic-regression-1/index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Probability Assignment</p>
+            <p class="prev-next-title">Logistic Regression Assignment</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../projects/semantic-segmentation/index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Semantic Segmentation of Satellite Imagery</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
