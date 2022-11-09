@@ -60,6 +60,7 @@ parts:
     - file: aiml-common/lectures/dnn/backprop-dnn/_index.md
     - file: aiml-common/lectures/dnn/backprop-dnn-exercises/_index.md
     - file: aiml-common/lectures/dnn/fashion-mnist-case-study.md
+    - file: aiml-common/lectures/optimization/regularization/_index.md
     - file: aiml-common/lectures/cnn/cnn-intro/_index.md
     - file: aiml-common/lectures/cnn/cnn-layers/_index.md
     - file: aiml-common/lectures/cnn/cnn-example-architectures/_index.md
