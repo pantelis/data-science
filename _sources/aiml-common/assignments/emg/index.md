@@ -20,7 +20,6 @@ Using libraries from the JAX ecosystem, code gradient boosting from scratch usin
 
 ![](emg.png)
 
-Apply your gradient boosting implementation to the [EMG dataset](https://physionet.org/content/grabmyo/1.0.1/) - for a demonstration of a similar application see [this tutorial](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3885826/)
-
+Apply your gradient boosting implementation to the [EMG dataset](https://archive.ics.uci.edu/ml/datasets/EMG+Physical+Action+Data+Set) - for a demonstration of a similar application see [this tutorial](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3885826/)
 
 **Every student that publishes this assignment as a tutorial on their [Medium](https://medium.com/) account will receive 5 additional points before the letter course grade is determined at the end of the semester. Link your published article in your github repo README.md file.**
