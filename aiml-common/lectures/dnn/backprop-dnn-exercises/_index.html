@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Logistic Regression &#8212; Introduction to Data Science</title>
+    <title>Backpropagation DNN exercises &#8212; Introduction to Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,11 +54,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/lectures/classification/logistic-regression/_index.html" />
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/lectures/dnn/backprop-dnn-exercises/_index.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Decision Trees" href="../../decision-trees/_index.html" />
-    <link rel="prev" title="Introduction to Classification" href="../classification-intro/_index.html" />
+    <link rel="next" title="Fashion MNIST Case Study" href="../fashion-mnist-case-study.html" />
+    <link rel="prev" title="Backpropagation in Deep Neural Networks" href="../backprop-dnn/_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../covid19-antibody-test/_index.html">
+  <a class="reference internal" href="../../classification/covid19-antibody-test/_index.html">
    COVID-19 Antibody Test
   </a>
  </li>
@@ -208,14 +208,14 @@ const thebe_selector_output = ".output, .cell_output"
   Classification
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification-intro/_index.html">
+  <a class="reference internal" href="../../classification/classification-intro/_index.html">
    Introduction to Classification
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../classification/logistic-regression/_index.html">
    Logistic Regression
   </a>
  </li>
@@ -284,34 +284,34 @@ const thebe_selector_output = ".output, .cell_output"
   Neural Networks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../perceptron/_index.html">
+  <a class="reference internal" href="../../classification/perceptron/_index.html">
    The Neuron (Perceptron)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/dnn-intro/_index.html">
+  <a class="reference internal" href="../dnn-intro/_index.html">
    Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-intro/_index.html">
+  <a class="reference internal" href="../backprop-intro/_index.html">
    Introduction to Backpropagation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-dnn/_index.html">
+  <a class="reference internal" href="../backprop-dnn/_index.html">
    Backpropagation in Deep Neural Networks
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-dnn-exercises/_index.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Backpropagation DNN exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/fashion-mnist-case-study.html">
+  <a class="reference internal" href="../fashion-mnist-case-study.html">
    Fashion MNIST Case Study
   </a>
  </li>
@@ -515,7 +515,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/classification/logistic-regression/_index.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/dnn/backprop-dnn-exercises/_index.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -543,7 +543,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../_sources/aiml-common/lectures/classification/logistic-regression/_index.md"
+        <a href="../../../../_sources/aiml-common/lectures/dnn/backprop-dnn-exercises/_index.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -603,13 +603,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#odds-and-the-logistic-sigmoid">
-   Odds and the Logistic Sigmoid
+  <a class="reference internal nav-link" href="#neuron">
+   Neuron
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-case">
-   Binary case
+  <a class="reference internal nav-link" href="#simple-dnn-1">
+   Simple DNN 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-dnn-2">
+   Simple DNN 2
   </a>
  </li>
 </ul>
@@ -621,7 +626,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Logistic Regression</h1>
+                <h1>Backpropagation DNN exercises</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -632,13 +637,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#odds-and-the-logistic-sigmoid">
-   Odds and the Logistic Sigmoid
+  <a class="reference internal nav-link" href="#neuron">
+   Neuron
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-case">
-   Binary case
+  <a class="reference internal nav-link" href="#simple-dnn-1">
+   Simple DNN 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-dnn-2">
+   Simple DNN 2
   </a>
  </li>
 </ul>
@@ -651,56 +661,85 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
-<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">#</a></h1>
-<p>Logistic regression is used in machine learning extensively - every time we need to provide probabilistic semantics to an outcome e.g. predicting the risk of developing a given disease (e.g. diabetes; coronary heart disease), based on observed characteristics of the patient (age, sex, body mass index, results of various blood tests, etc.), whether an voter will vote for a given party, predicting the probability of failure of a given process, system or product, predicting a customer’s propensity to purchase a product or halt a subscription, predicting the likelihood of a homeowner defaulting on a mortgage.</p>
-<section id="odds-and-the-logistic-sigmoid">
-<h2>Odds and the Logistic Sigmoid<a class="headerlink" href="#odds-and-the-logistic-sigmoid" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(\sigma\)</span> is a probability of an event, then the ratio <span class="math notranslate nohighlight">\(\frac{\sigma}{1-\sigma}\)</span> is the corresponding <em>odds</em>, the ratio of the event  occurring divided by not occurring. For example, if a race horse runs 100 races and wins 25 times and loses the other 75 times, the probability of winning is 25/100 = 0.25 or 25%, but the odds of the horse winning are 25/75 = 0.333 or 1 win to 3 loses. In the binary classification case, the log odds is given by</p>
-<div class="math notranslate nohighlight">
-\[ \mathtt{logit}(\sigma) = \alpha = \ln \frac{\sigma}{1-\sigma} = \ln \frac{p(\mathcal{C}_1|\mathbf{x})}{p(\mathcal{C}_2|\mathbf{x})}\]</div>
-<p>What is used in ML though is the logistic function of any number <span class="math notranslate nohighlight">\(\alpha\)</span> that is given by the inverse logit:</p>
-<div class="math notranslate nohighlight">
-\[\mathtt{logistic}(\alpha) = \sigma(\alpha) = \mathtt{logit}^{-1}(\alpha) =  \frac{1}{1 + \exp(-\alpha)} = \frac{\exp(\alpha)}{ \exp(\alpha) + 1}\]</div>
-<p>and is plotted below. It maps its argument to the “probability” space [0,1].</p>
-<p><img alt="logistic sigmoid" src="../../../../_images/Figure4.9.png" />
-<em>Logistic sigmoid (red)</em></p>
-<p>The sigmoid function satisfies the following symmetry:</p>
-<div class="math notranslate nohighlight">
-\[\sigma(-\alpha) = 1 - \sigma(\alpha)\]</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="backpropagation-dnn-exercises">
+<h1>Backpropagation DNN exercises<a class="headerlink" href="#backpropagation-dnn-exercises" title="Permalink to this headline">#</a></h1>
+<a class="reference internal image-reference" href="../../../../_images/tensorflow.gif"><img alt="../../../../_images/tensorflow.gif" src="../../../../_images/tensorflow.gif" style="width: 60%;" /></a>
+<p><em>Computational graph in Tensorboard showing the components involved in a TF BP update</em></p>
+<section id="neuron">
+<h2>Neuron<a class="headerlink" href="#neuron" title="Permalink to this headline">#</a></h2>
+<p><img alt="backprop-neuron" src="../../../../_images/backprop-neuron.jpg" /></p>
 </section>
-<section id="binary-case">
-<h2>Binary case<a class="headerlink" href="#binary-case" title="Permalink to this headline">#</a></h2>
-<p>If we consider the two class problem, we can write the posterior probability as,</p>
-<div class="math notranslate nohighlight">
-\[p(\mathcal{C}_1|\mathbf{x}) = \frac{p(\mathbf{x}|\mathcal{C}_1) p(\mathcal{C}_1)}{p(\mathbf{x}|\mathcal{C}_1) p(\mathcal{C}_1) + p(\mathbf{x}|\mathcal{C}_2) p(\mathcal{C}_2)} = \frac{1}{1 + \exp(-\alpha)} = \sigma(\alpha)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha = \ln \frac{p(\mathbf{x}|\mathcal{C}_1) p(\mathcal{C}_1)}{p(\mathbf{x}|\mathcal{C}_2) p(\mathcal{C}_2)}\)</span>.</p>
-<p>Given the posterior distribution above we have for the specific linear activation,</p>
-<div class="math notranslate nohighlight">
-\[p(\mathcal{C}_1|\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x})\]</div>
-<p>This model is what statisticians call logistic regression - despite its name its a model for classification.</p>
-<!-- The model has significant advantages in that it does require the estimation of far fewer parameters compared to the case where the class conditional distributions involved in the posterior were parametric. For example if we had Gaussian class conditionals we would had to estimate (using Maximum Likelihood) their parameters $\mathbf \mu$ and $\mathbf \Sigma$ that grow quadratically to the number of features $n$. With logistic regression we only have an evident linear relationship between parameters and features.   -->
-<p>The figure below shows the corresponding posterior distribution <span class="math notranslate nohighlight">\(p(\mathcal{C}_1|\mathbf{x})\)</span></p>
-<p><img alt="posterior-two-class-example" src="../../../../_images/Figure4.10a.png" />
-<em>The class-conditional densities for two classes, denoted red and blue. Here the class-conditional densities <span class="math notranslate nohighlight">\(p(\mathbf{x}|\mathcal{C}_1)\)</span> and <span class="math notranslate nohighlight">\(p(\mathbf{x}|\mathcal{C}_2)\)</span> are Gaussian</em></p>
-<p><img alt="posterior-two-class-example" src="../../../../_images/Figure4.10b.png" />
-<em>The corresponding posterior probability for the red class, which is given by a logistic sigmoid of a linear function of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</em></p>
-<!-- As we said, with logistic regression **we skip the assumption about the class-conditional densities** as they add parameters to our problem that grow  quadratic to the number of dimensions and we attempt to find the $n$ parameters of the model directly (the number of features) and sure enough we will use ML to do so.  -->
-<p>By repeating the classical steps in ML methodology i.e. writing down the expression of the likelihood function (this will now be a product of binomials), we can write down the negative log likelihood function for the binary case as,</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Binary CE Loss
-$<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - \ln p(\mathbf{y},\mathbf{w}) = - \big[ \sum_{i=1}^m \{y_i \ln \hat{y}_i + (1-y_i) \ln (1-\hat{y}_i) \} \big]\)</span>$</p>
-<p>which is called <strong>cross entropy loss function</strong> - probably the most widely used error function (in classification as well as regression) due to its information theoretic roots.</p>
-</div>
-<p>Its shape is shown in the figure below for an example case where the <span class="math notranslate nohighlight">\(y=1\)</span>. It is also known as log-loss.</p>
-<p><img alt="cross-entropy" src="../../../../_images/cross-entropy-binary.png" /></p>
-<p><em>CE Loss vs predicted probability for class “1”</em></p>
-<p>The behavior of the loss function is telling: it heavily penalizes confident wrong decisions. Notice its exponential rise when the probability <span class="math notranslate nohighlight">\(\hat{y}\)</span> of the class “1” is close to 0.0 which means that the classifier predicted with high confidence the opposite class that the ground truth.   On the other hand, when the probability of <span class="math notranslate nohighlight">\(\hat y\)</span> is close to 1.0, which means that the classifier predicts the class “1” with confidence, we exhibit minimal loss and in the limit zero loss.</p>
-<p>Minimizing the error function with respect to <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> requires calculating its gradient,</p>
-<div class="math notranslate nohighlight">
-\[\nabla L = \sum_{i=1}^m (\hat{y}_i - y_i) x_i\]</div>
-<p>The expression above defines the batch gradient decent algorithm. We can then readily convert this algorithm to SGD by considering mini-batch updates for any mini-batch size (usually delegated as a hyperparameter).</p>
+<section id="simple-dnn-1">
+<h2>Simple DNN 1<a class="headerlink" href="#simple-dnn-1" title="Permalink to this headline">#</a></h2>
+<p><img alt="backprop-simple-dnn" src="../../../../_images/backprop-simple-dnn.jpg" /></p>
+</section>
+<section id="simple-dnn-2">
+<h2>Simple DNN 2<a class="headerlink" href="#simple-dnn-2" title="Permalink to this headline">#</a></h2>
+<p>A network consist of a concatenation of the following layers</p>
+<ol class="simple">
+<li><p>Fully Connected layer with input <span class="math notranslate nohighlight">\(x^{(1)}\)</span>, <span class="math notranslate nohighlight">\(W^{(1)}\)</span> and output <span class="math notranslate nohighlight">\(z^{(1)}\)</span>.</p></li>
+<li><p>RELU producing <span class="math notranslate nohighlight">\(a^{(1)}\)</span></p></li>
+<li><p>Fully Connected layer with parameters <span class="math notranslate nohighlight">\(W^{(2)}\)</span> producing <span class="math notranslate nohighlight">\(z^{(2)}\)</span></p></li>
+<li><p>SOFTMAX producing <span class="math notranslate nohighlight">\(\hat{y}\)</span></p></li>
+<li><p>Cross-Entropy (CE) loss producing <span class="math notranslate nohighlight">\(L\)</span></p></li>
+</ol>
+<p>The task of backprop consists of the following steps:</p>
+<ol class="simple">
+<li><p>Sketch the network and write down the equations for the forward path.</p></li>
+<li><p>Propagate the backwards path i.e. make sure you write down the expressions of the gradient of the loss with respect to all the network <em>parameters</em>.</p></li>
+</ol>
+<p>NOTE: Please note that we have omitted the bias terms for simplicity.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Forward Pass Step</p></th>
+<th class="head"><p>Symbolic Equation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(z^{(1)} = W^{(1)} x^{(1)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(2)</p></td>
+<td><p><span class="math notranslate nohighlight">\(a^{(1)} = \max(0, z^{(1)})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(3)</p></td>
+<td><p><span class="math notranslate nohighlight">\(z^{(2)} = W^{(2)} a^{(1)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(4)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\hat{y} = \mathtt{softmax}(z^{(2)})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(5)</p></td>
+<td><p><span class="math notranslate nohighlight">\(L = CE(y, \hat{y})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Backward Pass Step</p></th>
+<th class="head"><p>Symbolic Equation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(5)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial L} = 1.0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(4)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial z^{(2)}} = \hat y - y\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(3a)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial W^{(2)}} = a^{(1)} (\hat y - y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(3b)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial a^{(1)}} = W^{(2)} (\hat y - y)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(2)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial z^{(1)}} = \frac{\partial L}{\partial a^{(1)}}\)</span> if   <span class="math notranslate nohighlight">\(a^{(1)} &gt; 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial W^{(1)}} = \frac{\partial L}{\partial z^{(1)}} \times x^{(1)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
@@ -717,7 +756,7 @@ $<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/lectures/classification/logistic-regression"
+            path: "./aiml-common/lectures/dnn/backprop-dnn-exercises"
         },
         predefinedOutput: true
     }
@@ -731,17 +770,17 @@ $<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../classification-intro/_index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../backprop-dnn/_index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Classification</p>
+            <p class="prev-next-title">Backpropagation in Deep Neural Networks</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../decision-trees/_index.html" title="next page">
+    <a class='right-next' id="next-link" href="../fashion-mnist-case-study.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Decision Trees</p>
+        <p class="prev-next-title">Fashion MNIST Case Study</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
