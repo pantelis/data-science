@@ -1,7 +1,3 @@
----
-title: Introduction to Data Science 
----
-
 # Introduction to Data Science
 
 {bdg-link-dark}`Instructor: Pantelis Monogioudis, Ph.D. <https://www.linkedin.com/in/pantelis/>`
@@ -24,7 +20,6 @@ This course is all about making you love data science. Data science is by defini
 :gutter: 3
 
 :::{grid-item-card}
-:link: basics/organize
 :link-type: doc
 :class-header: bg-light
 
@@ -40,7 +35,6 @@ CS301-103: Thu 6:00pm-8:30pm EST
 :::
 
 :::{grid-item-card}
-:link: content/myst
 :link-type: doc
 :class-header: bg-light
 
@@ -52,7 +46,6 @@ We use Google chat (NJIT account) for all communication and questions related to
 :::
 
 :::{grid-item-card}
-:link: content/executable/index
 :link-type: doc
 :class-header: bg-light
 
@@ -63,7 +56,6 @@ Professor Office hours will be coordinated via chat  - the process is simple: di
 :::
 
 :::{grid-item-card}
-:link: interactive/launchbuttons
 :link-type: doc
 :class-header: bg-light
 
@@ -74,7 +66,6 @@ TBP
 :::
 
 :::{grid-item-card}
-:link: publish/web
 :link-type: doc
 :class-header: bg-light
 

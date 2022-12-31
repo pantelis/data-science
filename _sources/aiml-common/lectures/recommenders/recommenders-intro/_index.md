@@ -1,8 +1,4 @@
----
-index: Recommenders Introduction
----
-
-# Recommender System Introduction
+# Introduction to Recommender Systems
 
 > NOTE: Most of the material presented here is taken from the book [Practical Recommender Systems.](https://www.amazon.com/Practical-Recommender-Systems-Kim-Falk/dp/1617292702) and [Isinkaye, 2015](https://www.sciencedirect.com/science/article/pii/S1110866515000341)
 > [developers.google.com](https://developers.google.com/machine-learning/recommendation) provides also a good introductory treatment in recommendation systems. 
