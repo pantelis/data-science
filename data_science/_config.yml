@@ -9,7 +9,7 @@ only_build_toc_files: true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'off'
+  execute_notebooks: 'cache'
   timeout: 300
   exclude_patterns: 
     - data_science/aiml-common/lectures/transfer-learning/quantized_transfer_learning.ipynb
@@ -45,6 +45,7 @@ launch_buttons:
 sphinx:
   recursive_update: false
   config:
+    nbsphinx_codecell_lexer: 
     html_theme_options:
       use_download_button: true
       repository_url: https://github.com/pantelis/data-science
@@ -61,6 +62,7 @@ sphinx:
     latex_elements:
         preamble: |
           \newcommand\N{\mathbb{N}}
+          \newcommand\R{\mathbb{R}}
           \newcommand\floor[1]{\lfloor#1\rfloor}
           \newcommand{\bmat}{\left[\begin{array}}
           \newcommand{\emat}{\end{array}\right]}
