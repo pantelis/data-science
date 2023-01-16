@@ -25,12 +25,9 @@ This course is all about making you love data science. Data science is by defini
 
 **Logistics** {octicon}`organization;1em;sd-text-info`
 ^^^
-Course Dates: Sept  - Dec 2022
+Course Dates: Jan 2023 - May 2023
 
-CS301-101: Tue 6:00pm-8:30pm EST 
-
-CS301-103: Thu 6:00pm-8:30pm EST 
-
+CS301-102: Tue 6:00pm-8:30pm EST (King 217)
 
 :::
 
@@ -62,7 +59,7 @@ Professor Office hours will be coordinated via chat  - the process is simple: di
 **Staff (TAs)** {octicon}`person;1em;sd-text-info`
 ^^^
 
-TBP
+Dhruvil Kansara
 :::
 
 :::{grid-item-card}
