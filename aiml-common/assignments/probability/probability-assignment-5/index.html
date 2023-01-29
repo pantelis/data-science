@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Logistic Regression &#8212; Introduction to Data Science</title>
+    <title>Probability Assignment &#8212; Introduction to Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,11 +54,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/lectures/classification/logistic-regression/_index.html" />
+    <link rel="canonical" href="https://pantelis.github.io/data-science/aiml-common/assignments/probability/probability-assignment-5/index.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Decision Trees" href="../../decision-trees/_index.html" />
-    <link rel="prev" title="Introduction to Classification" href="../classification-intro/_index.html" />
+    <link rel="prev" title="Learn Python" href="../../../lectures/python/_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,22 +128,22 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ai-intro/course-introduction/_index.html">
+  <a class="reference internal" href="../../../lectures/ai-intro/course-introduction/_index.html">
    Course Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ai-intro/data-science-360/_index.html">
+  <a class="reference internal" href="../../../lectures/ai-intro/data-science-360/_index.html">
    Data Science 360
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ai-intro/pipelines/_index.html">
+  <a class="reference internal" href="../../../lectures/ai-intro/pipelines/_index.html">
    ML Pipelines
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../uber-ml-arch-case-study/_index.html">
+  <a class="reference internal" href="../../../lectures/uber-ml-arch-case-study/_index.html">
    A Case Study of an ML Architecture - Uber
   </a>
  </li>
@@ -156,27 +155,27 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ml-math/probability/_index.html">
+  <a class="reference internal" href="../../../lectures/ml-math/probability/_index.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../entropy/_index.html">
+  <a class="reference internal" href="../../../lectures/entropy/_index.html">
    Entropy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../pgm/bayesian-inference/_index.html">
+  <a class="reference internal" href="../../../lectures/pgm/bayesian-inference/_index.html">
    Bayesian Inference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../covid19-antibody-test/_index.html">
+  <a class="reference internal" href="../../../lectures/classification/covid19-antibody-test/_index.html">
    COVID-19 Antibody Test
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../pgm/bayesian-coin/_index.html">
+  <a class="reference internal" href="../../../lectures/pgm/bayesian-coin/_index.html">
    Bayesian Coin Flipping
   </a>
  </li>
@@ -188,17 +187,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../learning-problem/_index.html">
+  <a class="reference internal" href="../../../lectures/learning-problem/_index.html">
    The Learning Problem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../regression/linear-regression/linear_regression.html">
+  <a class="reference internal" href="../../../lectures/regression/linear-regression/linear_regression.html">
    Linear Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../optimization/sgd/_index.html">
+  <a class="reference internal" href="../../../lectures/optimization/sgd/_index.html">
    Stochastic Gradient Descent
   </a>
  </li>
@@ -208,14 +207,14 @@ const thebe_selector_output = ".output, .cell_output"
   Classification
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../classification-intro/_index.html">
+  <a class="reference internal" href="../../../lectures/classification/classification-intro/_index.html">
    Introduction to Classification
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../lectures/classification/logistic-regression/_index.html">
    Logistic Regression
   </a>
  </li>
@@ -227,37 +226,37 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../decision-trees/_index.html">
+  <a class="reference internal" href="../../../lectures/decision-trees/_index.html">
    Decision Trees
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../regression-trees/regression_trees.html">
+  <a class="reference internal" href="../../../lectures/regression-trees/regression_trees.html">
    Regression tree stumps
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ensemble/_index.html">
+  <a class="reference internal" href="../../../lectures/ensemble/_index.html">
    Ensemble Methods
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ensemble/random-forests/_index.html">
+  <a class="reference internal" href="../../../lectures/ensemble/random-forests/_index.html">
    Random Forests
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ensemble/adaboost/index.html">
+  <a class="reference internal" href="../../../lectures/ensemble/adaboost/index.html">
    Adaptive Boosting (AdaBoost)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ensemble/gradient-boosting/index.html">
+  <a class="reference internal" href="../../../lectures/ensemble/gradient-boosting/index.html">
    Gradient Boosting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ensemble/boosting-workshop/_index.html">
+  <a class="reference internal" href="../../../lectures/ensemble/boosting-workshop/_index.html">
    Boosting workshop
   </a>
  </li>
@@ -269,17 +268,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../unsupervised/k-means/_index.html">
+  <a class="reference internal" href="../../../lectures/unsupervised/k-means/_index.html">
    K-means Clustering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../density-estimation/knn/_index.html">
+  <a class="reference internal" href="../../../lectures/density-estimation/knn/_index.html">
    k-Nearest Neighbors (kNN) Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../density-estimation/knn-workshop/_index.html">
+  <a class="reference internal" href="../../../lectures/density-estimation/knn-workshop/_index.html">
    kNN Workshop
   </a>
  </li>
@@ -291,57 +290,57 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../perceptron/_index.html">
+  <a class="reference internal" href="../../../lectures/classification/perceptron/_index.html">
    The Neuron (Perceptron)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/dnn-intro/_index.html">
+  <a class="reference internal" href="../../../lectures/dnn/dnn-intro/_index.html">
    Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-intro/_index.html">
+  <a class="reference internal" href="../../../lectures/dnn/backprop-intro/_index.html">
    Introduction to Backpropagation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-dnn/_index.html">
+  <a class="reference internal" href="../../../lectures/dnn/backprop-dnn/_index.html">
    Backpropagation in Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/backprop-dnn-exercises/_index.html">
+  <a class="reference internal" href="../../../lectures/dnn/backprop-dnn-exercises/_index.html">
    Backpropagation DNN exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../dnn/fashion-mnist-case-study.html">
+  <a class="reference internal" href="../../../lectures/dnn/fashion-mnist-case-study.html">
    Fashion MNIST Case Study
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../optimization/regularization/_index.html">
+  <a class="reference internal" href="../../../lectures/optimization/regularization/_index.html">
    Regularization in Deep Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../cnn/cnn-intro/_index.html">
+  <a class="reference internal" href="../../../lectures/cnn/cnn-intro/_index.html">
    Introduction to Convolutional Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../cnn/cnn-layers/_index.html">
+  <a class="reference internal" href="../../../lectures/cnn/cnn-layers/_index.html">
    CNN Architectures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../cnn/cnn-example-architectures/_index.html">
+  <a class="reference internal" href="../../../lectures/cnn/cnn-example-architectures/_index.html">
    CNN Example Architectures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../cnn/cnn-example-architectures/using_convnets_with_small_datasets.html">
+  <a class="reference internal" href="../../../lectures/cnn/cnn-example-architectures/using_convnets_with_small_datasets.html">
    Using convnets with small datasets
   </a>
  </li>
@@ -353,17 +352,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../recommenders/recommenders-intro/_index.html">
+  <a class="reference internal" href="../../../lectures/recommenders/recommenders-intro/_index.html">
    Introduction to Recommender Systems
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../recommenders/netflix/_index.html">
+  <a class="reference internal" href="../../../lectures/recommenders/netflix/_index.html">
    The Netflix Prize and Singular Value Decomposition
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../pca/_index.html">
+  <a class="reference internal" href="../../../lectures/pca/_index.html">
    Principal Component Analysis (PCA)
   </a>
  </li>
@@ -375,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../ml-math/_index.html">
+  <a class="reference internal" href="../../../lectures/ml-math/_index.html">
    Math for ML
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -385,12 +384,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../linear-algebra/_index.html">
+    <a class="reference internal" href="../../../lectures/linear-algebra/_index.html">
      Linear Algebra for Machine Learning
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../ml-math/calculus/_index.html">
+    <a class="reference internal" href="../../../lectures/ml-math/calculus/_index.html">
      Calculus
     </a>
    </li>
@@ -409,7 +408,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../python/_index.html">
+  <a class="reference internal" href="../../../lectures/python/_index.html">
    Learn Python
   </a>
  </li>
@@ -419,9 +418,9 @@ const thebe_selector_output = ".output, .cell_output"
   Assignments &amp; Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../assignments/probability/probability-assignment-5/index.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Probability Assignment
   </a>
  </li>
@@ -515,7 +514,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/lectures/classification/logistic-regression/_index.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pantelis/data-science/issues/new?title=Issue%20on%20page%20%2Faiml-common/assignments/probability/probability-assignment-5/index.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -543,7 +542,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../_sources/aiml-common/lectures/classification/logistic-regression/_index.md"
+        <a href="../../../../_sources/aiml-common/assignments/probability/probability-assignment-5/index.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -554,7 +553,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -602,19 +601,41 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#odds-and-the-logistic-sigmoid">
-   Odds and the Logistic Sigmoid
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Probability Assignment
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1a-10-points">
+     Question 1a (10 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1b-10-points">
+     Question 1b (10 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-20-points">
+     Question 2 (20 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-20-points">
+     Question 3 (20 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4-20-points">
+     Question 4 (20 points)
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-case">
-   Binary case
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimizing-lr-parameters-with-sgd">
-   Optimizing LR parameters with SGD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-20-points">
+   Question 5 (20 points)
   </a>
  </li>
 </ul>
@@ -626,7 +647,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Logistic Regression</h1>
+                <h1>Probability Assignment</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -636,19 +657,41 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#odds-and-the-logistic-sigmoid">
-   Odds and the Logistic Sigmoid
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Probability Assignment
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1a-10-points">
+     Question 1a (10 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1b-10-points">
+     Question 1b (10 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-20-points">
+     Question 2 (20 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-20-points">
+     Question 3 (20 points)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4-20-points">
+     Question 4 (20 points)
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-case">
-   Binary case
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimizing-lr-parameters-with-sgd">
-   Optimizing LR parameters with SGD
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-20-points">
+   Question 5 (20 points)
   </a>
  </li>
 </ul>
@@ -661,73 +704,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
-<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">#</a></h1>
-<p>Logistic regression is used in machine learning extensively - every time we need to provide probabilistic semantics to an outcome e.g. predicting the risk of developing a given disease (e.g. diabetes; coronary heart disease), based on observed characteristics of the patient (age, sex, body mass index, results of various blood tests, etc.), whether an voter will vote for a given party, predicting the probability of failure of a given process, system or product, predicting a customer’s propensity to purchase a product or halt a subscription, predicting the likelihood of a homeowner defaulting on a mortgage.</p>
-<section id="odds-and-the-logistic-sigmoid">
-<h2>Odds and the Logistic Sigmoid<a class="headerlink" href="#odds-and-the-logistic-sigmoid" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(\sigma\)</span> is a probability of an event, then the ratio <span class="math notranslate nohighlight">\(\frac{\sigma}{1-\sigma}\)</span> is the corresponding <em>odds</em>, the ratio of the event  occurring divided by not occurring. For example, if a race horse runs 100 races and wins 25 times and loses the other 75 times, the probability of winning is 25/100 = 0.25 or 25%, but the odds of the horse winning are 25/75 = 0.333 or 1 win to 3 loses. In the binary classification case, the log odds is given by</p>
-<div class="math notranslate nohighlight">
-\[ \mathtt{logit}(\sigma) = \alpha = \ln \frac{\sigma}{1-\sigma} = \ln \frac{p(y=1|\mathbf{x})}{p(y=0 |\mathbf{x})}\]</div>
-<p>The logistic function of any number <span class="math notranslate nohighlight">\(\alpha\)</span> is given by:</p>
-<div class="math notranslate nohighlight">
-\[\mathtt{logistic}(\alpha) = \sigma(\alpha) = \mathtt{logit}^{-1}(\alpha) =  \frac{1}{1 + \exp(-\alpha)} = \frac{\exp(\alpha)}{ \exp(\alpha) + 1}\]</div>
-<p>and is plotted below. It maps its argument to the “probability” space [0,1].</p>
-<p><img alt="logistic sigmoid" src="../../../../_images/Figure4.9.png" />
-<em>Logistic sigmoid (red)</em></p>
-<p>The sigmoid function satisfies the following symmetry:</p>
-<div class="math notranslate nohighlight">
-\[\sigma(-\alpha) = 1 - \sigma(\alpha)\]</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="probability-assignment">
+<h1>Probability Assignment<a class="headerlink" href="#probability-assignment" title="Permalink to this headline">#</a></h1>
+<p>To get full credit in this assignment you need to use only <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">jax</span></code> libraries  and include adequate explanation of the code in either markdown cells or code comments. Sometimes you need to type equations - type equations in latex math notation.</p>
+<p>PS: Please note that we run through chatGPT the questions and you will be referred to the Dean if we find that a robot answered your questions. .</p>
+<section id="question-1a-10-points">
+<h2>Question 1a (10 points)<a class="headerlink" href="#question-1a-10-points" title="Permalink to this headline">#</a></h2>
+<p>In a private subreddit people are posting their opinions on the CEO of the company you work for. Lets assume that the employees that are posting are random logging in to that subreddit and that each post indicates whether the employee approves or not the job that the CEO is doing. Let <span class="math notranslate nohighlight">\(x_i\)</span> be the binary random variable where <span class="math notranslate nohighlight">\(x_i=1\)</span> indicates approval. You can assume that <span class="math notranslate nohighlight">\(x\)</span> is distributed according to a Bernoulli distribution with parameter <span class="math notranslate nohighlight">\(p=1/2\)</span>.</p>
+<p>Your job is to sample <span class="math notranslate nohighlight">\(n=50\)</span> posts and estimate the approval rate of the CEO by considering the statistics of <span class="math notranslate nohighlight">\(y=x_1+x_2+ \dots + x_n\)</span>. What is the probability that 25 employees approve the CEO?</p>
 </section>
-<section id="binary-case">
-<h2>Binary case<a class="headerlink" href="#binary-case" title="Permalink to this headline">#</a></h2>
-<p>If we consider the two class problem, we can write the posterior probability as,</p>
+<section id="question-1b-10-points">
+<h2>Question 1b (10 points)<a class="headerlink" href="#question-1b-10-points" title="Permalink to this headline">#</a></h2>
+<p>Following your findings in Q1a, read about the <a class="reference external" href="https://en.wikipedia.org/wiki/Central_limit_theorem">Cenral Limit Theorem</a> and recognize that</p>
 <div class="math notranslate nohighlight">
-\[p(y=1|\mathbf{x}) = \frac{p(\mathbf{x}|y=1) p(y=1)}{p(\mathbf{x}|y=1) p(y=1) + p(\mathbf{x}|y=0) p(y=0)} = \frac{1}{1 + \exp(-\alpha)} = \sigma(\alpha)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha = \ln \frac{p(\mathbf{x}|y=1) p(y=1)}{p(\mathbf{x}|y=0) p(y=0)}\)</span>.</p>
-<p>Given the posterior distribution above, we have for the specific linear activation,</p>
-<div class="math notranslate nohighlight">
-\[p_{model}(y=1|\mathbf{x}) = \hat y = \sigma(\mathbf{w}^T \mathbf{x})\]</div>
-<p>This model is called logistic regression - despite its name its models a classification task.</p>
-<!-- The model has significant advantages in that it does require the estimation of far fewer parameters compared to the case where the class conditional distributions involved in the posterior were parametric. For example if we had Gaussian class conditionals we would had to estimate (using Maximum Likelihood) their parameters $\mathbf \mu$ and $\mathbf \Sigma$ that grow quadratically to the number of features $n$. With logistic regression we only have an evident linear relationship between parameters and features.   -->
-<p>The figure below shows the corresponding posterior distribution <span class="math notranslate nohighlight">\(p(y=1|\mathbf{x})\)</span></p>
-<p><img alt="posterior-two-class-example" src="../../../../_images/Figure4.10a.png" />
-<em>The class-conditional densities for two classes, denoted red and blue. Here the class-conditional densities <span class="math notranslate nohighlight">\(p(\mathbf{x}|y=1)\)</span> and <span class="math notranslate nohighlight">\(p(\mathbf{x}|y=0)\)</span> are Gaussian</em></p>
-<p><img alt="posterior-two-class-example" src="../../../../_images/Figure4.10b.png" />
-<em>The corresponding posterior probability for the red class, which is given by a logistic sigmoid of a linear function of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</em></p>
-<!-- As we said, with logistic regression **we skip the assumption about the class-conditional densities** as they add parameters to our problem that grow  quadratic to the number of dimensions and we attempt to find the $n$ parameters of the model directly (the number of features) and sure enough we will use ML to do so.  -->
-<p>By repeating the classical steps in ML methodology i.e. writing down the expression of the likelihood function (this will now be a product of binomials), we can write down the negative log likelihood function for the binary case as,</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Binary CE Loss
-$<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - \ln p(\mathbf{y},\mathbf{w}) = - \big[ \sum_{i=1}^m \{y_i \ln \hat{y}_i + (1-y_i) \ln (1-\hat{y}_i) \} \big]\)</span>$</p>
-<p>which is called <strong>cross entropy loss function</strong> - probably the most widely used error function (in classification as well as regression) due to its information theoretic roots.</p>
+\[z=\frac{y-\mu_y}{\sigma_y}\]</div>
+<p>is normally distributed with mean 0 and variance 1.</p>
+<p>Can you find the  probability that 25 employees approve the CEO using the Gaussian approximation?</p>
+<p>Type the answer here using the <a class="reference external" href="https://wch.github.io/latexsheet/">latex syntax</a> or handwrite the answer, upload the picture in the same folder and use a new markdown cell with markdown syntax <code class="docutils literal notranslate"><span class="pre">![title](image_name.png)</span></code></p>
+</section>
+<section id="question-2-20-points">
+<h2>Question 2 (20 points)<a class="headerlink" href="#question-2-20-points" title="Permalink to this headline">#</a></h2>
+<p>A sequential experiment involves repeatedly drawing a ball from one of the two urns, noting the number on the ball and replacing the ball in the urn. Urn 0 contains a ball with the number 0 and two balls with the number 1. Urn 1 contains five balls with the number 0 and one ball with the number 1.</p>
+<p>The urn from which the first ball is drawn is selected by flipping a fair coin. Urn 0 is used if the outcome is H and urn 1 is used if the outcome is T. <strong>The urn used in a subsequent draws corresponds to the number on the ball drawn in the previous draw.</strong></p>
+<p>What is the probability of a specific sequence of the numbers on drawn balls being 0011 ?</p>
+<p>Type the answer here using the <a class="reference external" href="https://wch.github.io/latexsheet/">latex syntax</a> or handwrite the answer, upload the picture in the same folder and use a new markdown cell with markdown syntax <code class="docutils literal notranslate"><span class="pre">![title](image_name.png)</span></code></p>
+</section>
+<section id="question-3-20-points">
+<h2>Question 3 (20 points)<a class="headerlink" href="#question-3-20-points" title="Permalink to this headline">#</a></h2>
+<p>Referring to Example 6.6 of the  <a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf">Math for ML book</a>, simulate and plot the bivariate normal distribution with the shown parameters using the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.cholesky.html">Cholesky factorization</a> for the simulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Type the Python code here and ensure you save the notebook with the results of the code execution.
+</pre></div>
 </div>
-<p>Its shape is shown in the figure below for an example case where the <span class="math notranslate nohighlight">\(y=1\)</span>. It is also known as log-loss.</p>
-<p><img alt="cross-entropy" src="../../../../_images/cross-entropy-binary.png" /></p>
-<p><em>CE Loss vs predicted probability for class “1”</em></p>
-<p>The behavior of the loss function is telling: it heavily penalizes confident wrong decisions. Notice its exponential rise when the probability <span class="math notranslate nohighlight">\(\hat{y}\)</span> of the class “1” is close to 0.0 which means that the classifier predicted with high confidence the opposite class that the ground truth.   On the other hand, when the probability of <span class="math notranslate nohighlight">\(\hat y\)</span> is close to 1.0, which means that the classifier predicts the class “1” with confidence, we exhibit minimal loss and in the limit zero loss.</p>
+</div>
+</div>
 </section>
-<section id="optimizing-lr-parameters-with-sgd">
-<h2>Optimizing LR parameters with SGD<a class="headerlink" href="#optimizing-lr-parameters-with-sgd" title="Permalink to this headline">#</a></h2>
-<p>Minimizing the Binary CE (log-loss) starts from the negative log likelihood:</p>
-<div class="math notranslate nohighlight">
-\[L(\mathbf{w}) = - \ln p_{model}(\mathbf{y},\mathbf{w}) = - \big[ \sum_{i=1}^m \{y_i \ln \hat{y}_i + (1-y_i) \ln (1-\hat{y}_i) \} \big]\]</div>
-<div class="math notranslate nohighlight">
-\[ = - \big[ \sum_{i=1}^m \{y_i \ln \hat{y}_i + (1-y_i) \ln (1-\hat{y}_i) \} \big]\]</div>
-<div class="math notranslate nohighlight">
-\[ = - \big[ \sum_{i=1}^m \{y_i \ln \frac{1}{1+\exp(-\alpha)} +(1- y_i) \ln (1 - \frac{1}{1+\exp(-\alpha)}) \} \big] \]</div>
-<div class="math notranslate nohighlight">
-\[ = - \big[ \sum_{i=1}^m \{y_i \big[ \ln \frac{1}{1+\exp(-\alpha)} - \ln (1 - \frac{1}{1+\exp(-\alpha)}) \big] + \ln (1 - \frac{1}{1+\exp(-\alpha)} \} \big] \]</div>
-<div class="math notranslate nohighlight">
-\[ = - \big[ \sum_{i=1}^m \{y_i \alpha + \ln (1+\exp(\alpha) \} \big] \]</div>
-<div class="math notranslate nohighlight">
-\[ = - \big[ \sum_{i=1}^m \{y_i \mathbf w^T \mathbf x  + \ln (1+\exp(\mathbf w^T \mathbf x) \} \big] \]</div>
-<p>We need to minimize it with respect to <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> and this requires calculating its gradient. The gradient can be derived to be:</p>
-<div class="math notranslate nohighlight">
-\[\nabla_\mathbf w L = \sum_{i=1}^m (\hat{y}_i - y_i) x_i\]</div>
-<p>The expression above defines the batch gradient decent algorithm. We can then readily convert this algorithm to mini-batch SGD by considering mini-batch updates of size <span class="math notranslate nohighlight">\(m_b\)</span> i.e. instead of <span class="math notranslate nohighlight">\(m\)</span> we sum over <span class="math notranslate nohighlight">\(m_b\)</span> where the later is a hyperparameter.</p>
+<section id="question-4-20-points">
+<h2>Question 4 (20 points)<a class="headerlink" href="#question-4-20-points" title="Permalink to this headline">#</a></h2>
+<p>Go through the provided links on <a class="reference external" href="https://dlsun.github.io/probability/poisson.html">Poisson</a> and <a class="reference external" href="https://dlsun.github.io/probability/exponential.html">exponential distributions</a> as the <code class="docutils literal notranslate"><span class="pre">Math</span> <span class="pre">for</span> <span class="pre">ML</span></code> textbook in your course site  is not covering enough these important distributions.</p>
+<p>Watch this video <a class="reference external" href="https://www.youtube.com/watch?v=Asto3RS46ks">https://www.youtube.com/watch?v=Asto3RS46ks</a> where the author is explaining how to simulate a Poisson distribution from scratch.</p>
+<ol class="simple">
+<li><p>Using the Kaggle API download <a class="reference external" href="https://www.kaggle.com/datasets/new-york-city/nyc-east-river-bicycle-crossings">this dataset</a> and plot the histogram of the number of cyclists that cross the Brooklyn bridge per day.</p></li>
+<li><p>Simulate the number of cyclists that cross the Brooklyn bridge per day using the Poisson distribution. Ensure that the simulated counts are similar distribution-wise to the observed counts.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Type the Python code here and ensure you save the notebook with the results of the code execution.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-5-20-points">
+<h1>Question 5 (20 points)<a class="headerlink" href="#question-5-20-points" title="Permalink to this headline">#</a></h1>
+<p>You are asked to stress test an cloud API endpoint and are told that the API exposes a database server that can be abstracted as an M/M/1 queue. Go through <a class="reference external" href="https://queue-it.com/blog/queuing-theory/">this introductory</a> page to just understand the queuing domain and the notation M/M/1. Go also through the elements of the MM1 queue <a class="reference external" href="https://en.wikipedia.org/wiki/M/M/1_queue">here</a>. Make sure you click on the links and learn about the random process called Poisson process.</p>
+<p>Your task is to simulate the behavior of the queue and plot the number of requests that are waiting in the queue as a function of time. You are given three arrival rates of the API requests <span class="math notranslate nohighlight">\(\lambda=[1, 3, 4]\)</span> and the service time of the requests as an exponential random variable with rate <span class="math notranslate nohighlight">\(\mu=4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Type the Python code here and ensure you save the notebook with the results of the code execution.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -743,7 +783,7 @@ $<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./aiml-common/lectures/classification/logistic-regression"
+            path: "./aiml-common/assignments/probability/probability-assignment-5"
         },
         predefinedOutput: true
     }
@@ -757,19 +797,12 @@ $<span class="math notranslate nohighlight">\(L(\mathbf{w}) = L(y, \hat{y}) = - 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../classification-intro/_index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../../lectures/python/_index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Classification</p>
+            <p class="prev-next-title">Learn Python</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../decision-trees/_index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Decision Trees</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
