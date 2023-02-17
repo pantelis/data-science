@@ -9,10 +9,10 @@ only_build_toc_files: true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'cache'
+  execute_notebooks: 'off'
   timeout: 300
-  exclude_patterns: 
-    - data_science/aiml-common/lectures/transfer-learning/quantized_transfer_learning.ipynb
+  # exclude_patterns: 
+  #   - data_science/aiml-common/lectures/transfer-learning/quantized_transfer_learning.ipynb
     
 # Define the name of the latex output file for PDF builds
 latex:
