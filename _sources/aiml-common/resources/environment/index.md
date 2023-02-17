@@ -100,7 +100,7 @@ After adding the TA as a collaborator they will be able to see your code in Gith
 ![](./images/Open1.png)
 
 2. After Adding a Markdown section you need to add the following link to the same. Check the image. Also please note that in this link
-instead of "https://github.com/dhruvilk/Course-Assignments/tree/main/Sample.ipynb" you need to add the location of the notebook in which your code is present. Your notebook will be in yout Github. So copy the link and paste it above. Rest will stay the same.
+instead of "https://github.com/dhruvilk/Course-Assignments/tree/main/Sample.ipynb" you need to add the location of the notebook in which your code is present. Your notebook will be in your Github. So copy the link and paste it above. Rest will stay the same.
 
 ![](./images/Open2.png)
 
@@ -108,6 +108,9 @@ instead of "https://github.com/dhruvilk/Course-Assignments/tree/main/Sample.ipyn
 
 ![](./images/Open3.png)
 
+The following video is also useful on how to add the Open in Colab button in notebooks but also in a browser bookmark. The later is helpful when the notebook does not have the embedded button.
+
+[![Open in Colab](https://img.youtube.com/vi/RoGZIbwzG5w/0.jpg)](https://www.youtube.com/watch?v=RoGZIbwzG5w)
 
 ## External Tools and Databases (Optional)
 
@@ -115,12 +118,4 @@ instead of "https://github.com/dhruvilk/Course-Assignments/tree/main/Sample.ipyn
 
 For project work you may need to install ES. Please note you are responsible for setting up the environment. For example to set up ES in Win10 you may follow [this](https://www.youtube.com/watch?v=hzaG2Uq60uw) guide but bear in mind that we cannot support any IT issues you may encounter in your laptop. You may decide to set up a development environment in AWS cloud 9 that is linux based for a small fee or taking advantage the free tier for _new_ AWS accounts (which is not free if you need EC2 instances outside of what the free tier provides).
 
-
-
-
-## External Tools and Databases
-
-### Elastic Search Environment Setup
-
-For projects work you may need to install ES. Please note you are responsible for setting up the environment. For example to set up ES in Win10 you may follow [this](https://www.youtube.com/watch?v=hzaG2Uq60uw) guide but bear in mind that we cannot support any IT issues you may encounter in your laptop. You may decide to set up a development environment in AWS cloud 9 that is linux based for a small fee or taking advantage the free tier for _new_ AWS accounts (which is not free if you need EC2 instances outside of what the free tier provides).
 
