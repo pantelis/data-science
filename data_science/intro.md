@@ -1,10 +1,11 @@
 # Introduction to Data Science
 
-{bdg-link-dark}`Instructor: Pantelis Monogioudis, Ph.D. <https://www.linkedin.com/in/pantelis/>`
-
 ```{only} html
 
-<button type="button" class="btn btn-dark btn-sm">Please star and then fork the new Github repo [![](https://img.shields.io/github/stars/pantelis/data-science?style=social)](https://github.com/pantelis/data-science)</button>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="pantelis" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/pantelis?trk=profile-badge">Pantelis Monogioudis</a></div>
+              
+<a href="https://twitter.com/monogioudis?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @monogioudis</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ```
 
@@ -32,7 +33,6 @@ CS301-102: Tue 6:00pm-8:30pm EST (King 217)
 :::
 
 :::{grid-item-card}
-:link-type: doc
 :class-header: bg-light
 
 **Communication** {octicon}`megaphone;1em;sd-text-info`
@@ -43,7 +43,6 @@ We use Google chat (NJIT account) for all communication and questions related to
 :::
 
 :::{grid-item-card}
-:link-type: doc
 :class-header: bg-light
 
 **Office Hours** {octicon}`clock;1em;sd-text-info`
@@ -53,7 +52,6 @@ Professor Office hours will be coordinated via chat  - the process is simple: di
 :::
 
 :::{grid-item-card}
-:link-type: doc
 :class-header: bg-light
 
 **Staff (TAs)** {octicon}`person;1em;sd-text-info`
@@ -63,7 +61,6 @@ Dhruvil Kansara
 :::
 
 :::{grid-item-card}
-:link-type: doc
 :class-header: bg-light
 
 **Grading** {octicon}`pulse;1em;sd-text-info`

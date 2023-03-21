@@ -14,7 +14,7 @@ If you'd like to develop and/or build the data-science book, you should:
 3. Run `conda activate data-mining-book`
 4. (Optional) Edit the source files located in the `data_science/` directory
 5. Run `jupyter-book clean data_science/` to remove any existing builds
-6. Run `jupyter-book build data_science/`
+6. Run `poetry run sphinx-autobuild data_science/ _build/html`
 
 A fully-rendered HTML version of the book will be built in `data_science/_build/html/`.
 
