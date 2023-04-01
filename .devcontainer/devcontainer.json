@@ -44,5 +44,5 @@
 			]
 		}
 	},
-	"postStartCommand": "poetry run sphinx-autobuild data_mining _build/html"
+	"postStartCommand": "poetry run sphinx-autobuild data_science _build/html"
 }

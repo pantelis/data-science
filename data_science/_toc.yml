@@ -87,9 +87,8 @@ parts:
     chapters:
     - file: aiml-common/assignments/probability/probability-assignment-5/index.ipynb
     - file: aiml-common/assignments/mle/mle-gaussian.ipynb
-  #   - file: aiml-common/assignments/logistic-regression-1/index.md
-  #   - file: aiml-common/assignments/emg/index.md      
-  #   - file: aiml-common/projects/semantic-segmentation/index.md
+    - file: aiml-common/assignments/simple-language-models/index.md
+  
   
   - caption:  Project
     chapters:  
