@@ -37,7 +37,12 @@ Watch these two videos and implement the language model neural network using the
 .. youtube:: TCH_1BHY58I
 ```
 
-You are **not** allowed to use `torch` or `TF2`. Points will be subtracted if your code is delivered undocumented.  
+You are **not** allowed to use `torch` or `TF2`. 
+
+
+## Part 3: Documentation (20 points)
+
+Write a summary of your experiment in your README.md file such as the objective clearly explaining what a simple language model is. Please note that points will be subtracted if your code is delivered uncommented.   
 
 
 
