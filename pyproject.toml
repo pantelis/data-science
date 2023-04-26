@@ -32,6 +32,8 @@ distributed = "^2023.3.0"
 modin = "^0.18.1"
 jaxlib = "^0.4.4"
 opencv-python = "^4.7.0.72"
+nbdev = "^2.3.12"
+seaborn = "^0.12.2"
 
 [build-system]
 requires = ["poetry-core"]

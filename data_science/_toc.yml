@@ -67,6 +67,7 @@ parts:
     - file: aiml-common/lectures/recommenders/recommenders-intro/_index.md
     - file: aiml-common/lectures/recommenders/netflix/_index.md
     - file: aiml-common/lectures/pca/_index.md
+    - file: aiml-common/lectures/pca/principal-component-analysis.ipynb 
   
   - caption: Math Background
     chapters: 
