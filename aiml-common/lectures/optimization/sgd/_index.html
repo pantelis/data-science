@@ -229,6 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../recommenders/recommenders-intro/_index.html">Introduction to Recommender Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../recommenders/netflix/_index.html">The Netflix Prize and Singular Value Decomposition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pca/_index.html">Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pca/principal-component-analysis.html">PCA Workshop</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Math Background</span></p>
 <ul class="nav bd-sidenav">
@@ -486,7 +487,7 @@ document.write(`
 <h2>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">#</a></h2>
 <p>Obviously for us to be able to find the right weights we need to pose the learning problem via a suitable objective (loss) function such as the cross-entropy.  Optimization refers to the task of either minimizing or maximizing some function <span class="math notranslate nohighlight">\(L(\mathbf w)\)</span> by altering <span class="math notranslate nohighlight">\(\mathbf w\)</span>. We usually phrase most optimization problems in terms of minimizing <span class="math notranslate nohighlight">\(L(\mathbf w)\)</span>. Maximization may be accomplished via a minimization algorithm by minimizing <span class="math notranslate nohighlight">\(−L\)</span>. Mathematically</p>
 <div class="math notranslate nohighlight">
-\[\mathbf w^* = \argmax_w L(\mathbf w)\]</div>
+\[\mathbf w^* = \arg \max_w L(\mathbf w)\]</div>
 <p>As the simplest possible example the following figure show the simplest possible objective function and what an optimization algorithm is doing.</p>
 <p><img alt="derivative" src="../../../../_images/derivative.png" />
 <em>Gradient descent. An illustration of how the gradient descent algorithm uses the derivatives of a function to follow the function downhill to a minimum</em></p>

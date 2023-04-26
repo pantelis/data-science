@@ -16,7 +16,7 @@ Can we define PCA from a graphical point of view? This is shown in the next figu
 ![principal-subspace](images/principal-subspace.png)
 *PCA seeks a space of lower dimensionality (the magenda line) such that the orthogonal projection of the data points into the subspace maximizes the variance of the projected points (green dots) or equivalently minimizes the squared distances of the projection errors (blue lines)*
 
-We will now go through [this notebook](https://nbviewer.jupyter.org/github/jakevdp/PythonDataScienceHandbook/blob/97c8c91c5932f2b2a58bb97c000506f636ee661a/notebooks/05.09-Principal-Component-Analysis.ipynb) to see how PCA is calculated and what it offers to various types of data. 
+We will now go through [this notebook]() to see how PCA is calculated and what it offers to various types of data. 
 
 <iframe src="https://nbviewer.jupyter.org/github/jakevdp/PythonDataScienceHandbook/blob/97c8c91c5932f2b2a58bb97c000506f636ee661a/notebooks/05.09-Principal-Component-Analysis.ipynb" width="900" height="1200"></iframe>
 
